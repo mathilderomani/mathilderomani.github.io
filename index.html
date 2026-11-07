@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=10">
+<link rel="stylesheet" href="css/style.css?v=11">
 </head>
 <body>
 
@@ -372,6 +372,88 @@
         <p>Tu ne devines plus. Tu vois.</p>
       </blockquote>
     </div>
+  </div>
+</section>
+
+<!-- Le simulateur -->
+<section class="feuille" id="simulateur">
+  <div class="feuille-in">
+    <div class="tete">
+      <p class="ref">Le simulateur</p>
+      <h2>Combien ton tunnel laisse sur la <span class="accent">table</span> ?</h2>
+      <p>Je ne connais pas tes chiffres. Mets les tiens, ou garde mon exemple. Tu vois ce que tu gagnes aujourd'hui, et ce que tu gagnerais avec un tunnel bien construit.</p>
+    </div>
+
+    <div class="sim">
+      <div class="sim-bloc sim-aujourdhui">
+        <p class="sim-titre">Aujourd'hui <span>(mon exemple, mets tes chiffres)</span></p>
+        <div class="sim-champ">
+          <label for="sim-entrees">Personnes qui entrent dans ton tunnel chaque mois</label>
+          <p class="sim-aide">Les inscrits à ta liste, ou les visiteurs de ta page de vente.</p>
+          <div class="sim-saisie">
+            <input type="range" id="sim-entrees-curseur" data-curseur="entrees" min="50" max="5000" step="50" value="300" aria-label="Personnes par mois, curseur">
+            <input type="number" id="sim-entrees" data-champ="entrees" min="10" max="100000" step="10" value="300" inputmode="numeric">
+          </div>
+        </div>
+        <div class="sim-champ">
+          <label for="sim-taux">Sur 100 personnes, combien achètent (en %)</label>
+          <p class="sim-aide">Si tu ne sais pas, garde 2 % : c'est courant.</p>
+          <div class="sim-saisie">
+            <input type="range" id="sim-taux-curseur" data-curseur="taux" min="0.5" max="15" step="0.5" value="2" aria-label="Taux d'achat, curseur">
+            <input type="number" id="sim-taux" data-champ="taux" min="0.1" max="50" step="0.1" value="2" inputmode="decimal">
+          </div>
+        </div>
+        <div class="sim-champ">
+          <label for="sim-panier">Prix moyen d'une vente (en €)</label>
+          <p class="sim-aide">Ce que paie un client, en moyenne.</p>
+          <div class="sim-saisie">
+            <input type="range" id="sim-panier-curseur" data-curseur="panier" min="10" max="2000" step="1" value="97" aria-label="Prix moyen, curseur">
+            <input type="number" id="sim-panier" data-champ="panier" min="1" max="50000" step="1" value="97" inputmode="numeric">
+          </div>
+        </div>
+        <p class="sim-total">Tu gagnes aujourd'hui <strong data-sortie="auj">582 €</strong> par mois.</p>
+      </div>
+
+      <div class="sim-bloc sim-leviers">
+        <p class="sim-titre">Avec un tunnel bien construit</p>
+        <div class="sim-scenarios" role="group" aria-label="Choisir un scénario">
+          <button type="button" class="sim-scenario" data-scenario="prudent" aria-pressed="false">Prudent</button>
+          <button type="button" class="sim-scenario" data-scenario="realiste" aria-pressed="true">Réaliste</button>
+          <button type="button" class="sim-scenario" data-scenario="ambitieux" aria-pressed="false">Ambitieux</button>
+        </div>
+        <ol class="sim-liste">
+          <li>
+            <p class="sim-levier"><span>1</span>Plus de monde <b data-sortie="x-monde">×1,5</b></p>
+            <p class="sim-chiffres"><span data-sortie="entrees-avant">300</span> → <strong data-sortie="entrees-apres">450</strong> personnes par mois</p>
+            <p>Je réécris ta page d'inscription et le cadeau qui donne envie de laisser son email. Une audience qui te connaît déjà s'inscrit à 15 à 30 % sur une bonne page.</p>
+          </li>
+          <li>
+            <p class="sim-levier"><span>2</span>Plus d'acheteurs <b data-sortie="x-achat">×2</b></p>
+            <p class="sim-chiffres"><span data-sortie="taux-avant">2 %</span> → <strong data-sortie="taux-apres">4 %</strong> qui achètent</p>
+            <p>J'écris une vraie série d'emails au lieu d'un seul message. Une série de bienvenue rapporte de 51 % à 3 fois plus qu'un email unique.</p>
+          </li>
+          <li>
+            <p class="sim-levier"><span>3</span>Un panier plus élevé <b data-sortie="x-panier">+30 %</b></p>
+            <p class="sim-chiffres"><span data-sortie="panier-avant">97 €</span> → <strong data-sortie="panier-apres">126 €</strong> par vente</p>
+            <p>J'ajoute une petite offre en plus au moment de l'achat. Elle est prise par 20 à 40 % des acheteurs, et le panier monte de 20 à 40 %.</p>
+          </li>
+        </ol>
+        <p class="sim-total">Tu gagnerais <strong data-sortie="avec">2 270 €</strong> par mois.</p>
+      </div>
+    </div>
+
+    <div class="sim-resultat" aria-live="polite">
+      <p class="sim-resultat-label">Ce que tu laisses sur la table</p>
+      <p class="sim-resultat-chiffre"><span data-sortie="gain-mois">+1 688 €</span> par mois</p>
+      <p class="sim-resultat-an">soit <strong data-sortie="gain-an">20 254 €</strong> par an</p>
+      <p class="sim-rembourse">Un tunnel complet à 3 500 € serait remboursé en 63 jours. Et après, tout ce qu'il rapporte est pour toi.</p>
+      <div class="actions">
+        <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSe_-8tRlJAWZYybFKXNjkNFQKwHkvTZKSJkQWs8hOul3v4kxg/viewform" target="_blank" rel="noopener">Faire le vrai calcul avec mon audit gratuit</a>
+        <a class="btn btn-ligne" href="#tarifs">Voir mes tarifs</a>
+      </div>
+    </div>
+
+    <p class="sim-note">Ce sont des estimations, pas des promesses. Chaque levier reste dans une fourchette publiée : Mailchimp (via Thrive Themes) et Experian (via ResponseMedia) pour les séries d'emails, Leadpages pour les pages d'inscription, systeme.io pour l'offre au moment de l'achat. L'audit te donne les vrais chiffres de ton tunnel.</p>
   </div>
 </section>
 
@@ -894,8 +976,9 @@
   <span>Plan A · Feuille 1/1</span>
 </footer>
 
-<script src="js/maison.js?v=10"></script>
-<script src="js/site.js?v=10"></script>
-<script src="js/visite.js?v=10"></script>
+<script src="js/maison.js?v=11"></script>
+<script src="js/site.js?v=11"></script>
+<script src="js/visite.js?v=11"></script>
+<script src="js/simulateur.js?v=11"></script>
 </body>
 </html>

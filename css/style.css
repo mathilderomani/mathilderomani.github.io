@@ -611,3 +611,54 @@ h3 { font-size: 1.25rem; font-weight: 600; line-height: 1.25; letter-spacing: -.
   .iso.trace .f { animation: none; opacity: 1; }
   .btn, .fiche, .tarif, .raisons li, .plus, .marque, .chemin, .iso .ch { transition: none; }
 }
+
+/* Le simulateur */
+.sim { display: grid; gap: 18px; }
+.sim-bloc { background: var(--verre); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); border: 1px solid var(--trait); border-radius: var(--rayon); box-shadow: var(--ombre); padding: 26px 22px; display: flex; flex-direction: column; }
+.sim-leviers { border-color: rgba(31, 78, 140, .3); }
+.sim-titre { font-size: 12.5px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--lapis); margin-bottom: 20px; }
+.sim-titre span { font-weight: 500; letter-spacing: .02em; text-transform: none; color: var(--gris); }
+.sim-champ { margin-bottom: 22px; }
+.sim-champ label { display: block; font-weight: 600; color: var(--noir); line-height: 1.35; }
+.sim-aide { font-size: .88rem; margin: 2px 0 10px; }
+.sim-saisie { display: flex; align-items: center; gap: 14px; }
+.sim-saisie input[type="number"] {
+  width: 96px; flex: none; padding: 10px 12px; border: 1px solid var(--trait-fort); border-radius: 12px;
+  background: var(--blanc); color: var(--noir); font: 600 16px/1.2 var(--f-sans); text-align: right;
+}
+.sim-saisie input[type="number"]:focus { outline: 2px solid var(--lapis); outline-offset: 1px; }
+.sim input[type="range"] { flex: 1; min-width: 0; height: 32px; accent-color: var(--lapis); cursor: pointer; }
+.sim-total { margin: auto 0 0; padding-top: 16px; border-top: 1px solid rgba(184, 147, 74, .5); color: var(--noir); }
+.sim-total strong { font-size: 1.35rem; font-weight: 700; letter-spacing: -.02em; }
+.sim-leviers .sim-total strong { color: var(--lapis); }
+.sim-scenarios { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+.sim-scenario {
+  min-height: 40px; padding: 8px 16px; border: 1px solid var(--trait-fort); border-radius: 999px;
+  background: transparent; color: var(--noir); font: 500 14px/1.2 var(--f-sans); cursor: pointer; transition: border-color .25s, background .25s;
+}
+.sim-scenario:hover { border-color: var(--or); }
+.sim-scenario[aria-pressed="true"] { background: var(--noir); border-color: var(--noir); color: var(--creme); }
+.sim-liste { display: grid; gap: 14px; margin-bottom: 18px; }
+.sim-liste li { padding: 16px; border-radius: 14px; background: var(--lapis-voile); }
+.sim-liste p { margin: 0; font-size: .92rem; }
+.sim-levier { display: flex; align-items: center; gap: 10px; font-weight: 600; color: var(--noir); font-size: 1rem !important; }
+.sim-levier span { display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; border: 1px solid var(--or); color: var(--or); font-size: 12px; flex: none; }
+.sim-levier b { margin-left: auto; font-weight: 700; color: var(--lapis); }
+.sim-chiffres { color: var(--noir); margin: 4px 0 8px !important; font-variant-numeric: tabular-nums; }
+.sim-chiffres strong { color: var(--lapis); }
+.sim-resultat {
+  margin-top: 22px; padding: 34px 22px; text-align: center; border-radius: 24px;
+  background: linear-gradient(180deg, rgba(31, 78, 140, .07), rgba(251, 248, 242, .75));
+  border: 1px solid rgba(31, 78, 140, .25); box-shadow: var(--ombre);
+}
+.sim-resultat-label { font-size: 12.5px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--lapis); margin-bottom: 10px; }
+.sim-resultat-chiffre { font-weight: 700; color: var(--noir); font-size: clamp(1.4rem, 3vw, 1.8rem); letter-spacing: -.02em; margin-bottom: 4px; }
+.sim-resultat-chiffre span { display: block; font-size: clamp(2.8rem, 9vw, 5rem); line-height: 1.05; letter-spacing: -.045em; color: var(--lapis); font-variant-numeric: tabular-nums; }
+.sim-resultat-an { font-size: 1.15rem; color: var(--noir); }
+.sim-rembourse { max-width: 560px; margin: 0 auto 24px; }
+.sim-note { max-width: 760px; margin: 22px auto 0; font-size: .86rem; text-align: center; }
+@media (min-width: 900px) {
+  .sim { grid-template-columns: 1fr 1.15fr; gap: 22px; }
+  .sim-bloc { padding: 32px; }
+  .sim-resultat { padding: 48px 40px; }
+}
