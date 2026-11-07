@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Email de cooptation · Mathilde</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#0a84ff; --blue-deep:#2f5fd6; --ink:#12141c; --text:#1c2230; --text-dim:#5b6472; --text-dimmer:#8891a1;
+    --line:rgba(28,34,48,0.10); --bg:#eef2f9; --card:#ffffff;
+    --sans:'Plus Jakarta Sans', sans-serif; --serif:'Cormorant Garamond', serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{ background:var(--bg); font-family:var(--sans); color:var(--text); padding:40px 16px 80px; }
+  em{ font-family:var(--serif); font-style:italic; font-weight:500; color:var(--blue-deep); }
+
+  .mailwrap{ max-width:680px; margin:0 auto; }
+
+  .client-bar{
+    background:var(--card); border:1px solid var(--line); border-radius:16px 16px 0 0;
+    padding:16px 22px; display:flex; align-items:center; gap:10px;
+  }
+  .client-bar .dot{ width:10px; height:10px; border-radius:50%; }
+  .client-bar .d1{ background:#ff5f57; } .client-bar .d2{ background:#febc2e; } .client-bar .d3{ background:#28c840; }
+  .client-bar .app{ margin-left:10px; font-size:12px; font-weight:600; color:var(--text-dimmer); }
+
+  .meta{
+    background:var(--card); border-left:1px solid var(--line); border-right:1px solid var(--line);
+    padding:20px 26px; border-bottom:1px solid var(--line);
+  }
+  .meta .row{ display:flex; gap:10px; font-size:12.5px; color:var(--text-dimmer); padding:3px 0; }
+  .meta .row b{ color:var(--text); width:44px; flex-shrink:0; font-weight:700; }
+  .meta .subject{ font-size:1.15rem; font-weight:800; color:var(--ink); margin:10px 0 4px; }
+  .meta .preheader{ font-size:12.5px; color:var(--text-dimmer); font-style:italic; }
+
+  .body-card{
+    background:var(--card); border:1px solid var(--line); border-top:none; border-radius:0 0 16px 16px;
+    padding:36px 30px 40px; box-shadow:0 24px 60px rgba(20,45,100,0.10);
+  }
+  .body-card p{ font-size:0.98rem; color:var(--text-dim); line-height:1.72; margin-bottom:14px; }
+  .body-card p strong{ color:var(--text); font-weight:700; }
+  .body-card h3{ font-size:1.1rem; color:var(--ink); font-weight:800; margin:28px 0 14px; line-height:1.35; }
+
+  .short{ margin-bottom:4px; }
+
+  .quote{
+    margin:24px 0; padding:22px 24px; border-left:3px solid var(--blue); background:rgba(10,132,255,0.05);
+    border-radius:0 10px 10px 0;
+  }
+  .quote p{ font-family:var(--serif); font-style:italic; font-size:1.12rem; color:var(--ink); margin:0; line-height:1.55; }
+
+  .facts{ display:flex; flex-direction:column; gap:10px; margin:20px 0 24px; }
+  .facts .row{ display:flex; gap:14px; align-items:baseline; padding:10px 0; border-bottom:1px solid var(--line); }
+  .facts .row:last-child{ border-bottom:none; }
+  .facts .k{ flex-shrink:0; width:150px; font-size:11.5px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; color:var(--blue-deep); }
+  .facts .v{ font-size:0.94rem; color:var(--text); }
+
+  .fit{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:22px 0 26px; }
+  .fit-card{ border-radius:12px; padding:18px 20px; font-size:0.88rem; color:var(--text-dim); }
+  .fit-card.no{ background:rgba(255,90,90,0.06); border:1px solid rgba(255,90,90,0.2); }
+  .fit-card.yes{ background:rgba(10,132,255,0.06); border:1px solid rgba(10,132,255,0.2); }
+  .fit-card .tag{ display:block; font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:8px; }
+  .fit-card.no .tag{ color:#c94f4f; }
+  .fit-card.yes .tag{ color:var(--blue-deep); }
+  @media (max-width:560px){ .fit{ grid-template-columns:1fr; } }
+
+  .alert{
+    background:rgba(255,190,60,0.10); border:1px solid rgba(255,170,40,0.35); border-radius:12px;
+    padding:16px 20px; margin:24px 0; font-size:0.9rem; color:var(--text-dim);
+  }
+  .alert b{ color:var(--ink); }
+
+  .cta-wrap{ text-align:center; margin:30px 0 8px; }
+  .cta{
+    display:inline-block; padding:16px 38px; border-radius:999px; background:var(--ink); color:#fff;
+    font-weight:700; font-size:0.92rem; text-decoration:none; transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .cta:hover{ transform:translateY(-2px); box-shadow:0 14px 30px rgba(10,20,40,0.24); }
+  .cta-sub{ margin-top:12px; font-size:0.82rem; color:var(--text-dimmer); }
+
+  .sign{ margin-top:32px; font-size:0.94rem; color:var(--text-dim); }
+  .sign .name{ font-weight:800; color:var(--ink); }
+
+  .ps-block{
+    margin-top:26px; padding:20px 22px; background:rgba(10,132,255,0.05); border-radius:12px;
+    border:1px solid rgba(10,132,255,0.14);
+  }
+  .ps-block .ps-label{ font-size:11px; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; color:var(--blue-deep); margin-bottom:8px; }
+  .ps-block p{ font-size:0.9rem; margin-bottom:0; }
+
+  @media (max-width:600px){ .body-card{ padding:28px 18px 34px; } }
+
+  /* Lien de retour vers le portfolio */
+  .retour-portfolio{ position:sticky; top:0; z-index:50; display:block; padding:12px 20px; background:#12161D; color:#FFD23F;
+    font-family:"IBM Plex Mono", ui-monospace, monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; text-decoration:none; }
+  .retour-portfolio:hover{ color:#fff; }
+  body > .retour-portfolio{ margin:-40px -16px 32px; }
+</style>
+</head>
+<body>
+<a class="retour-portfolio" href="../index.html#ouvrages">← Retour au portfolio</a>
+
+<div class="mailwrap">
+  <div class="client-bar">
+    <span class="dot d1"></span><span class="dot d2"></span><span class="dot d3"></span>
+    <span class="app">Aperçu e-mail</span>
+  </div>
+
+  <div class="meta">
+    <div class="row"><b>De</b><span>[Ton prénom] &lt;contact@tonpseudo.fr&gt;</span></div>
+    <div class="row"><b>À</b><span>[Prénom] &lt;lead@email.fr&gt;</span></div>
+    <div class="subject">Marc ouvre un groupe fermé, et j'ai pensé à toi en premier</div>
+    <div class="preheader">Je n'envoie presque jamais ce genre de mail. Celui-ci, si.</div>
+  </div>
+
+  <div class="body-card">
+    <p class="short">Je vais être direct avec toi.</p>
+    <p class="short">Je n'envoie quasiment jamais de mails pour promouvoir ce que font les autres.</p>
+    <p>Pas parce que je n'ai pas d'amis dans le business. Mais parce que ma liste, c'est ma liste, et ton attention, tu me la donnes parce que tu fais confiance à ce que je partage. Je ne vais pas la gaspiller sur quelque chose qui ne t'apporte rien de concret.</p>
+    <p class="short"><strong>Aujourd'hui, c'est différent.</strong></p>
+
+    <p>Il y a environ quatre ans, j'ai passé deux jours enfermé dans une villa à Miami avec un groupe de huit personnes.</p>
+    <p class="short">Pas de scène. Pas de micro. Pas de powerpoints.</p>
+    <p>Juste une table, des whiteboards, et Marc assis en face de nous, en train de disséquer chaque offre, chaque tunnel, chaque argument de vente avec une précision que je n'avais vue nulle part ailleurs.</p>
+    <p>Je suis arrivé avec une offre qui tournait correctement. Pas mal, vraiment. Je pensais que mon problème était le trafic : que si j'envoyais plus de gens dans mon tunnel, les chiffres suivraient mécaniquement.</p>
+    <p class="short">Marc a regardé mon offre pendant vingt minutes.</p>
+    <p>Puis il a dit une phrase que je n'ai jamais oubliée.</p>
+
+    <div class="quote"><p>« Cette offre parle de toi. Ton acheteur s'en fout de toi. Il veut savoir ce qui change dans sa vie dans trente jours. »</p></div>
+
+    <p>J'ai reconstruit l'offre sur place. Deux jours de travail. Un angle complètement différent, une structure que je n'aurais jamais trouvée seul.</p>
+    <p>Deux mois plus tard, cette offre avait doublé ses conversions. Pas grâce à plus de trafic. Grâce à une offre qui parlait enfin à la bonne douleur, de la bonne façon.</p>
+    <p><strong>Ce week-end à Miami a probablement été l'investissement le plus rentable de ma carrière.</strong></p>
+
+    <p>Je te raconte ça parce que Marc vient de m'envoyer un message il y a quelques jours.</p>
+    <p>Il ouvre le Mastermind « Scale Your Offer », et il m'a demandé si je connaissais des gens dans mon cercle qui méritaient d'en entendre parler.</p>
+    <p><strong>Ma réponse a été oui. Et la première personne à qui j'ai pensé, c'est toi.</strong></p>
+
+    <h3>Voilà ce que c'est concrètement</h3>
+    <p>Trois fois dans l'année (Newport Beach en septembre, Dorado Beach en janvier, Miami en mai), un groupe de douze personnes se retrouve à huis clos avec Marc. Deux jours complets. Pas d'équipe, pas de coachs délégués. Marc, toi, onze autres marketeurs sérieux, et rien d'autre.</p>
+    <p>Il prend ton offre. Il te montre exactement où est le plafond. Et comment le traverser, avec des décisions concrètes, pas des frameworks théoriques.</p>
+    <p>Entre les réunions, appels critiques toutes les deux semaines. Parce que les vrais progrès arrivent quand tu testes et que tu as besoin d'un retour maintenant.</p>
+
+    <div class="facts">
+      <div class="row"><span class="k">Investissement</span><span class="v">2 200 $ / mois</span></div>
+      <div class="row"><span class="k">Format</span><span class="v">3 sessions de 2 jours par an, en présentiel, groupe de 12</span></div>
+      <div class="row"><span class="k">Accès</span><span class="v">Direct à Marc. Pas à son équipe, pas à un coach délégué. À lui.</span></div>
+      <div class="row"><span class="k">Suivi</span><span class="v">Appel critique toutes les deux semaines entre les sessions</span></div>
+    </div>
+
+    <p>Je vais être honnête sur ce que ce n'est pas.</p>
+
+    <div class="fit">
+      <div class="fit-card no">
+        <span class="tag">Pas pour toi si</span>
+        Tu démarres, tu n'as pas encore de revenus réguliers, ou tu cherches encore ton premier vrai résultat. Marc est le premier à le dire lui-même, et c'est une des raisons pour lesquelles je lui fais confiance.
+      </div>
+      <div class="fit-card yes">
+        <span class="tag">Fait pour toi si</span>
+        Ton business tourne déjà (plusieurs milliers d'euros ou de dollars par mois régulièrement), et tu sais, quelque part, que ton offre devrait faire beaucoup plus que ce qu'elle fait aujourd'hui. Un plafond précis que tu sens sans savoir comment le traverser.
+      </div>
+    </div>
+
+    <div class="alert">⚠️ Si c'est ta situation : <b>il reste deux places pour septembre.</b></div>
+
+    <h3>Voilà ce que je te demande de faire</h3>
+    <p>Réponds à ce mail. Dis-moi en deux lignes où en est ton business et ce que tu veux scaler. Je transmets directement à Marc. Il lit lui-même et revient sous 48 heures.</p>
+    <p>Je ne ferai pas de relance sur ce sujet. Ce mail est unique.</p>
+    <p>Si tu le lis et que tu te dis « peut-être plus tard », sache que ce groupe se remplit par cooptation, jamais par annonce publique. Plus tard voudra probablement dire jamais.</p>
+
+    <div class="cta-wrap">
+      <a href="#" class="cta">Répondre à ce mail</a>
+      <div class="cta-sub">Deux lignes suffisent. Je transmets directement à Marc.</div>
+    </div>
+
+    <div class="sign">
+      <span class="name">[Ton prénom]</span>
+    </div>
+
+    <div class="ps-block">
+      <div class="ps-label">P.S.</div>
+      <p>La dernière fois que j'ai vu Marc fermer un groupe comme celui-là, les deux dernières places sont parties en une journée. Ce que tu fais dans les 48 prochaines heures définit dans quel camp tu te retrouves.</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

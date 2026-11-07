@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Email d'acquisition · Prépa santé · Mathilde</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#0a84ff; --blue-deep:#2f5fd6; --ink:#12141c; --text:#1c2230; --text-dim:#5b6472; --text-dimmer:#8891a1;
+    --line:rgba(28,34,48,0.10); --bg:#eef2f9; --card:#ffffff;
+    --sans:'Plus Jakarta Sans', sans-serif; --serif:'Cormorant Garamond', serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{ background:var(--bg); font-family:var(--sans); color:var(--text); padding:40px 16px 80px; }
+  em{ font-family:var(--serif); font-style:italic; font-weight:500; color:var(--blue-deep); }
+
+  .mailwrap{ max-width:680px; margin:0 auto; }
+
+  .client-bar{
+    background:var(--card); border:1px solid var(--line); border-radius:16px 16px 0 0;
+    padding:16px 22px; display:flex; align-items:center; gap:10px;
+  }
+  .client-bar .dot{ width:10px; height:10px; border-radius:50%; }
+  .client-bar .d1{ background:#ff5f57; } .client-bar .d2{ background:#febc2e; } .client-bar .d3{ background:#28c840; }
+  .client-bar .app{ margin-left:10px; font-size:12px; font-weight:600; color:var(--text-dimmer); }
+
+  .meta{
+    background:var(--card); border-left:1px solid var(--line); border-right:1px solid var(--line);
+    padding:20px 26px; border-bottom:1px solid var(--line);
+  }
+  .meta .row{ display:flex; gap:10px; font-size:12.5px; color:var(--text-dimmer); padding:3px 0; }
+  .meta .row b{ color:var(--text); width:44px; flex-shrink:0; font-weight:700; }
+  .meta .subject{ font-size:1.15rem; font-weight:800; color:var(--ink); margin:10px 0 4px; }
+  .meta .preheader{ font-size:12.5px; color:var(--text-dimmer); font-style:italic; }
+
+  .body-card{
+    background:var(--card); border:1px solid var(--line); border-top:none; border-radius:0 0 16px 16px;
+    padding:36px 30px 40px; box-shadow:0 24px 60px rgba(20,45,100,0.10);
+  }
+  .body-card p{ font-size:0.98rem; color:var(--text-dim); line-height:1.72; margin-bottom:16px; }
+  .body-card p strong{ color:var(--text); font-weight:700; }
+  .body-card h3{ font-size:1.15rem; color:var(--ink); font-weight:800; margin:30px 0 16px; line-height:1.35; }
+
+  .criteria{ display:flex; flex-direction:column; gap:16px; margin:6px 0 24px; }
+  .criteria .item{ display:flex; gap:14px; }
+  .criteria .n{
+    flex-shrink:0; width:28px; height:28px; border-radius:50%; background:rgba(10,132,255,0.12);
+    color:var(--blue-deep); font-weight:800; font-size:13px; display:flex; align-items:center; justify-content:center;
+  }
+  .criteria p{ margin:0; font-size:0.94rem; }
+
+  table{ width:100%; border-collapse:collapse; margin:18px 0 22px; font-size:0.85rem; }
+  thead th{
+    text-align:left; font-size:11px; text-transform:uppercase; letter-spacing:0.05em; color:var(--text-dimmer);
+    padding:10px 12px; border-bottom:2px solid var(--line); font-weight:700;
+  }
+  tbody td{ padding:12px; border-bottom:1px solid var(--line); color:var(--text-dim); vertical-align:top; }
+  tbody td:first-child{ color:var(--text); font-weight:600; }
+  tbody td:nth-child(2){ color:var(--blue-deep); font-weight:700; white-space:nowrap; }
+  tbody td:last-child{ font-size:0.78rem; color:var(--text-dimmer); }
+  .table-note{ font-size:0.78rem; color:var(--text-dimmer); font-style:italic; margin-top:-8px; margin-bottom:22px; }
+
+  .bullets{ list-style:none; display:flex; flex-direction:column; gap:10px; margin:6px 0 24px; }
+  .bullets li{ display:flex; gap:10px; font-size:0.94rem; color:var(--text-dim); align-items:flex-start; }
+  .bullets li::before{ content:"✓"; color:var(--blue-deep); font-weight:800; flex-shrink:0; }
+
+  .alert{
+    background:rgba(255,190,60,0.10); border:1px solid rgba(255,170,40,0.35); border-radius:12px;
+    padding:18px 20px; margin:26px 0; font-size:0.9rem; color:var(--text-dim);
+  }
+  .alert b{ color:var(--ink); }
+
+  .cta-wrap{ text-align:center; margin:30px 0 8px; }
+  .cta{
+    display:inline-block; padding:16px 38px; border-radius:999px; background:var(--ink); color:#fff;
+    font-weight:700; font-size:0.92rem; text-decoration:none; transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .cta:hover{ transform:translateY(-2px); box-shadow:0 14px 30px rgba(10,20,40,0.24); }
+  .cta-sub{ margin-top:12px; font-size:0.82rem; color:var(--text-dimmer); }
+
+  .sign{ margin-top:32px; font-size:0.94rem; color:var(--text-dim); }
+  .sign .team{ font-weight:800; color:var(--ink); }
+  .sign .contacts{ margin-top:6px; font-size:0.85rem; color:var(--blue-deep); }
+
+  .footer-note{
+    margin-top:26px; padding-top:18px; border-top:1px solid var(--line);
+    font-size:0.76rem; color:var(--text-dimmer); line-height:1.6;
+  }
+  .footer-note a{ color:var(--text-dimmer); text-decoration:underline; }
+
+  .ps-block{
+    margin-top:26px; padding:22px 24px; background:rgba(10,132,255,0.05); border-radius:12px;
+    border:1px solid rgba(10,132,255,0.14);
+  }
+  .ps-block .ps-label{ font-size:11px; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; color:var(--blue-deep); margin-bottom:10px; }
+  .ps-block p{ font-size:0.9rem; margin-bottom:0; }
+  .ps-block a{ color:var(--blue-deep); font-weight:700; }
+
+  @media (max-width:600px){
+    table{ font-size:0.78rem; }
+    .body-card{ padding:28px 18px 34px; }
+  }
+
+  /* Lien de retour vers le portfolio */
+  .retour-portfolio{ position:sticky; top:0; z-index:50; display:block; padding:12px 20px; background:#12161D; color:#FFD23F;
+    font-family:"IBM Plex Mono", ui-monospace, monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; text-decoration:none; }
+  .retour-portfolio:hover{ color:#fff; }
+  body > .retour-portfolio{ margin:-40px -16px 32px; }
+</style>
+</head>
+<body>
+<a class="retour-portfolio" href="../index.html#ouvrages">← Retour au portfolio</a>
+
+<div class="mailwrap">
+  <div class="client-bar">
+    <span class="dot d1"></span><span class="dot d2"></span><span class="dot d3"></span>
+    <span class="app">Aperçu e-mail</span>
+  </div>
+
+  <div class="meta">
+    <div class="row"><b>De</b><span>L'équipe [Nom de la prépa] &lt;contact@[prepa].fr&gt;</span></div>
+    <div class="row"><b>À</b><span>[Prénom] &lt;parent@email.fr&gt;</span></div>
+    <div class="subject">78 % en 2ᵉ année dès la 1ʳᵉ tentative : voici ce que ces étudiants avaient en commun</div>
+    <div class="preheader">Ni le talent brut, ni le volume horaire. Trois choix concrets faits avant la rentrée.</div>
+  </div>
+
+  <div class="body-card">
+    <p>Bonjour [Prénom],</p>
+    <p>Votre enfant envisage médecine, pharmacie, kiné ou maïeutique ?</p>
+    <p>Alors vous savez déjà que la première année (PASS/LAS) est un tournant, et que <strong>le choix d'accompagnement fait avant la rentrée pèse autant que le travail fourni pendant l'année.</strong></p>
+    <p>Le problème, c'est que toutes les prépas se ressemblent sur le papier : cours, tutorat, examens blancs… Comment distinguer celle qui fait vraiment la différence ?</p>
+
+    <h3>Ce qu'il faut vérifier, et que peu de familles pensent à demander</h3>
+    <p>Après avoir accompagné des centaines de familles, nous avons identifié trois critères concrets qui séparent les prépas efficaces des prépas « génériques » :</p>
+
+    <div class="criteria">
+      <div class="item"><div class="n">1</div><p><strong>La qualité réelle des enseignants.</strong> Pas des « intervenants » anonymes. Des professeurs agrégés, docteurs et enseignants-chercheurs qui connaissent les programmes universitaires de l'intérieur, parce qu'ils les conçoivent ou les enseignent eux-mêmes.</p></div>
+      <div class="item"><div class="n">2</div><p><strong>Un suivi individualisé, pas juste un cours collectif.</strong> Un amphi de 300 étudiants ne corrige personne. Ce qui change la trajectoire, c'est un coaching individuel hebdomadaire : un point d'étape chaque semaine pour ajuster la méthode, identifier les lacunes et garder le cap.</p></div>
+      <div class="item"><div class="n">3</div><p><strong>Des résultats vérifiables, pas des promesses floues.</strong> N'importe quelle prépa peut écrire « excellents résultats ». La question à poser : quel pourcentage exact de vos étudiants passe en 2ᵉ année dès la première tentative ? Et surtout : où est la source ?</p></div>
+    </div>
+
+    <h3>📊 Ce que disent les chiffres (sources vérifiables)</h3>
+    <table>
+      <thead><tr><th>Indicateur</th><th>Donnée</th><th>Source</th></tr></thead>
+      <tbody>
+        <tr><td>Admissibilité filière MMOPK</td><td>Jusqu'à 92 %</td><td>Brochure 2026, p. 55</td></tr>
+        <tr><td>Réussite dès la 1ʳᵉ tentative</td><td>78 % en 2ᵉ année</td><td>Brochure 2026, p. 9</td></tr>
+        <tr><td>Heures de cours encadrés (PASS/LSPS)</td><td>234 h</td><td>Brochure 2026, p. 36</td></tr>
+        <tr><td>Heures d'épreuves surveillées</td><td>74 h</td><td>Brochure 2026, p. 36</td></tr>
+        <tr><td>Accès aux locaux</td><td>7j/7, de 7h à minuit</td><td>Brochure 2026, p. 5</td></tr>
+        <tr><td>Profil enseignants</td><td>100 % agrégés / docteurs</td><td>Brochure 2026, p. 13</td></tr>
+      </tbody>
+    </table>
+    <p class="table-note">Ces données sont extraites de la brochure officielle 2026 de la prépa. Aucun chiffre n'est extrapolé.</p>
+
+    <h3>Pourquoi je vous en parle ?</h3>
+    <p>Parce que chaque année, des étudiants motivés échouent, non par manque de travail, mais parce qu'ils ont choisi un cadre qui ne leur donnait pas les bons outils au bon moment.</p>
+    <p>[Nom de la prépa] a été conçu pour éliminer ce risque :</p>
+    <ul class="bullets">
+      <li>Un coaching individuel chaque semaine, pas un simple suivi de groupe</li>
+      <li>Des enseignants qui connaissent les concours de l'intérieur</li>
+      <li>Un cadre de travail ouvert 7j/7 pour ceux qui veulent aller au bout</li>
+      <li>Une sélection sur entretien individuel, parce que l'engagement de l'étudiant compte autant que le nôtre</li>
+    </ul>
+
+    <p>Si [Nom de la prépa] correspond à ce que vous cherchez pour votre enfant, voici la prochaine étape concrète :</p>
+
+    <div class="alert">
+      ⚠️ <b>Places limitées, Sélection sur entretien individuel.</b> [Nom de la prépa] ne fonctionne pas au premier arrivé, premier servi : chaque candidat est reçu en entretien individuel avant toute admission. Mais le nombre de places par campus est volontairement limité pour garantir la qualité de l'encadrement (coaching hebdomadaire, accès enseignants, locaux). Les entretiens pour la rentrée 2026 sont ouverts, et les dernières places se remplissent chaque année avant l'été.
+    </div>
+
+    <div class="cta-wrap">
+      <a href="#" onclick="return false" class="cta">👉 Déposer votre candidature maintenant</a>
+      <div class="cta-sub">L'entretien est sans engagement. Il permet de vérifier l'adéquation entre le profil de votre enfant et notre méthode.</div>
+    </div>
+
+    <div class="sign">
+      À très bientôt,<br>
+      <span class="team">L'équipe [Nom de la prépa]</span>
+      <div class="contacts">📞 [Numéro de contact] · 🌐 [site de la prépa]</div>
+    </div>
+
+    <div class="footer-note">
+      Vous recevez cet e-mail car vous avez manifesté un intérêt pour les études de santé. <a href="#">Se désinscrire</a>
+    </div>
+
+    <div class="ps-block">
+      <div class="ps-label">P.S. : à l'attention des parents</div>
+      <p>Soutenir un projet d'études de santé, c'est souvent chercher le bon équilibre entre ambition et cadre sécurisant. Chez [Nom de la prépa], chaque étudiant est reçu <strong>en entretien individuel avant l'admission</strong>, suivi chaque semaine par <strong>un coach dédié</strong>, et travaille dans des locaux <strong>ouverts 7j/7 de 7h à minuit</strong>, avec une équipe composée exclusivement de <strong>professeurs agrégés et universitaires</strong>. Ce n'est pas « plus de cours » : c'est une méthode, un travail régulier et un encadrement humain qui aide votre enfant à tenir le rythme sur la durée.</p>
+      <p style="margin-top:10px;">👉 <a href="#" onclick="return false">[site de la prépa]/candidature</a></p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Méthode MERAKI : perds tes kilos durablement, sans frustration</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --coral:#d97757; --coral-deep:#b85a3d; --blush:#f7e4dc; --cream:#fdf7f2;
+    --ink:#2e2320; --text:#43332e; --text-dim:#6e5c56; --text-dimmer:#9c8a83;
+    --line:rgba(46,35,32,0.10); --card:#ffffff;
+    --sans:'Plus Jakarta Sans', sans-serif; --serif:'Cormorant Garamond', serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{ background:var(--cream); font-family:var(--sans); color:var(--text); line-height:1.65; }
+  em{ font-family:var(--serif); font-style:italic; font-weight:500; color:var(--coral-deep); }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+  section{ padding:64px 0; }
+  h1,h2,h3{ font-family:var(--sans); color:var(--ink); font-weight:800; line-height:1.22; }
+  p{ color:var(--text-dim); margin-bottom:16px; font-size:1rem; }
+  p strong{ color:var(--ink); font-weight:700; }
+
+  .badge-bar{ background:var(--coral); color:#fff; text-align:center; padding:10px 0; font-size:12px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; }
+
+  /* HERO */
+  .hero{ text-align:center; padding:70px 0 40px; }
+  .hero .eyebrow{ font-size:12px; font-weight:800; letter-spacing:0.14em; text-transform:uppercase; color:var(--coral-deep); margin-bottom:18px; }
+  .hero h1{ font-size:clamp(1.9rem,4.6vw,3rem); max-width:640px; margin:0 auto; }
+  .hero .sub{ font-size:1.1rem; color:var(--text-dim); max-width:560px; margin:22px auto 0; }
+
+  .cta-block{ text-align:center; margin:34px auto 0; }
+  .cta{
+    display:inline-flex; align-items:center; gap:10px; padding:17px 38px; border-radius:999px;
+    background:var(--coral); color:#fff; font-weight:700; font-size:0.95rem; text-decoration:none;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .cta:hover{ transform:translateY(-2px); box-shadow:0 16px 32px rgba(217,119,87,0.3); }
+  .cta-note{ margin-top:10px; font-size:0.8rem; color:var(--text-dimmer); }
+
+  .divider{ display:flex; align-items:center; gap:14px; max-width:520px; margin:0 auto; }
+  .divider .l{ flex:1; height:1px; background:var(--line); }
+  .divider svg{ width:20px; height:20px; opacity:0.6; }
+
+  /* PAIN CARD */
+  .pain-card{
+    background:var(--card); border-radius:20px; padding:36px 32px; box-shadow:0 20px 50px rgba(46,35,32,0.06);
+  }
+  .pain-list{ list-style:none; display:flex; flex-direction:column; gap:14px; margin:20px 0; }
+  .pain-list li{ display:flex; gap:12px; align-items:flex-start; font-size:0.98rem; color:var(--text-dim); }
+  .pain-list li::before{ content:"•"; color:var(--coral); font-weight:800; flex-shrink:0; font-size:1.2rem; line-height:1.1; }
+
+  /* DREAM */
+  .dream-box{ background:var(--blush); border-radius:20px; padding:38px 32px; }
+  .checklist{ list-style:none; display:flex; flex-direction:column; gap:10px; margin:18px 0; }
+  .checklist li{ display:flex; gap:10px; font-size:0.96rem; color:var(--text-dim); }
+  .checklist li::before{ content:"✓"; color:var(--coral-deep); font-weight:800; flex-shrink:0; }
+
+  .shift-grid{ display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:26px; }
+  .shift-card{ background:#fff; border-radius:14px; padding:20px; }
+  .shift-card .tag{ font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:0.06em; color:var(--text-dimmer); margin-bottom:10px; }
+  .shift-card p{ font-size:0.88rem; margin-bottom:6px; }
+  @media (max-width:600px){ .shift-grid{ grid-template-columns:1fr; } }
+
+  /* MYTH / SCIENCE */
+  .myth-row{ display:flex; gap:14px; padding:16px 0; border-bottom:1px solid var(--line); }
+  .myth-row:last-child{ border-bottom:none; }
+  .myth-row .ic{ flex-shrink:0; font-size:1.1rem; }
+  .myth-row p{ margin:0; font-size:0.93rem; }
+
+  .cycle-list{ counter-reset:cyc; list-style:none; margin:18px 0; }
+  .cycle-list li{ counter-increment:cyc; display:flex; gap:14px; padding:10px 0; align-items:baseline; }
+  .cycle-list li::before{ content:counter(cyc); flex-shrink:0; width:26px; height:26px; border-radius:50%; background:var(--blush); color:var(--coral-deep); font-weight:800; font-size:12px; display:flex; align-items:center; justify-content:center; }
+  .cycle-list li span{ font-size:0.93rem; color:var(--text-dim); }
+
+  /* METHOD */
+  .method-hero{ background:linear-gradient(160deg, var(--ink), #4a3a35); border-radius:24px; padding:44px 36px; color:#fff; text-align:center; }
+  .method-hero h2{ color:#fff; font-size:1.7rem; }
+  .method-hero p{ color:rgba(255,255,255,0.78); max-width:520px; margin:14px auto 0; }
+  .steps{ display:flex; flex-direction:column; gap:12px; margin:26px auto 0; max-width:480px; text-align:left; }
+  .steps div{ display:flex; gap:12px; font-size:0.92rem; color:rgba(255,255,255,0.9); align-items:baseline; }
+  .method-hero .cta{ background:#fff; color:var(--ink); margin-top:28px; }
+  .method-hero .cta-note{ color:rgba(255,255,255,0.6); }
+
+  /* SUPPORT STAT */
+  .stat-box{ display:flex; gap:24px; align-items:center; background:var(--card); border-radius:18px; padding:28px 30px; }
+  .stat-box .num{ font-family:var(--serif); font-style:italic; font-size:2.6rem; color:var(--coral); flex-shrink:0; }
+  .stat-box p{ margin:0; font-size:0.94rem; }
+
+  /* MODULES */
+  .modules{ display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin-top:24px; }
+  .module{ background:var(--card); border-radius:14px; padding:18px 20px; border:1px solid var(--line); }
+  .module .n{ font-size:11px; font-weight:800; letter-spacing:0.06em; text-transform:uppercase; color:var(--coral-deep); margin-bottom:6px; }
+  .module h4{ font-size:0.96rem; color:var(--ink); font-weight:700; }
+  @media (max-width:600px){ .modules{ grid-template-columns:1fr; } }
+
+  /* VALUE STACK */
+  .stack{ background:var(--card); border-radius:20px; padding:30px 32px; }
+  .stack-row{ display:flex; justify-content:space-between; align-items:center; padding:12px 0; border-bottom:1px solid var(--line); font-size:0.93rem; }
+  .stack-row:last-child{ border-bottom:none; }
+  .stack-row .val{ color:var(--text-dimmer); font-weight:600; white-space:nowrap; }
+  .stack-total{ display:flex; justify-content:space-between; padding-top:18px; margin-top:6px; border-top:2px solid var(--ink); font-weight:800; color:var(--ink); font-size:1.05rem; }
+
+  .price-box{ text-align:center; margin-top:30px; }
+  .price-box .strike{ font-size:1.1rem; color:var(--text-dimmer); text-decoration:line-through; }
+  .price-box .now{ font-family:var(--serif); font-style:italic; font-size:2.8rem; color:var(--coral-deep); margin:8px 0; }
+  .price-box .alt{ font-size:0.9rem; color:var(--text-dim); }
+
+  /* PROOF */
+  .proof-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:20px; }
+  .proof-card{ background:var(--card); border-radius:14px; padding:18px; text-align:center; border:1px dashed rgba(217,119,87,0.35); }
+  .proof-card .avatar{ width:44px; height:44px; border-radius:50%; background:var(--blush); margin:0 auto 10px; }
+  .proof-card p{ font-size:0.82rem; font-style:italic; font-family:var(--serif); color:var(--text-dim); margin:0; }
+  @media (max-width:600px){ .proof-grid{ grid-template-columns:1fr; } }
+
+  .guarantee{ display:flex; align-items:center; gap:16px; background:var(--blush); border-radius:16px; padding:22px 26px; margin-top:26px; }
+  .guarantee .ic{ font-size:1.8rem; flex-shrink:0; }
+  .guarantee p{ margin:0; font-size:0.9rem; }
+
+  .final-cta{ text-align:center; padding:70px 0 90px; }
+  .final-cta h2{ font-size:1.9rem; max-width:520px; margin:0 auto 16px; }
+  .fork{ display:flex; flex-direction:column; gap:10px; max-width:480px; margin:24px auto; text-align:left; }
+  .fork div{ font-size:0.94rem; color:var(--text-dim); }
+
+  footer{ text-align:center; padding:30px 0; font-size:0.76rem; color:var(--text-dimmer); border-top:1px solid var(--line); }
+
+  /* Lien de retour vers le portfolio */
+  .retour-portfolio{ position:sticky; top:0; z-index:50; display:block; padding:12px 20px; background:#12161D; color:#FFD23F;
+    font-family:"IBM Plex Mono", ui-monospace, monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; text-decoration:none; }
+  .retour-portfolio:hover{ color:#fff; }
+</style>
+</head>
+<body>
+<a class="retour-portfolio" href="../index.html#ouvrages">← Retour au portfolio</a>
+
+<div class="badge-bar">🌸 Programme MERAKI · Offre de lancement</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <div class="eyebrow">Perte de poids durable</div>
+    <h1>Perds tes kilos durablement, sans frustration, et retrouve <em>le corps que tu aimes</em></h1>
+    <p class="sub">Un corps que tu aimes, de l'énergie et du plaisir. Sans frustration, sans sport obligatoire, sans culpabilité.</p>
+    <div class="cta-block">
+      <a href="#offre" class="cta">👉 Je découvre la méthode MERAKI</a>
+      <div class="cta-note">Accès immédiat · Suivi personnalisé inclus</div>
+    </div>
+  </div>
+
+  <section>
+    <p>Tu sais ce que ça fait de passer devant le miroir et de ne plus te reconnaître ? Ce ventre que tu caches, les vêtements que tu n'arrives plus à fermer, et ce petit déclic au fond de toi qui te dit : <strong>« Ça ne peut plus continuer comme ça. »</strong></p>
+    <p>Tu as déjà essayé tous les régimes possibles : keto, détox, menus stricts. Et à chaque fois, le même scénario. Tu perds quelques kilos, tu te bats, tu te prives, et puis tout revient, parfois en double. Avec cette sensation que ton corps ne t'obéit plus, que ton métabolisme est bloqué, que tu es condamnée à galérer pour toujours.</p>
+    <p>Et pourtant, imagine un instant : perdre tes kilos sans te priver, sans frustration, sans sport obligatoire, tout en gardant tes plaisirs du quotidien (ton chocolat, tes apéros, tes week-ends) sans culpabilité. Imagine ce moment où tu pourrais te regarder dans le miroir et enfin sourire, où tes vêtements te vont naturellement, où tu te sens légère, vivante et confiante.</p>
+    <p><strong>C'est ce que vivent déjà des centaines de femmes qui ont tout essayé avant toi.</strong> Et ce qui va suivre pourrait bien être le chemin pour que ça devienne ta réalité, toi aussi.</p>
+  </section>
+
+  <section class="pain-card">
+    <h2>Ce que tu n'oses pas dire</h2>
+    <ul class="pain-list">
+      <li>Le miroir devient ton ennemi. Tu évites de te regarder.</li>
+      <li>Les photos ? Tu les refuses, ou tu les regardes avec dégoût.</li>
+      <li>Les vêtements te trahissent. Le jean que tu aimais tant ne ferme plus.</li>
+      <li>Tu te sens frustrée, découragée, épuisée par ta propre vie. Entre le boulot, la famille, les obligations, tu t'oublies totalement.</li>
+      <li>La culpabilité et la honte te rongent. Chaque reprise de poids est un coup dur. Tu te dis que tu n'as aucune volonté, que tu es incapable, que ton corps t'a trahie.</li>
+      <li>La confiance s'évapore. Tu doutes de ton corps, de toi-même, parfois même de ton avenir.</li>
+    </ul>
+    <p>Ce poids que tu portes en trop est aussi un poids que tu portes en toi. Tous les jours, ton estime de toi est écrasée par tes propres pensées. Tu n'oses plus te mettre nue, tu te caches sous des vêtements larges, tu te compares aux autres, tu caches ton ventre même devant ton compagnon.</p>
+    <p>Tu as l'impression de ne plus être femme, juste maman, salariée, épuisée. Pourtant, tous les jours, tu te dis que tu vas changer ça. Tu te réveilles avec cette envie de faire attention à tes repas, de trouver le temps pour le sport. Et tous les soirs, tu te couches avec cette honte de n'avoir rien fait de tout ça.</p>
+    <div class="cta-block">
+      <a href="#offre" class="cta">👉 Je veux sortir de cette boucle maintenant</a>
+    </div>
+  </section>
+
+  <section class="dream-box">
+    <h2>Se sentir légère, dans son corps et dans sa tête</h2>
+    <p>Ne passe plus à côté de ta vie. Imagine te lever sans penser à ton poids, sans ce ventre que tu essaies à tout prix de cacher. Enfiler enfin le jean qui t'allait il y a quelques années. Retrouver une énergie oubliée : celle de se sentir vivante à 100 %, de profiter des activités qu'on aime, jouer avec ses enfants, partir au ski, courir avec des amies.</p>
+    <p>En finir avec la honte de son corps, ne plus redouter l'été, les débardeurs, la cellulite qu'on cache sous un short trop long. Fini le « summer body » : c'est toute l'année que tu as le corps dont tu as toujours rêvé. Fini le regard des autres qui te rendait prisonnière d'une image qui n'était pas réellement toi.</p>
+    <ul class="checklist">
+      <li>Se sentir légitime</li>
+      <li>Arrêter de se cacher</li>
+      <li>Avoir une relation normale avec la nourriture</li>
+      <li>Ne plus dépendre du regard des autres</li>
+    </ul>
+    <p>Le regard des autres sur toi change aussi. Des personnes qui ne te voyaient pas avant, qui te parlaient peu, qui te jugeaient, deviennent soudain plus gentilles, plus intéressées, plus respectueuses.</p>
+    <p><strong>Tu es belle, unique, irremplaçable. L'objectif, c'est que ton corps rattrape la personne que tu es déjà.</strong></p>
+  </section>
+
+  <section>
+    <h2>Pourquoi tout ce que tu as essayé n'a pas marché</h2>
+    <p><strong>Ce n'est pas de ta faute.</strong> On t'a appris que pour maigrir, il fallait te priver, souffrir, supprimer des aliments, être parfaite. Résultat : tu tiens quelques semaines, puis tu craques, puis tu culpabilises, puis tu abandonnes.</p>
+    <p>Le problème n'est pas ton manque de volonté. Le problème, ce sont des méthodes impossibles à vivre dans la vraie vie, qui oublient de te parler de l'effet yo-yo.</p>
+    <div class="myth-row"><span class="ic">🔻</span><p>Quand tu manges très peu, ton corps croit qu'il est en mode famine : il brûle moins de calories pour économiser de l'énergie.</p></div>
+    <div class="myth-row"><span class="ic">💪</span><p>Un régime sévère fait fondre le muscle. Or le muscle consomme des calories même au repos : moins de muscle veut dire un métabolisme encore plus lent, et une reprise de poids plus facile.</p></div>
+    <div class="myth-row"><span class="ic">🍽️</span><p>Les régimes très stricts augmentent la ghréline (l'hormone de la faim) et font baisser la leptine (la satiété). Tu as donc beaucoup plus faim, et tu craques plus facilement.</p></div>
+    <div class="myth-row"><span class="ic">⚠️</span><p>Tu perds du poids au début, puis ça bloque. Et quand tu remanges normalement, ton métabolisme est encore bas : ton corps stocke plus de gras qu'avant pour se protéger. C'est comme ça que tu reprends du poids, souvent plus qu'avant.</p></div>
+    <p>Les méthodes centrées sur la privation ne permettent pas de construire un nouvel équilibre durable. Autrement dit, tu souffres pour rien, et tu culpabilises au moindre écart.</p>
+    <p>Tu as sûrement déjà croisé ces fausses promesses du marketing minceur, elles savent où appuyer : l'urgence (« perds vite avant l'été »), la culpabilité (« si tu n'y arrives pas, c'est ta faute »), la solution miracle (pilule, thé, patch, programme secret). Ces méthodes ne te feront jamais perdre du vrai gras, celui du ventre, des poignées d'amour, des cuisses, du double menton. Elles ne te font perdre que de l'eau, des glucides stockés, ou du muscle : un corps plus léger sur la balance, mais tout aussi « flasque ».</p>
+    <div class="cta-block">
+      <a href="#offre" class="cta">👉 Je veux enfin une méthode qui fonctionne</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>« J'ai déjà tout essayé, rien ne marche sur moi »</h2>
+    <p>Ce qui te bloque aujourd'hui n'est ni ton métabolisme, ni ton âge, ni tes hormones. La vraie cause, c'est un cercle psychologique et comportemental construit par des années de régimes.</p>
+    <p>Ton problème n'est pas le poids. C'est la relation que tu as avec la nourriture. Lundi, tu manges sainement, tu pèses ton repas, tu supprimes le sucre, le pain, tu fais du sport. Tu crois agir parfaitement. Et mercredi soir, tu craques sur un carré de chocolat, et dans ta tête résonne : « J'ai craqué. J'ai foutu la journée en l'air. Je suis nulle. »</p>
+    <p>Alors tu te dis « autant continuer », et ça devient une tablette de chocolat, des chips, du pain, du grignotage. Le vrai problème, ce n'est pas le chocolat. C'est la pensée : « Si ce n'est pas parfait, ça ne vaut rien. » J'appelle ça <strong>le cycle du tout ou rien.</strong></p>
+    <ol class="cycle-list">
+      <li><span>Règles strictes</span></li>
+      <li><span>Petit écart</span></li>
+      <li><span>Culpabilité</span></li>
+      <li><span>Craquage</span></li>
+      <li><span>Abandon</span></li>
+      <li><span>Reprise de poids</span></li>
+      <li><span>Nouvelle tentative extrême</span></li>
+    </ol>
+    <p>Ce n'est pas un problème de volonté. C'est un problème de modèle mental. Chaque aliment se range dans une case : autorisé, interdit, écart, craquage. Résultat, tu manges avec la tête et plus avec ton corps. Tu n'as jamais eu de système clair, flexible, applicable dans la vraie vie.</p>
+    <p><strong>Il ne te faut pas de règles. Il te faut une méthode.</strong></p>
+  </section>
+
+  <section id="offre" class="method-hero">
+    <div class="eyebrow" style="color:rgba(255,255,255,0.6);">Méthode MERAKI</div>
+    <h2>Une méthode simple, flexible et durable pour perdre du poids sans te priver</h2>
+    <p>Tu n'as pas besoin d'un régime de plus. Tu as besoin d'une méthode simple, structurée et personnalisée qui te dit exactement quoi faire, sans te prendre la tête.</p>
+    <div class="steps">
+      <div>👉 <span>Tu accèdes à la plateforme intuitive et simple</span></div>
+      <div>👉 <span>Tu regardes la vidéo de bienvenue (4 minutes)</span></div>
+      <div>👉 <span>Tu télécharges ton carnet de suivi</span></div>
+      <div>👉 <span>Tu calcules ton déficit calorique intelligent en 5 minutes</span></div>
+      <div>👉 <span>Tu récupères ton plan de rééquilibrage alimentaire personnalisé</span></div>
+    </div>
+    <p style="margin-top:20px;">Et tu es prête à dégommer tes premiers kilos dès la première semaine. Tu ne fais plus « tout ou rien », tu avances dans un cadre stable, flexible et réaliste. Résultat : tu perds du poids sans frustration, et surtout, tu arrives à tenir dans le temps.</p>
+    <a href="#stack" class="cta">👉 Je rejoins le programme MERAKI</a>
+    <div class="cta-note">Offre de lancement en cours</div>
+  </section>
+
+  <section>
+    <div class="stat-box">
+      <div class="num">87%</div>
+      <p>des personnes qui achètent un programme sans suivi abandonnent. Pas parce qu'elles n'ont pas de plan, mais parce que personne n'est là pour répondre à leurs questions, les rassurer, les remotiver, les débloquer quand elles stagnent. Avec MERAKI, c'est l'inverse.</p>
+    </div>
+    <p style="margin-top:20px;">Tu as un vrai suivi tous les 15 jours, avec deux consultations nutrition par mois en live, des ajustements personnalisés, et un accompagnement jusqu'au résultat.</p>
+  </section>
+
+  <section>
+    <h2>Le programme, module par module</h2>
+    <div class="modules">
+      <div class="module"><div class="n">Module 1</div><h4>On calcule TON déficit calorique parfait</h4></div>
+      <div class="module"><div class="n">Module 2</div><h4>Ton plan de rééquilibrage alimentaire sur-mesure</h4></div>
+      <div class="module"><div class="n">Module 3</div><h4>Profiter de tes week-ends sans ruiner ta perte de poids</h4></div>
+      <div class="module"><div class="n">Module 4</div><h4>Brûler du gras et des calories sans effort inutile</h4></div>
+      <div class="module"><div class="n">Module 5</div><h4>Séances de sport CRA (optionnelles), 20 min à la maison</h4></div>
+      <div class="module"><div class="n">Module 6</div><h4>Comment ne jamais laisser tomber</h4></div>
+      <div class="module"><div class="n">Module 7</div><h4>Gérer les repas en extérieur sans stresser</h4></div>
+      <div class="module"><div class="n">Module 8</div><h4>Maintenir ton poids de forme à vie</h4></div>
+    </div>
+    <p style="margin-top:20px;">8 modules courts et utiles, en vidéos de 3 à 10 minutes, testés par plus de 1 500 femmes de 30 à 68 ans. Tu as des réponses concrètes à chaque étape.</p>
+    <div class="cta-block">
+      <a href="#stack" class="cta">👉 Je démarre mon programme</a>
+    </div>
+  </section>
+
+  <section id="stack" class="stack">
+    <h2 style="margin-bottom:20px;">🎁 Ce que tu reçois</h2>
+    <div class="stack-row"><span>Plan de rééquilibrage alimentaire sur-mesure</span><span class="val">149 €</span></div>
+    <div class="stack-row"><span>Carnet de suivi complet (30 pages)</span><span class="val">69 €</span></div>
+    <div class="stack-row"><span>Accès à la plateforme premium</span><span class="val">249 €</span></div>
+    <div class="stack-row"><span>Sessions de coaching en live chaque semaine</span><span class="val">449 €</span></div>
+    <div class="stack-row"><span>Liste des super-aliments brûle-graisse</span><span class="val">39 €</span></div>
+    <div class="stack-row"><span>Guide des compléments alimentaires naturels</span><span class="val">49 €</span></div>
+    <div class="stack-row"><span>Bonus et challenges chaque mois</span><span class="val">608 €</span></div>
+    <div class="stack-total"><span>Valeur totale</span><span>1 612 €</span></div>
+
+    <div class="price-box">
+      <div class="strike">1 612 €</div>
+      <div class="now">467 €</div>
+      <div class="alt">ou 47 € / mois pendant 10 mois</div>
+      <div class="cta-block">
+        <a href="#" onclick="return false" class="cta">👉 Je profite de l'offre de lancement</a>
+        <div class="cta-note">Places limitées à chaque session de coaching</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Concrètement, pour toi</h2>
+    <ul class="checklist">
+      <li>Tu perds du poids sans te priver</li>
+      <li>Tu manges normalement, sans frustration</li>
+      <li>Tu comprends enfin comment fonctionne ton corps</li>
+      <li>Tu n'as plus peur de l'effet yo-yo</li>
+      <li>Tu sais gérer les week-ends, les restos, les écarts</li>
+      <li>Tu restes motivée parce que tu es suivie</li>
+      <li>Tu reprends confiance en toi et retrouves de l'énergie</li>
+      <li>Tu rentres de nouveau dans tes vêtements, et tu es fière de toi</li>
+    </ul>
+    <p>Et surtout : tu n'es plus seule, tu as une méthode claire, un plan précis, un accompagnement jusqu'au résultat, et une stabilité que tu construis pour la vie.</p>
+  </section>
+
+  <section>
+    <h2>Elles ont suivi le programme</h2>
+    <p style="font-size:0.85rem; color:var(--text-dimmer);">Emplacement à remplir : témoignages vidéo courts, photos avant / après, captures du groupe d'accompagnement.</p>
+    <div class="proof-grid">
+      <div class="proof-card"><div class="avatar"></div><p>« J'ai perdu 12 kilos en 2 mois »</p></div>
+      <div class="proof-card"><div class="avatar"></div><p>« Je rentre dans mon jean préféré, ça faisait dix ans que je ne l'avais pas porté »</p></div>
+      <div class="proof-card"><div class="avatar"></div><p>Témoignage à ajouter</p></div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <h2>Rejoindre MERAKI, c'est saisir l'opportunité de changer de vie pour de bon</h2>
+    <p>Tu as consacré bien trop de temps et d'énergie à te sentir bien dans ton corps, en vain. Aujourd'hui s'offre à toi une méthode qui a fait ses preuves et qui a changé la vie de centaines de femmes. Tu peux devenir l'une d'entre elles.</p>
+    <p>La valeur totale du programme est de 1 612 €. Mais l'offre de lancement est actuellement à 467 €, ou 47 € par mois pendant 10 mois.</p>
+    <p>Changer de vie commence par changer ses habitudes. Au lieu de dépenser 50 € de fast-food, tu dépenses 47 € par mois pour un changement rapide et durable. Le meilleur investissement que tu feras dans ta vie, c'est celui que tu fais en toi.</p>
+    <div class="fork">
+      <div>👉 Soit tu continues seule, avec les mêmes schémas qui t'empêchent d'être épanouie dans ton corps.</div>
+      <div>👉 Soit tu te fais accompagner, et tu changes vraiment les choses pour le restant de ta vie.</div>
+    </div>
+    <div class="cta-block">
+      <a href="#" onclick="return false" class="cta">👉 Je rejoins le programme MERAKI</a>
+    </div>
+    <div class="guarantee">
+      <span class="ic">🛡️</span>
+      <p><strong>Garantie satisfait ou remboursé pendant 30 jours.</strong> Tu essaies la méthode sans risque.</p>
+    </div>
+  </section>
+
+</div>
+
+<footer><a href="../index.html#ouvrages" style="color:inherit">Retour au portfolio</a></footer>
+
+</body>
+</html>

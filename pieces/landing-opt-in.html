@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le Métier Invisible Que Personne Ne T'a Montré</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0a0c; --panel:#131316; --line:rgba(212,175,97,0.14);
+    --gold:#d9b25c; --gold-soft:#a9863f; --text:#eee9df; --text-dim:#a6a196; --text-dimmer:#6c6960;
+    --serif:'Playfair Display', serif; --sans:'Inter', sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{ background:var(--bg); color:var(--text); font-family:var(--sans); line-height:1.65; }
+  .wrap{ max-width:720px; margin:0 auto; padding:0 24px; }
+
+  .badge-bar{
+    background:linear-gradient(90deg, rgba(217,178,92,0.08), transparent);
+    border-bottom:1px solid var(--line); padding:14px 0; text-align:center;
+    font-size:11.5px; letter-spacing:0.16em; text-transform:uppercase; color:var(--gold-soft); font-weight:600;
+  }
+
+  .hero{ padding:90px 0 60px; text-align:center; }
+  .lock{
+    width:56px; height:56px; margin:0 auto 30px; border:1px solid var(--line); border-radius:50%;
+    display:flex; align-items:center; justify-content:center; color:var(--gold);
+  }
+  .lock svg{ width:22px; height:22px; }
+  h1{
+    font-family:var(--serif); font-weight:700; font-style:italic; font-size:clamp(1.8rem,4.4vw,3rem);
+    line-height:1.22; color:var(--text); max-width:600px; margin:0 auto;
+  }
+  h2.sub{
+    font-family:var(--sans); font-weight:400; font-size:1.08rem; color:var(--text-dim);
+    max-width:560px; margin:26px auto 0; font-style:normal;
+  }
+  h2.sub strong{ color:var(--gold); font-weight:600; }
+
+  .divider{ display:flex; align-items:center; gap:14px; margin:60px auto; max-width:520px; }
+  .divider .l{ flex:1; height:1px; background:var(--line); }
+  .divider span{ font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dimmer); white-space:nowrap; }
+
+  .list{ list-style:none; display:flex; flex-direction:column; gap:22px; max-width:600px; margin:0 auto; }
+  .list li{ display:flex; gap:16px; align-items:flex-start; }
+  .check{
+    flex-shrink:0; width:22px; height:22px; border-radius:50%; border:1px solid var(--gold-soft);
+    display:flex; align-items:center; justify-content:center; margin-top:2px;
+  }
+  .check svg{ width:11px; height:11px; }
+  .list p{ font-size:0.98rem; color:var(--text-dim); }
+  .list p strong{ color:var(--text); font-weight:600; }
+
+  .quote{
+    max-width:560px; margin:64px auto 0; padding:32px 34px; border-left:2px solid var(--gold);
+    background:var(--panel);
+  }
+  .quote p{ font-family:var(--serif); font-style:italic; font-size:1.15rem; color:var(--text); line-height:1.6; }
+
+  .reveal-box{
+    max-width:560px; margin:70px auto 0; text-align:center; padding:44px 30px;
+    border:1px solid var(--line); background:radial-gradient(circle at 50% 0%, rgba(217,178,92,0.06), transparent 70%);
+  }
+  .reveal-box .tag{ font-size:11.5px; letter-spacing:0.16em; text-transform:uppercase; color:var(--gold); font-weight:700; margin-bottom:16px; }
+  .reveal-box p{ color:var(--text-dim); font-size:1rem; max-width:440px; margin:0 auto; }
+  .reveal-box p strong{ color:var(--text); font-weight:600; }
+
+  .cta-wrap{ text-align:center; margin:44px auto 100px; }
+  .cta{
+    display:inline-flex; align-items:center; gap:10px; padding:19px 40px; border-radius:3px;
+    background:var(--gold); color:#0a0a0c; font-weight:700; font-size:0.85rem; letter-spacing:0.06em;
+    text-transform:uppercase; text-decoration:none; transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .cta:hover{ transform:translateY(-2px); box-shadow:0 16px 36px rgba(217,178,92,0.22); }
+  .cta svg{ width:16px; height:16px; }
+  .cta-note{ margin-top:16px; font-size:0.78rem; color:var(--text-dimmer); letter-spacing:0.04em; }
+
+  footer{
+    border-top:1px solid var(--line); padding:26px 0; text-align:center;
+    font-size:0.72rem; color:var(--text-dimmer); letter-spacing:0.06em;
+  }
+
+  /* Lien de retour vers le portfolio */
+  .retour-portfolio{ position:sticky; top:0; z-index:50; display:block; padding:12px 20px; background:#12161D; color:#FFD23F;
+    font-family:"IBM Plex Mono", ui-monospace, monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; text-decoration:none; }
+  .retour-portfolio:hover{ color:#fff; }
+</style>
+</head>
+<body>
+<a class="retour-portfolio" href="../index.html#ouvrages">← Retour au portfolio</a>
+
+<div class="badge-bar">🔒 Accès réservé : dossier non indexé</div>
+
+<div class="wrap">
+  <div class="hero">
+    <div class="lock">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+    </div>
+    <h1>Le métier invisible que personne ne t'a montré</h1>
+    <h2 class="sub">Tu veux plus de liberté, mais tu ne sais pas encore quel levier activer. Lis ce qui suit : <strong>ça va changer ta façon de voir les choses.</strong></h2>
+  </div>
+
+  <div class="divider"><div class="l"></div><span>Ce que des gens ordinaires ont découvert</span><div class="l"></div></div>
+
+  <ul class="list">
+    <li>
+      <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="#d9b25c" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>
+      <p><strong>Une compétence que tu utilises déjà sans le savoir.</strong> Tu l'exerces chaque jour dans tes messages, tes mails, tes conversations. Sauf que tu ne la monétises pas.</p>
+    </li>
+    <li>
+      <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="#d9b25c" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>
+      <p><strong>Pas besoin de diplôme, de réseau ou de capital de départ.</strong> Juste un ordinateur, une connexion, et la volonté d'apprendre une méthode précise.</p>
+    </li>
+    <li>
+      <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="#d9b25c" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>
+      <p><strong>Un métier qui se pratique de n'importe où, sans montrer ton visage.</strong> Pas de caméra, pas de communauté à construire, pas de danse sur TikTok. Tu travailles dans l'ombre, et tu encaisses.</p>
+    </li>
+    <li>
+      <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="#d9b25c" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>
+      <p><strong>Des résultats dès les premières semaines.</strong> Le cycle est court : tu produis, tu ajustes, tu livres. Une mission, un paiement.</p>
+    </li>
+    <li>
+      <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="#d9b25c" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>
+      <p><strong>La demande explose, et personne n'en parle.</strong> Pendant que tout le monde court après les mêmes opportunités saturées, ce métier reste le secret le mieux gardé du digital.</p>
+    </li>
+    <li>
+      <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="#d9b25c" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>
+      <p><strong>Tu transformes des mots simples en revenus concrets.</strong> Pas de produit à stocker, pas de client à relancer dix fois. Juste une compétence que les entreprises s'arrachent en silence.</p>
+    </li>
+  </ul>
+
+  <div class="quote">
+    <p>« J'ai quitté mon CDI en 4 mois. Et le plus fou, c'est que j'avais cette compétence depuis toujours, je ne savais juste pas qu'elle avait autant de valeur. »</p>
+  </div>
+
+  <div class="reveal-box">
+    <div class="tag">🔓 Un dossier complet t'attend</div>
+    <p>Il contient <strong>le nom exact de ce métier</strong>, la méthode pour démarrer <strong>à partir de zéro</strong>, et le plan d'action pour générer tes premiers revenus <strong>sans audience, sans publicité et sans expérience.</strong></p>
+    <p style="margin-top:14px;">Tu découvriras tout après ta demande d'accès.</p>
+  </div>
+
+  <div class="cta-wrap">
+    <a href="#" onclick="return false" class="cta">Demander l'accès gratuit au dossier
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+    <div class="cta-note">Accès immédiat après validation, aucune carte requise</div>
+  </div>
+</div>
+
+<footer><a href="../index.html#ouvrages" style="color:inherit">Retour au portfolio</a></footer>
+
+</body>
+</html>
