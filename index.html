@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=12">
+<link rel="stylesheet" href="css/style.css?v=19">
 </head>
 <body>
 
@@ -62,6 +62,7 @@
     <a href="#ouvrages">Travaux</a>
     <a href="#architecte">Pourquoi moi</a>
     <a href="#tarifs">Tarifs</a>
+    <a href="#simulateur">Simulateur</a>
     <a href="#questions">Questions</a>
   </nav>
   <a class="btn btn-petit" href="https://docs.google.com/forms/d/e/1FAIpQLSe_-8tRlJAWZYybFKXNjkNFQKwHkvTZKSJkQWs8hOul3v4kxg/viewform" target="_blank" rel="noopener">Audit gratuit</a>
@@ -375,85 +376,15 @@
   </div>
 </section>
 
-<!-- Le simulateur -->
-<section class="feuille" id="simulateur">
+<!-- Aperçu du simulateur -->
+<section class="feuille" id="simulateur-apercu">
   <div class="feuille-in">
     <div class="tete">
       <p class="ref">Le simulateur</p>
-      <h2>Combien ton tunnel laisse sur la <span class="accent">table</span> ?</h2>
-      <p>Je ne connais pas tes chiffres. Mets les tiens, ou garde mon exemple. Tu vois ce que tu gagnes aujourd'hui, et ce que tu gagnerais avec un tunnel bien construit.</p>
+      <h2>Et toi, combien ça te <span class="accent">coûte</span> ?</h2>
+      <p>Mets tes chiffres dans mon simulateur. En une minute, tu vois en euros ce que ton tunnel laisse sur la table chaque mois, et ce qu'une pièce reconstruite te rapporterait.</p>
+      <p class="actions"><a class="btn" href="#simulateur">Calculer mon manque à gagner</a></p>
     </div>
-
-    <div class="sim">
-      <div class="sim-bloc sim-aujourdhui">
-        <p class="sim-titre">Aujourd'hui <span>(mon exemple, mets tes chiffres)</span></p>
-        <div class="sim-champ">
-          <label for="sim-entrees">Personnes qui entrent dans ton tunnel chaque mois</label>
-          <p class="sim-aide">Les inscrits à ta liste, ou les visiteurs de ta page de vente.</p>
-          <div class="sim-saisie">
-            <input type="range" id="sim-entrees-curseur" data-curseur="entrees" min="50" max="5000" step="50" value="300" aria-label="Personnes par mois, curseur">
-            <input type="number" id="sim-entrees" data-champ="entrees" min="10" max="100000" step="10" value="300" inputmode="numeric">
-          </div>
-        </div>
-        <div class="sim-champ">
-          <label for="sim-taux">Sur 100 personnes, combien achètent (en %)</label>
-          <p class="sim-aide">Si tu ne sais pas, garde 2 % : c'est courant.</p>
-          <div class="sim-saisie">
-            <input type="range" id="sim-taux-curseur" data-curseur="taux" min="0.5" max="15" step="0.5" value="2" aria-label="Taux d'achat, curseur">
-            <input type="number" id="sim-taux" data-champ="taux" min="0.1" max="50" step="0.1" value="2" inputmode="decimal">
-          </div>
-        </div>
-        <div class="sim-champ">
-          <label for="sim-panier">Prix moyen d'une vente (en €)</label>
-          <p class="sim-aide">Ce que paie un client, en moyenne.</p>
-          <div class="sim-saisie">
-            <input type="range" id="sim-panier-curseur" data-curseur="panier" min="10" max="2000" step="1" value="97" aria-label="Prix moyen, curseur">
-            <input type="number" id="sim-panier" data-champ="panier" min="1" max="50000" step="1" value="97" inputmode="numeric">
-          </div>
-        </div>
-        <p class="sim-total">Tu gagnes aujourd'hui <strong data-sortie="auj">582 €</strong> par mois.</p>
-      </div>
-
-      <div class="sim-bloc sim-leviers">
-        <p class="sim-titre">Avec un tunnel bien construit</p>
-        <div class="sim-scenarios" role="group" aria-label="Choisir un scénario">
-          <button type="button" class="sim-scenario" data-scenario="prudent" aria-pressed="false">Prudent</button>
-          <button type="button" class="sim-scenario" data-scenario="realiste" aria-pressed="true">Réaliste</button>
-          <button type="button" class="sim-scenario" data-scenario="ambitieux" aria-pressed="false">Ambitieux</button>
-        </div>
-        <ol class="sim-liste">
-          <li>
-            <p class="sim-levier"><span>1</span>Plus de monde <b data-sortie="x-monde">×1,5</b></p>
-            <p class="sim-chiffres"><span data-sortie="entrees-avant">300</span> → <strong data-sortie="entrees-apres">450</strong> personnes par mois</p>
-            <p>Je réécris ta page d'inscription et le cadeau qui donne envie de laisser son email. Une audience qui te connaît déjà s'inscrit à 15 à 30 % sur une bonne page.</p>
-          </li>
-          <li>
-            <p class="sim-levier"><span>2</span>Plus d'acheteurs <b data-sortie="x-achat">×2</b></p>
-            <p class="sim-chiffres"><span data-sortie="taux-avant">2 %</span> → <strong data-sortie="taux-apres">4 %</strong> qui achètent</p>
-            <p>J'écris une vraie série d'emails au lieu d'un seul message. Une série de bienvenue rapporte de 51 % à 3 fois plus qu'un email unique.</p>
-          </li>
-          <li>
-            <p class="sim-levier"><span>3</span>Un panier plus élevé <b data-sortie="x-panier">+30 %</b></p>
-            <p class="sim-chiffres"><span data-sortie="panier-avant">97 €</span> → <strong data-sortie="panier-apres">126 €</strong> par vente</p>
-            <p>J'ajoute une petite offre en plus au moment de l'achat. Elle est prise par 20 à 40 % des acheteurs, et le panier monte de 20 à 40 %.</p>
-          </li>
-        </ol>
-        <p class="sim-total">Tu gagnerais <strong data-sortie="avec">2 270 €</strong> par mois.</p>
-      </div>
-    </div>
-
-    <div class="sim-resultat" aria-live="polite">
-      <p class="sim-resultat-label">Ce que tu laisses sur la table</p>
-      <p class="sim-resultat-chiffre"><span data-sortie="gain-mois">+1 688 €</span> par mois</p>
-      <p class="sim-resultat-an">soit <strong data-sortie="gain-an">20 254 €</strong> par an</p>
-      <p class="sim-rembourse">Un tunnel complet à 3 500 € serait remboursé en 63 jours. Et après, tout ce qu'il rapporte est pour toi.</p>
-      <div class="actions">
-        <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSe_-8tRlJAWZYybFKXNjkNFQKwHkvTZKSJkQWs8hOul3v4kxg/viewform" target="_blank" rel="noopener">Faire le vrai calcul avec mon audit gratuit</a>
-        <a class="btn btn-ligne" href="#tarifs">Voir mes tarifs</a>
-      </div>
-    </div>
-
-    <p class="sim-note">Ce sont des estimations, pas des promesses. Chaque levier reste dans une fourchette publiée : Mailchimp (via Thrive Themes) et Experian (via ResponseMedia) pour les séries d'emails, Leadpages pour les pages d'inscription, systeme.io pour l'offre au moment de l'achat. L'audit te donne les vrais chiffres de ton tunnel.</p>
   </div>
 </section>
 
@@ -857,7 +788,210 @@
         </li>
       </ul>
       <p class="centre col">Pour ce qui est sur devis, le prix est fixé après l'audit, sur ce que ta maison demande vraiment. Tu le connais avant de t'engager.</p>
+      <p class="centre"><a class="btn btn-ligne" href="#simulateur">Calculer ce que chaque pièce me rapporterait</a></p>
     </div>
+  </div>
+</section>
+
+<!-- Le simulateur -->
+<section class="feuille" id="simulateur">
+  <div class="feuille-in">
+    <div class="tete">
+      <p class="ref">Le simulateur</p>
+      <h2>Combien ton tunnel laisse sur la <span class="accent">table</span> ?</h2>
+      <p>Choisis ton activité, mets tes chiffres, coche les pièces que tu voudrais reconstruire. Tu vois ce qu'elles te rapporteraient, ce qu'elles coûtent à mes tarifs, et en combien de jours elles sont remboursées.</p>
+    </div>
+
+    <div class="simx">
+      <div class="simx-reglages">
+
+        <div class="sim-bloc">
+          <p class="sim-titre"><span class="simx-num">1</span>Ton activité</p>
+          <div class="sim-scenarios" role="group" aria-label="Ton activité">
+            <button type="button" class="sim-scenario" data-profil="info" aria-pressed="true">Infopreneur</button>
+            <button type="button" class="sim-scenario" data-profil="ecom" aria-pressed="false">E-commerce</button>
+            <button type="button" class="sim-scenario" data-profil="saas" aria-pressed="false">SaaS</button>
+          </div>
+          <p class="sim-aide" data-texte="profil-aide">Tu vends une formation, un coaching ou un accompagnement en ligne.</p>
+        </div>
+
+        <div class="sim-bloc">
+          <p class="sim-titre"><span class="simx-num">2</span>Ton tunnel aujourd'hui <span>(mon exemple, mets tes chiffres)</span></p>
+          <div class="sim-champ">
+            <label for="sim-visiteurs" data-texte="l-visiteurs">Visiteurs sur ta page d'entrée, par mois</label>
+            <div class="sim-saisie">
+              <input type="range" data-curseur="visiteurs" min="100" max="20000" step="100" value="2000" aria-label="Visiteurs par mois, curseur">
+              <input type="number" id="sim-visiteurs" data-champ="visiteurs" min="10" max="1000000" step="10" value="2000" inputmode="numeric">
+            </div>
+          </div>
+          <div class="sim-champ">
+            <label for="sim-etape1" data-texte="l-etape1">Sur 100 visiteurs, combien laissent leur email (%)</label>
+            <p class="sim-aide simx-repere" data-texte="r-etape1">Repère : une landing page convertit 6,6 % des visiteurs en médiane (Unbounce, 2024).</p>
+            <div class="sim-saisie">
+              <input type="range" data-curseur="etape1" min="0.5" max="60" step="0.5" value="20" aria-label="Première étape, curseur">
+              <input type="number" id="sim-etape1" data-champ="etape1" min="0.1" max="100" step="0.1" value="20" inputmode="decimal">
+            </div>
+          </div>
+          <div class="sim-champ">
+            <label for="sim-etape2" data-texte="l-etape2">Sur 100 inscrits, combien achètent (%)</label>
+            <p class="sim-aide simx-repere" data-texte="r-etape2">Si tu ne sais pas, garde 2 % : c'est courant.</p>
+            <div class="sim-saisie">
+              <input type="range" data-curseur="etape2" min="0.5" max="80" step="0.5" value="2" aria-label="Deuxième étape, curseur">
+              <input type="number" id="sim-etape2" data-champ="etape2" min="0.1" max="100" step="0.1" value="2" inputmode="decimal">
+            </div>
+          </div>
+          <div class="sim-champ">
+            <label for="sim-panier" data-texte="l-panier">Prix de ton offre (en €)</label>
+            <div class="sim-saisie">
+              <input type="range" data-curseur="panier" min="5" max="5000" step="1" value="297" aria-label="Prix, curseur">
+              <input type="number" id="sim-panier" data-champ="panier" min="1" max="100000" step="1" value="297" inputmode="numeric">
+            </div>
+          </div>
+          <div class="sim-champ">
+            <label for="sim-pub">Budget publicité par mois (en €)</label>
+            <p class="sim-aide">Mets 0 si tu ne fais que du contenu organique.</p>
+            <div class="sim-saisie">
+              <input type="range" data-curseur="pub" min="0" max="20000" step="50" value="500" aria-label="Budget publicité, curseur">
+              <input type="number" id="sim-pub" data-champ="pub" min="0" max="1000000" step="10" value="500" inputmode="numeric">
+            </div>
+          </div>
+
+          <ol class="simx-entonnoir" aria-label="Ton tunnel aujourd'hui">
+            <li><strong data-sortie="f-visiteurs">2 000</strong><span data-texte="n-visiteurs">visiteurs</span></li>
+            <li><strong data-sortie="f-prospects">400</strong><span data-texte="n-prospects">inscrits</span></li>
+            <li><strong data-sortie="f-clients">8</strong><span data-texte="n-clients">clients</span></li>
+          </ol>
+          <p class="simx-perte" data-sortie="perte"></p>
+          <p class="sim-total">Chaque mois, ton tunnel te rapporte <strong data-sortie="auj">2 376 €</strong>.</p>
+        </div>
+
+        <div class="sim-bloc">
+          <p class="sim-titre"><span class="simx-num">3</span>Les pièces que tu reconstruis <span>(à mes tarifs)</span></p>
+          <ul class="simx-pieces">
+            <li>
+              <label class="simx-piece simx-piece-complet">
+                <input type="checkbox" data-piece="complet" checked>
+                <span class="simx-piece-corps"><strong>Le tunnel complet</strong><span>La gestion de tes pubs, 10 publicités, la VSL et la séquence d'emails.</span></span>
+                <b data-prix="maisonSimple">3 500 €</b>
+              </label>
+            </li>
+            <li>
+              <label class="simx-piece">
+                <input type="checkbox" data-piece="vsl">
+                <span class="simx-piece-corps"><strong>La VSL</strong><span data-texte="d-vsl">Ta vidéo de vente : plus d'inscrits passent à l'achat.</span></span>
+                <b data-prix="vsl">2 000 €</b>
+              </label>
+            </li>
+            <li>
+              <label class="simx-piece">
+                <input type="checkbox" data-piece="emails">
+                <span class="simx-piece-corps"><strong>La séquence d'emails</strong><span data-texte="d-emails">Une vraie série de bienvenue : tes inscrits deviennent clients.</span></span>
+                <b data-prix="emails">1 000 €</b>
+              </label>
+            </li>
+            <li>
+              <label class="simx-piece">
+                <input type="checkbox" data-piece="ads">
+                <span class="simx-piece-corps"><strong>Des publicités</strong><span>À budget égal, plus de clics vers ta page.</span>
+                  <span class="simx-nb">Combien ?
+                    <select data-nb-ads aria-label="Nombre de publicités">
+                      <option>1</option><option>2</option><option selected>3</option><option>4</option><option>5</option>
+                      <option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
+                    </select>
+                  </span>
+                </span>
+                <b data-sortie="prix-ads">500 à 750 € l'une</b>
+              </label>
+            </li>
+            <li>
+              <label class="simx-piece">
+                <input type="checkbox" data-piece="landing">
+                <span class="simx-piece-corps"><strong>La landing page</strong><span data-texte="d-landing">Plus de visiteurs laissent leur email.</span></span>
+                <b>Sur devis</b>
+              </label>
+            </li>
+            <li>
+              <label class="simx-piece">
+                <input type="checkbox" data-piece="bump">
+                <span class="simx-piece-corps"><strong>Une offre au moment de l'achat</strong><span>Un petit ajout proposé juste avant de payer : le panier moyen monte.</span></span>
+                <b>Sur devis</b>
+              </label>
+            </li>
+          </ul>
+
+          <p class="sim-titre simx-titre-scenario"><span class="simx-num">4</span>Ton scénario</p>
+          <div class="sim-scenarios" role="group" aria-label="Choisir un scénario">
+            <button type="button" class="sim-scenario" data-scenario="prudent" aria-pressed="false">Prudent</button>
+            <button type="button" class="sim-scenario" data-scenario="realiste" aria-pressed="true">Réaliste</button>
+            <button type="button" class="sim-scenario" data-scenario="ambitieux" aria-pressed="false">Ambitieux</button>
+          </div>
+          <p class="sim-aide" data-texte="scenario-aide">Le milieu des fourchettes publiées.</p>
+        </div>
+
+        <a class="simx-mini" href="#simx-resultat"><span>Ce que tu laisses sur la table</span><strong data-sortie="gain-mois">+5 037 €</strong><em>par mois · voir le détail ↓</em></a>
+      </div>
+
+      <div class="simx-resultats" id="simx-resultat" aria-live="polite">
+        <div class="sim-resultat">
+          <p class="sim-resultat-label">Ce que tu laisses sur la table</p>
+          <p class="sim-resultat-chiffre"><span data-sortie="gain-mois">+5 037 €</span> par mois</p>
+          <p class="sim-resultat-an">soit <strong data-sortie="gain-an">60 444 €</strong> par an</p>
+          <p class="simx-jour" data-sortie="jour"></p>
+
+          <div class="simx-barres">
+            <div class="simx-barre"><span>Aujourd'hui</span><i><em data-barre="avant"></em></i><b data-sortie="auj">2 376 €</b></div>
+            <div class="simx-barre simx-barre-apres"><span>Après</span><i><em data-barre="apres"></em></i><b data-sortie="avec">7 413 €</b></div>
+          </div>
+
+          <dl class="simx-kpis">
+            <div><dt data-texte="k-clients">Clients par mois</dt><dd data-sortie="k-clients">8 → 25</dd></div>
+            <div data-si-pub><dt>Coût d'un client en pub</dt><dd data-sortie="k-cac">63 € → 20 €</dd></div>
+            <div data-si-pub><dt>Chaque euro de pub rapporte</dt><dd data-sortie="k-roas">4,8 € → 14,8 €</dd></div>
+            <div><dt>Prix des pièces</dt><dd data-sortie="k-cout">3 500 €</dd></div>
+            <div><dt>Remboursé en</dt><dd data-sortie="k-rembourse">21 jours</dd></div>
+            <div><dt>Rapporté sur 12 mois</dt><dd data-sortie="k-roi">17 fois le prix</dd></div>
+          </dl>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="simx-suite">
+      <figure class="simx-courbe">
+        <figcaption data-legende-courbe>Ton gain cumulé sur 12 mois, une fois les pièces payées</figcaption>
+        <svg data-courbe viewBox="0 0 600 220" role="img" aria-label="Courbe du gain cumulé sur 12 mois"></svg>
+      </figure>
+      <div class="simx-suite-texte">
+        <p class="simx-reco" data-sortie="reco"></p>
+        <p class="simx-eco" data-sortie="eco"></p>
+
+        <div class="actions">
+          <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSe_-8tRlJAWZYybFKXNjkNFQKwHkvTZKSJkQWs8hOul3v4kxg/viewform" target="_blank" rel="noopener">Faire le vrai calcul avec mon audit gratuit</a>
+          <a class="btn btn-ligne" href="#tarifs">Revoir mes tarifs</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="simx-stats">
+      <div class="tete">
+        <p class="ref">Les chiffres derrière le simulateur</p>
+        <h3 class="certifs-titre">Ce que disent les <span class="accent">études</span>.</h3>
+        <p class="sim-aide">Ceux qui concernent ton activité sont mis en avant.</p>
+      </div>
+      <ul class="simx-stats-liste">
+        <li data-profils="ecom"><strong>70,22 %</strong><p>des paniers en ligne sont abandonnés avant le paiement.</p><cite>Baymard Institute, moyenne de 50 études, 2025</cite></li>
+        <li data-profils="ecom"><strong>3,33 %</strong><p>des personnes qui reçoivent une relance de panier abandonné finissent par commander. 7,69 % chez les meilleures marques.</p><cite>Klaviyo, 143 000 séquences, 2023</cite></li>
+        <li data-profils="ecom info"><strong>41 %</strong><p>du chiffre d'affaires des emails vient des emails automatiques. Ils ne pèsent que 5,3 % des envois.</p><cite>Klaviyo, benchmarks email</cite></li>
+        <li data-profils="info saas"><strong>6,6 %</strong><p>des visiteurs passent à l'action sur une landing page, en médiane. 3,8 % en SaaS.</p><cite>Unbounce, 41 000 pages, 2024</cite></li>
+        <li data-profils="ecom"><strong>1,4 %</strong><p>des visiteurs d'une boutique Shopify achètent, en moyenne. Le top 20 % dépasse 3,2 %.</p><cite>Littledata, environ 2 800 boutiques</cite></li>
+        <li data-profils="info saas"><strong>84 %</strong><p>des marketeurs qui utilisent la vidéo disent qu'elle a directement augmenté leurs ventes.</p><cite>Wyzowl, 2025</cite></li>
+        <li data-profils="ecom info"><strong>+270 %</strong><p>de probabilité d'achat quand un produit affiche des avis, par rapport à aucun avis.</p><cite>Spiegel Research Center, Northwestern, 2017</cite></li>
+        <li data-profils="info saas"><strong>27,66 $</strong><p>coût moyen d'un prospect en publicité Facebook. +21 % en un an.</p><cite>WordStream et LocaliQ, 2025</cite></li>
+        <li data-profils="info ecom saas"><strong>20 %</strong><p>du texte d'une page web est réellement lu, en moyenne. Le reste est survolé.</p><cite>Nielsen Norman Group, 2008</cite></li>
+      </ul>
+    </div>
+
+    <p class="sim-note">Ce sont des estimations, pas des promesses. Leviers sourcés : séquence de bienvenue (Mailchimp et Experian), page d'inscription (Leadpages), offre au moment de l'achat (systeme.io), relance de panier (Klaviyo). Pour la VSL, les publicités et les emails en SaaS, il n'existe pas d'étude publique fiable : j'ai pris des hypothèses prudentes. Rien de ce que tu tapes n'est envoyé : tout reste dans ton navigateur. L'audit te donne les vrais chiffres de ton tunnel.</p>
   </div>
 </section>
 
@@ -1009,9 +1143,9 @@
   <span>Plan A · Feuille 1/1</span>
 </footer>
 
-<script src="js/maison.js?v=12"></script>
-<script src="js/site.js?v=12"></script>
-<script src="js/visite.js?v=12"></script>
-<script src="js/simulateur.js?v=12"></script>
+<script src="js/maison.js?v=19"></script>
+<script src="js/site.js?v=19"></script>
+<script src="js/visite.js?v=19"></script>
+<script src="js/simulateur.js?v=19"></script>
 </body>
 </html>

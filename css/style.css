@@ -689,3 +689,120 @@ h3 { font-size: 1.25rem; font-weight: 600; line-height: 1.25; letter-spacing: -.
 .choix-oui { background: var(--blanc); border-color: rgba(184, 147, 74, .6); box-shadow: var(--ombre); }
 .choix-oui p { color: var(--noir); }
 .choix-oui .choix-label { color: var(--lapis); }
+
+/* Le simulateur complet */
+.simx { display: grid; gap: 22px; align-items: start; }
+.simx-reglages { display: grid; gap: 18px; min-width: 0; }
+.simx-resultats { min-width: 0; scroll-margin-top: 80px; }
+.simx-resultats .sim-resultat { margin-top: 0; }
+@media (min-width: 1000px) {
+  .simx { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 26px; }
+  .simx-resultats { position: sticky; top: 84px; }
+  .simx-resultats .sim-resultat { padding: 32px 30px; }
+}
+.simx-num {
+  display: inline-grid; place-items: center; width: 24px; height: 24px; margin-right: 10px; border-radius: 50%;
+  border: 1px solid var(--or); color: var(--or); font-size: 12px; letter-spacing: 0; vertical-align: 1px;
+}
+.simx-titre-scenario { margin: 26px 0 14px; padding-top: 22px; border-top: 1px solid rgba(184, 147, 74, .5); }
+.simx-repere { color: var(--lapis); }
+
+/* Le tunnel d'aujourd'hui */
+.simx-entonnoir { list-style: none; padding: 0; margin: 4px 0 12px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; counter-reset: none; }
+.simx-entonnoir li { position: relative; padding: 14px 8px; text-align: center; border-radius: 14px; background: var(--lapis-voile); }
+.simx-entonnoir li:nth-child(2) { background: rgba(31, 78, 140, .12); }
+.simx-entonnoir li:nth-child(3) { background: rgba(31, 78, 140, .2); }
+.simx-entonnoir li + li::before { content: "›"; position: absolute; left: -9px; top: 50%; transform: translateY(-50%); color: var(--or); font-weight: 700; }
+.simx-entonnoir strong { display: block; font-size: 1.3rem; font-weight: 700; color: var(--noir); letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+.simx-entonnoir span { font-size: 13px; color: var(--gris); }
+.simx-perte { font-size: .92rem; color: var(--terre); margin: 0 0 6px; }
+
+/* Les pièces */
+.simx-pieces { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.simx-piece {
+  display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: start; padding: 14px 16px;
+  border: 1px solid var(--trait-fort); border-radius: 14px; background: var(--blanc); cursor: pointer;
+  transition: border-color .25s, background .25s, box-shadow .25s;
+}
+.simx-piece:hover { border-color: var(--or); }
+.simx-piece:has(input:checked) { border-color: var(--lapis); background: rgba(31, 78, 140, .05); }
+.simx-piece input[type="checkbox"] { width: 20px; height: 20px; margin: 2px 0 0; accent-color: var(--lapis); cursor: pointer; }
+.simx-piece-corps strong { display: block; color: var(--noir); font-weight: 600; line-height: 1.3; }
+.simx-piece-corps > span { display: block; font-size: .88rem; color: var(--gris); line-height: 1.4; margin-top: 2px; }
+.simx-piece b { font-weight: 700; color: var(--lapis); white-space: nowrap; font-size: .95rem; text-align: right; }
+.simx-piece-complet { border-color: rgba(184, 147, 74, .7); box-shadow: var(--ombre); }
+.simx-piece-complet strong::after { content: " ✦"; color: var(--or); font-size: .8em; }
+.simx-inclus { opacity: .55; cursor: default; }
+.simx-inclus b { text-decoration: line-through; text-decoration-color: var(--or); }
+.simx-nb { display: flex !important; align-items: center; gap: 8px; margin-top: 8px !important; }
+.simx-nb select {
+  padding: 6px 10px; border: 1px solid var(--trait-fort); border-radius: 10px; background: var(--blanc);
+  font: 600 15px/1.2 var(--f-sans); color: var(--noir);
+}
+@media (max-width: 420px) {
+  .simx-piece { grid-template-columns: auto 1fr; }
+  .simx-piece b { grid-column: 2; text-align: left; }
+}
+
+/* La barre de résultat qui suit sur mobile */
+.simx-mini {
+  position: sticky; bottom: 12px; z-index: 5; display: flex; flex-wrap: wrap; align-items: baseline; justify-content: center; gap: 2px 10px;
+  padding: 12px 18px; border-radius: 18px; text-decoration: none; text-align: center;
+  background: rgba(26, 26, 26, .92); color: var(--creme); box-shadow: 0 10px 30px rgba(26, 26, 26, .25);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+}
+.simx-mini span { width: 100%; font-size: 11.5px; letter-spacing: .12em; text-transform: uppercase; opacity: .75; }
+.simx-mini strong { font-size: 1.35rem; font-weight: 700; letter-spacing: -.02em; }
+.simx-mini em { font-style: normal; font-size: 13px; opacity: .8; }
+@media (min-width: 1000px) { .simx-mini { display: none; } }
+
+/* Les résultats */
+.simx-jour { margin: 8px auto 20px; max-width: 460px; color: var(--terre); font-weight: 500; }
+.simx-barres { display: grid; gap: 10px; margin: 0 0 22px; text-align: left; }
+.simx-barre { display: grid; grid-template-columns: 84px 1fr auto; gap: 10px; align-items: center; font-size: 14px; }
+.simx-barre i { display: block; height: 14px; border-radius: 999px; background: var(--lapis-voile); overflow: hidden; }
+.simx-barre em { display: block; height: 100%; border-radius: 999px; background: var(--gris); opacity: .55; transition: width .5s ease; }
+.simx-barre-apres em { background: var(--lapis); opacity: 1; }
+.simx-barre b { font-weight: 700; color: var(--noir); font-variant-numeric: tabular-nums; min-width: 76px; text-align: right; }
+.simx-barre-apres b { color: var(--lapis); }
+.simx-kpis { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin: 0 0 22px; text-align: left; }
+@media (min-width: 560px) { .simx-kpis { grid-template-columns: repeat(3, 1fr); } }
+.simx-kpis > div { padding: 12px 14px; border-radius: 14px; background: var(--blanc); border: 1px solid var(--trait); }
+.simx-kpis dt { font-size: 12px; color: var(--gris); line-height: 1.3; margin-bottom: 4px; }
+.simx-kpis dd { margin: 0; font-weight: 700; color: var(--noir); font-size: 1rem; line-height: 1.25; font-variant-numeric: tabular-nums; }
+.simx-courbe { margin: 0 0 18px; padding: 14px 12px 6px; border-radius: 16px; background: var(--blanc); border: 1px solid var(--trait); }
+.simx-courbe figcaption { font-size: 13px; color: var(--gris); text-align: left; margin: 0 4px 6px; }
+.simx-courbe svg { display: block; width: 100%; height: auto; font-family: var(--f-sans); }
+.simx-reco { font-weight: 600; color: var(--noir); max-width: 520px; margin: 0 auto 8px; }
+.simx-reco:empty, .simx-eco:empty { display: none; }
+.simx-eco { font-size: .92rem; max-width: 520px; margin: 0 auto 22px; }
+
+/* Les chiffres derrière le simulateur */
+.simx-stats { margin-top: 64px; padding-top: 48px; border-top: 1px solid rgba(184, 147, 74, .5); }
+.simx-stats-liste { list-style: none; padding: 0; margin: 28px 0 0; display: grid; gap: 12px; }
+@media (min-width: 700px) { .simx-stats-liste { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1000px) { .simx-stats-liste { grid-template-columns: repeat(3, 1fr); gap: 16px; } }
+.simx-stats-liste li {
+  padding: 22px; border-radius: var(--rayon); background: var(--verre); border: 1px solid var(--trait);
+  transition: opacity .35s, border-color .35s, box-shadow .35s; opacity: .55;
+}
+.simx-stats-liste li.simx-stat-active { opacity: 1; border-color: rgba(31, 78, 140, .3); box-shadow: var(--ombre); }
+.simx-stats-liste strong { display: block; font-size: 2rem; font-weight: 700; letter-spacing: -.04em; color: var(--lapis); line-height: 1.1; margin-bottom: 6px; font-variant-numeric: tabular-nums; }
+.simx-stats-liste p { margin: 0 0 10px; color: var(--noir); line-height: 1.45; font-size: .95rem; }
+.simx-stats-liste cite { font-style: normal; font-size: 12.5px; color: var(--gris); }
+.simx input[type="range"] { flex: 1; min-width: 0; height: 32px; accent-color: var(--lapis); cursor: pointer; }
+.simx-mini strong, .simx-mini span, .simx-mini em { color: var(--creme); }
+.simx-kpis { margin-bottom: 0; }
+.simx-suite {
+  display: grid; gap: 22px; align-items: center; margin-top: 22px; padding: 26px 22px; border-radius: 24px;
+  background: var(--verre); border: 1px solid rgba(31, 78, 140, .2); box-shadow: var(--ombre);
+}
+.simx-suite .simx-courbe { margin: 0; }
+.simx-suite-texte { text-align: center; }
+.simx-suite-texte .simx-reco { font-size: 1.1rem; line-height: 1.45; }
+@media (min-width: 1000px) {
+  .simx-suite { grid-template-columns: 1.2fr 1fr; padding: 32px; gap: 34px; }
+  .simx-suite-texte { text-align: left; }
+  .simx-suite-texte .simx-reco, .simx-suite-texte .simx-eco { margin-left: 0; }
+  .simx-suite-texte .actions { justify-content: flex-start; }
+}
