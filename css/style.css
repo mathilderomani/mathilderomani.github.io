@@ -806,3 +806,6 @@ h3 { font-size: 1.25rem; font-weight: 600; line-height: 1.25; letter-spacing: -.
   .simx-suite-texte .simx-reco, .simx-suite-texte .simx-eco { margin-left: 0; }
   .simx-suite-texte .actions { justify-content: flex-start; }
 }
+.hero-simu { margin: 16px 0 0; }
+.hero-simu a { color: var(--lapis); font-weight: 600; text-decoration: underline; text-underline-offset: 5px; text-decoration-color: rgba(184, 147, 74, .7); }
+.hero-simu a:hover { text-decoration-color: var(--lapis); }
