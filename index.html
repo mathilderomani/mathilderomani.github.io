@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=11">
+<link rel="stylesheet" href="css/style.css?v=12">
 </head>
 <body>
 
@@ -59,7 +59,7 @@
   <nav class="entete-nav" aria-label="Sections">
     <a href="#maison">La maison</a>
     <a href="#plan-de-travail">La méthode</a>
-    <a href="#ouvrages">Chantiers</a>
+    <a href="#ouvrages">Travaux</a>
     <a href="#architecte">Pourquoi moi</a>
     <a href="#tarifs">Tarifs</a>
     <a href="#questions">Questions</a>
@@ -83,7 +83,7 @@
     <p class="chapo">Ta pub, ton site, tes emails : quelque part, tes visiteurs s'en vont sans acheter. Je trouve l'endroit. Puis je le réécris.</p>
     <div class="actions">
       <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSe_-8tRlJAWZYybFKXNjkNFQKwHkvTZKSJkQWs8hOul3v4kxg/viewform" target="_blank" rel="noopener">Demander mon audit gratuit</a>
-      <a class="btn btn-ligne" href="#ouvrages">Voir mes chantiers</a>
+      <a class="btn btn-ligne" href="#ouvrages">Voir mes travaux</a>
     </div>
     <ul class="etiquettes">
       <li class="etiq etiq-plein">Gratuit</li>
@@ -542,8 +542,8 @@
 <section class="feuille t-encre" id="ouvrages">
   <div class="feuille-in">
     <div class="tete">
-      <p class="ref">A.05 · Les ouvrages</p>
-      <h2>Six chantiers. Pour chacun, ce que j'ai vu et ce que j'ai <span class="accent">décidé</span>.</h2>
+      <p class="ref">A.05 · Mes travaux</p>
+      <h2>Six travaux. Pour chacun, ce que j'ai vu et ce que j'ai <span class="accent">décidé</span>.</h2>
       <p class="indice">Ouvre une fiche pour lire le détail</p>
     </div>
     <div class="fiches clair">
@@ -722,6 +722,33 @@
           </div>
         </div>
       </details>
+    </div>
+
+    <div class="certifs" id="certifications">
+      <div class="tete">
+        <p class="ref">Certifications et formations</p>
+        <h3 class="certifs-titre">Ce que j'ai appris, et qui l'a <span class="accent">validé</span>.</h3>
+      </div>
+      <ul class="certifs-liste stagger">
+        <li class="certif a-venir">
+          <span class="certif-icone" aria-hidden="true"><img src="assets/logo-sprezza.png" alt="" width="40" height="40"></span>
+          <span class="certif-emetteur">Académie de Théo Rossi</span>
+          <strong class="certif-titre">Diplôme à ajouter</strong>
+          <span class="certif-detail">Pièce jointe en attente</span>
+        </li>
+        <li class="certif a-venir">
+          <span class="certif-icone" aria-hidden="true">✦</span>
+          <span class="certif-emetteur">Académie de Théo Rossi</span>
+          <strong class="certif-titre">Diplôme à ajouter</strong>
+          <span class="certif-detail">Pièce jointe en attente</span>
+        </li>
+        <li class="certif a-venir">
+          <span class="certif-icone" aria-hidden="true">✦</span>
+          <span class="certif-emetteur">Meta, ou autre formation</span>
+          <strong class="certif-titre">Prochaine certification</strong>
+          <span class="certif-detail">Emplacement libre</span>
+        </li>
+      </ul>
     </div>
   </div>
 </section>
@@ -949,15 +976,21 @@
       <h2 class="h2-geant">Imagine.</h2>
     </div>
     <ol class="escalier stagger clair">
-      <li class="marche"><strong>Dans une semaine</strong><span>tu sais quelle pièce de ta maison fait fuir tes visiteurs. Et ce n'est pas celle que tu crois.</span></li>
-      <li class="marche"><strong>Dans un mois</strong><span>la pièce qui bloquait est reconstruite, et tu compares tes ventes à celles du mois d'avant.</span></li>
-      <li class="marche"><strong>Dans six mois</strong><span>ta maison tient debout. Tu ajoutes des pièces au lieu de tout recommencer.</span></li>
+      <li class="marche"><strong>Dans une semaine</strong><span>tu lis ton audit et tu vois, noir sur blanc, la page où tes visiteurs repartent. Le paragraphe. La phrase. Le dimanche soir, tu ne te demandes plus ce qui cloche : tu le sais.</span></li>
+      <li class="marche"><strong>Dans un mois</strong><span>la pièce qui bloquait est reconstruite. Ton téléphone vibre : une vente. Puis une autre. Ce jour-là, tu n'as rien posté et tu n'as pas mis un euro de plus en publicité.</span></li>
+      <li class="marche"><strong>Dans six mois</strong><span>tu lances ta prochaine offre sans repartir de zéro. La page, les emails et les pubs existent déjà : tu ajoutes une pièce. Et quand tu fermes ton ordinateur pour une semaine, ton tunnel, lui, continue de vendre.</span></li>
     </ol>
     <div class="col centre">
       <p class="libre">Tu es <span class="accent">libre</span>.</p>
-      <div class="encadre sombre choix">
-        <p>Soit tu continues à déplacer des mots en espérant que ça bouge.</p>
-        <p>Soit je regarde ton plan, gratuitement.</p>
+      <div class="choix-duo">
+        <div class="choix-carte">
+          <p class="choix-label">Option 1 · Tu continues seul</p>
+          <p>Tu changes encore un titre. Tu relances une pub. Tu attends la fin du mois en espérant que ce soit le bon. Et dans six mois, tu regardes les mêmes chiffres en te demandant ce qui cloche.</p>
+        </div>
+        <div class="choix-carte choix-oui">
+          <p class="choix-label">Option 2 · Tu me laisses visiter ta maison</p>
+          <p>Je parcours ton tunnel en entier, pièce par pièce. Tu reçois un plan écrit : la pièce à reprendre en premier, ce qu'elle te fait perdre aujourd'hui, et ce que tu peux y gagner. Ça ne te coûte rien.</p>
+        </div>
       </div>
       <p><a class="btn btn-grand" href="https://docs.google.com/forms/d/e/1FAIpQLSe_-8tRlJAWZYybFKXNjkNFQKwHkvTZKSJkQWs8hOul3v4kxg/viewform" target="_blank" rel="noopener">Demander mon audit gratuit</a></p>
       <p class="ps"><strong>P.S.</strong> L'audit est gratuit et sans engagement. Le nombre que j'en prends, lui, est limité : chacun demande de visiter ton tunnel en entier avant d'écrire la première ligne.</p>
@@ -976,9 +1009,9 @@
   <span>Plan A · Feuille 1/1</span>
 </footer>
 
-<script src="js/maison.js?v=11"></script>
-<script src="js/site.js?v=11"></script>
-<script src="js/visite.js?v=11"></script>
-<script src="js/simulateur.js?v=11"></script>
+<script src="js/maison.js?v=12"></script>
+<script src="js/site.js?v=12"></script>
+<script src="js/visite.js?v=12"></script>
+<script src="js/simulateur.js?v=12"></script>
 </body>
 </html>

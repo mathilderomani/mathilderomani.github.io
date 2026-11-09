@@ -662,3 +662,30 @@ h3 { font-size: 1.25rem; font-weight: 600; line-height: 1.25; letter-spacing: -.
   .sim-bloc { padding: 32px; }
   .sim-resultat { padding: 48px 40px; }
 }
+
+/* Certifications et formations (dans Mes travaux) */
+.certifs { max-width: 920px; margin: 72px auto 0; padding-top: 48px; border-top: 1px solid rgba(184, 147, 74, .5); }
+.certifs-titre { font-weight: 700; font-size: clamp(1.4rem, 3.4vw, 2rem); line-height: 1.15; letter-spacing: -.03em; }
+.certifs-liste { list-style: none; padding: 0; margin: 28px 0 0; display: grid; gap: 14px; }
+@media (min-width: 760px) { .certifs-liste { grid-template-columns: repeat(3, 1fr); gap: 18px; } }
+.certif {
+  display: flex; flex-direction: column; gap: 6px; padding: 24px; text-align: left;
+  background: var(--verre); border: 1px solid rgba(31, 78, 140, .14); border-radius: var(--rayon);
+  -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); box-shadow: var(--ombre);
+}
+.certif-icone { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 50%; background: var(--blanc); border: 1px solid rgba(184, 147, 74, .5); color: var(--or); font-size: 18px; margin-bottom: 8px; overflow: hidden; }
+.certif-icone img { width: 28px; height: 28px; object-fit: contain; }
+.certif-emetteur { font-size: 12.5px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--lapis); }
+.certif-titre { font-size: 1.1rem; font-weight: 700; color: var(--noir); line-height: 1.25; }
+.certif-detail { font-size: 14px; color: var(--gris); }
+.certif.a-venir { border-style: dashed; box-shadow: none; }
+
+/* Imagine : les deux options */
+.choix-duo { display: grid; gap: 14px; margin: 0 0 36px; text-align: left; }
+@media (min-width: 760px) { .choix-duo { grid-template-columns: 1fr 1fr; gap: 18px; } }
+.choix-carte { padding: 26px; border-radius: var(--rayon); background: var(--verre); border: 1px solid rgba(107, 100, 89, .2); }
+.choix-carte p { margin: 0; line-height: 1.55; color: var(--gris); }
+.choix-carte .choix-label { font-size: 12.5px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 12px; color: var(--gris); }
+.choix-oui { background: var(--blanc); border-color: rgba(184, 147, 74, .6); box-shadow: var(--ombre); }
+.choix-oui p { color: var(--noir); }
+.choix-oui .choix-label { color: var(--lapis); }
