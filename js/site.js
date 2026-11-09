@@ -111,4 +111,18 @@ var PRIX = {
   }
   window.addEventListener("hashchange", ouvrirCible);
   ouvrirCible();
+
+  // Bouton « Copier mon adresse email »
+  document.querySelectorAll("[data-copier]").forEach(function (b) {
+    var texte = b.textContent;
+    b.addEventListener("click", function () {
+      var valeur = b.getAttribute("data-copier");
+      function fait() { b.textContent = "Adresse copiée ✓"; setTimeout(function () { b.textContent = texte; }, 2200); }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(valeur).then(fait, function () { window.location.href = "mailto:" + valeur; });
+      } else {
+        window.location.href = "mailto:" + valeur;
+      }
+    });
+  });
 })();

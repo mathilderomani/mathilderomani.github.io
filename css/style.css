@@ -809,3 +809,24 @@ h3 { font-size: 1.25rem; font-weight: 600; line-height: 1.25; letter-spacing: -.
 .hero-simu { margin: 16px 0 0; }
 .hero-simu a { color: var(--lapis); font-weight: 600; text-decoration: underline; text-underline-offset: 5px; text-decoration-color: rgba(184, 147, 74, .7); }
 .hero-simu a:hover { text-decoration-color: var(--lapis); }
+
+/* Me contacter */
+.contact-renvoi { margin-top: 28px; }
+.contact-renvoi a { color: var(--lapis); font-weight: 600; text-decoration: underline; text-underline-offset: 5px; text-decoration-color: rgba(184, 147, 74, .7); }
+.contact-liste { list-style: none; padding: 0; margin: 0 auto; max-width: 920px; display: grid; gap: 12px; }
+@media (min-width: 640px) { .contact-liste { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 960px) { .contact-liste { grid-template-columns: repeat(3, 1fr); gap: 16px; } }
+.contact-carte {
+  display: flex; align-items: center; gap: 14px; padding: 18px 20px; border-radius: var(--rayon); text-decoration: none; color: var(--noir);
+  background: var(--verre); border: 1px solid var(--trait); box-shadow: var(--ombre);
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+  transition: transform .3s ease, border-color .3s ease;
+}
+.contact-carte:hover { transform: translateY(-3px); border-color: var(--or); }
+.contact-carte:focus-visible { outline: 2px solid var(--lapis); outline-offset: 3px; }
+.contact-ico { flex: none; width: 46px; height: 46px; display: grid; place-items: center; border-radius: 50%; background: var(--blanc); border: 1px solid rgba(184, 147, 74, .55); color: var(--lapis); }
+.contact-texte { min-width: 0; display: flex; flex-direction: column; }
+.contact-texte strong { font-weight: 700; font-size: 1.02rem; }
+.contact-texte span { font-size: 14px; color: var(--gris); overflow-wrap: anywhere; }
+.contact-fleche { margin-left: auto; color: var(--or); font-size: 18px; }
+.contact-copier { text-align: center; margin: 26px 0 0; }
