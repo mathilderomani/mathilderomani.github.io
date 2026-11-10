@@ -36,7 +36,8 @@
   nav.hidden = false;
 
   function liste(indices) {
-    var noms = indices.map(function (i) { return NOMS[i]; });
+    var source = window.NOMS_PIECES || NOMS;
+    var noms = indices.map(function (i) { return source[i]; });
     if (noms.length < 2) return noms.join("");
     return noms.slice(0, -1).join(", ") + " et " + noms[noms.length - 1];
   }
@@ -179,5 +180,7 @@
     });
   });
 
+  // Le choix du profil (js/profil.js) change le nom des pièces : on repeint
+  window.visiteRafraichir = peindre;
   peindre();
 })();

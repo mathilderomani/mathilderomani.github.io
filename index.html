@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=41">
+<link rel="stylesheet" href="css/style.css?v=45">
 </head>
 <body>
 
@@ -83,6 +83,12 @@
     <p class="surtitre">Stratège et copywriter · Infopreneurs, e-commerce, SaaS</p>
     <h1>Pourquoi ton offre ne se vend pas plus, et comment y remédier en <span class="accent">3 étapes</span> <span class="h1-fin">(sans tout refaire)</span></h1>
     <p class="chapo">Ta pub, ton site, tes emails : quelque part, tes visiteurs s'en vont sans acheter. Je trouve l'endroit. Puis je le réécris.</p>
+    <div class="profil-choix" role="group" aria-label="Ce que tu vends">
+      <span class="profil-label">Tu vends :</span>
+      <button type="button" class="profil-btn" data-choix-profil="info" aria-pressed="true">une formation</button>
+      <button type="button" class="profil-btn" data-choix-profil="ecom" aria-pressed="false">des produits</button>
+      <button type="button" class="profil-btn" data-choix-profil="saas" aria-pressed="false">un logiciel</button>
+    </div>
     <div class="actions">
       <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSe_-8tRlJAWZYybFKXNjkNFQKwHkvTZKSJkQWs8hOul3v4kxg/viewform" target="_blank" rel="noopener">Demander mon audit gratuit</a>
       <a class="btn btn-ligne" href="#ouvrages">Voir mes travaux</a>
@@ -195,6 +201,12 @@
       <p>Ton tunnel de vente, c'est le chemin que fait un inconnu entre le moment où il te découvre et le moment où il te paie. Chaque étape est une pièce. Chaque bouton est une porte. S'il ne pousse pas la porte, il ne voit jamais la pièce suivante.</p>
     </div>
     <p class="fort centre">Fais la visite. À chaque pièce, dis-moi si tu l'as déjà.</p>
+    <div class="centre profil-maison"><div class="profil-choix" role="group" aria-label="Ta maison selon ce que tu vends">
+      <span class="profil-label">Tu vends :</span>
+      <button type="button" class="profil-btn" data-choix-profil="info" aria-pressed="true">une formation</button>
+      <button type="button" class="profil-btn" data-choix-profil="ecom" aria-pressed="false">des produits</button>
+      <button type="button" class="profil-btn" data-choix-profil="saas" aria-pressed="false">un logiciel</button>
+    </div></div>
 
     <div class="visite clair" id="visite" data-formulaire="https://docs.google.com/forms/d/e/1FAIpQLSe_-8tRlJAWZYybFKXNjkNFQKwHkvTZKSJkQWs8hOul3v4kxg/viewform">
       <div class="visite-vues" role="group" aria-label="Choisir la vue" hidden>
@@ -210,43 +222,43 @@
               <span class="chemin"></span>
               <span class="p-nom"><b>1</b>Façade</span>
               <svg class="p-ico" viewBox="0 0 32 22" aria-hidden="true"><use href="#ico-pub"/></svg>
-              <span class="p-sub">Pub ou contenu<span class="vh p-etat"></span></span>
+              <span class="p-sub"><span data-p="sub0">Pub ou contenu</span><span class="vh p-etat"></span></span>
               <span class="marque" aria-hidden="true"></span>
             </a>
             <a class="piece porte p-entree" href="#piece-2" data-piece="1">
               <span class="chemin"></span>
               <span class="p-nom"><b>2</b>Entrée</span>
               <svg class="p-ico" viewBox="0 0 32 22" aria-hidden="true"><use href="#ico-form"/></svg>
-              <span class="p-sub">Ta landing page<span class="vh p-etat"></span></span>
+              <span class="p-sub"><span data-p="sub1">Ta landing page</span><span class="vh p-etat"></span></span>
               <span class="marque" aria-hidden="true"></span>
             </a>
             <a class="piece porte p-couloir" href="#piece-3" data-piece="2">
               <span class="chemin"></span>
               <span class="p-nom"><b>3</b>Couloir</span>
               <svg class="p-ico" viewBox="0 0 32 22" aria-hidden="true"><use href="#ico-mail"/></svg>
-              <span class="p-sub">Tes emails<span class="vh p-etat"></span></span>
+              <span class="p-sub"><span data-p="sub2">Tes emails</span><span class="vh p-etat"></span></span>
               <span class="marque" aria-hidden="true"></span>
             </a>
             <a class="piece porte p-salon" href="#piece-4" data-piece="3">
               <span class="chemin"></span>
               <span class="p-nom"><b>4</b>Salon</span>
               <svg class="p-ico" viewBox="0 0 32 22" aria-hidden="true"><use href="#ico-vente"/></svg>
-              <span class="p-sub">Ta page de vente / VSL<span class="vh p-etat"></span></span>
+              <span class="p-sub"><span data-p="sub3">Ta page de vente / VSL</span><span class="vh p-etat"></span></span>
               <span class="marque" aria-hidden="true"></span>
             </a>
           </div>
           <a class="piece p-fondations" href="#piece-5" data-piece="4">
             <span class="p-nom"><b>5</b>Fondations</span>
-            <span class="p-sub">Cible, promesse, méthode<span class="vh p-etat"></span></span>
+            <span class="p-sub"><span data-p="sub4">Cible, promesse, méthode</span><span class="vh p-etat"></span></span>
             <span class="marque" aria-hidden="true"></span>
           </a>
           <div class="jardin-annexes">
             <p class="jardin-titre"><span aria-hidden="true">✿</span> Le jardin <span>Les pièces annexes, autour de la maison</span></p>
             <ul class="jardin-liste">
-              <li>Ta page d'accueil</li>
-              <li>Tes posts LinkedIn</li>
-              <li>Ton webinaire ou ton challenge</li>
-              <li>Tes scripts courts Instagram et TikTok</li>
+              <li data-p="j0">Ta page d'accueil</li>
+              <li data-p="j1">Tes posts LinkedIn</li>
+              <li data-p="j2">Ton webinaire ou ton challenge</li>
+              <li data-p="j3">Tes scripts courts Instagram et TikTok</li>
             </ul>
           </div>
           </div>
@@ -259,11 +271,11 @@
           <div class="panneau-grille">
             <div>
               <p class="panneau-kicker">Pièce 1 · La façade</p>
-              <h3 tabindex="-1">La façade, <em>c'est ce qui te fait connaître.</em></h3>
-              <p>C'est ce qu'il voit de loin, en passant. Une publicité, si tu as du budget. Sinon ton contenu gratuit : tes posts LinkedIn, Instagram, Facebook ou tes vidéos TikTok. Son seul travail : lui donner envie de s'approcher. Pas de tout lui raconter.</p>
+              <h3 tabindex="-1">La façade, <em data-p="em0">c'est ce qui te fait connaître.</em></h3>
+              <p data-p="desc0">C'est ce qu'il voit de loin, en passant. Une publicité, si tu as du budget. Sinon ton contenu gratuit : tes posts LinkedIn, Instagram, Facebook ou tes vidéos TikTok. Son seul travail : lui donner envie de s'approcher. Pas de tout lui raconter.</p>
             </div>
             <div class="panneau-q">
-              <p class="question">Toi, tu fais déjà venir du monde, avec de la pub ou avec ton contenu ?</p>
+              <p class="question" data-p="q0">Toi, tu fais déjà venir du monde, avec de la pub ou avec ton contenu ?</p>
               <div class="reponses">
                 <button type="button" class="rep" data-rep="oui" aria-pressed="false">Je l'ai</button>
                 <button type="button" class="rep" data-rep="non" aria-pressed="false">Pas encore</button>
@@ -277,11 +289,11 @@
           <div class="panneau-grille">
             <div>
               <p class="panneau-kicker">Pièce 2 · L'entrée</p>
-              <h3 tabindex="-1">L'entrée, <em>c'est ta landing page.</em></h3>
-              <p>La première pièce où il met les pieds. Il y laisse son email en échange d'un cadeau : un guide, une vidéo, un quiz, un code promo, un essai gratuit. Beaucoup la confondent avec la page de vente. Elle ne vend rien. Elle fait entrer.</p>
+              <h3 tabindex="-1">L'entrée, <em data-p="em1">c'est ta landing page.</em></h3>
+              <p data-p="desc1">La première pièce où il met les pieds. Il y laisse son email en échange d'un cadeau : un guide, une vidéo, un quiz, un code promo, un essai gratuit. Beaucoup la confondent avec la page de vente. Elle ne vend rien. Elle fait entrer.</p>
             </div>
             <div class="panneau-q">
-              <p class="question">Toi, tu as une page où on te laisse son email ?</p>
+              <p class="question" data-p="q1">Toi, tu as une page où on te laisse son email ?</p>
               <div class="reponses">
                 <button type="button" class="rep" data-rep="oui" aria-pressed="false">Je l'ai</button>
                 <button type="button" class="rep" data-rep="non" aria-pressed="false">Pas encore</button>
@@ -295,11 +307,11 @@
           <div class="panneau-grille">
             <div>
               <p class="panneau-kicker">Pièce 3 · Le couloir</p>
-              <h3 tabindex="-1">Le couloir, <em>ce sont tes emails.</em></h3>
-              <p>Il t'a laissé son email. Tes emails l'emmènent vers la suite. Ils créent le lien, répondent à ses doutes, et le préparent à acheter. Beaucoup sautent cette pièce. Sans elle, il reste planté dans l'entrée.</p>
+              <h3 tabindex="-1">Le couloir, <em data-p="em2">ce sont tes emails.</em></h3>
+              <p data-p="desc2">Il t'a laissé son email. Tes emails l'emmènent vers la suite. Ils créent le lien, répondent à ses doutes, et le préparent à acheter. Beaucoup sautent cette pièce. Sans elle, il reste planté dans l'entrée.</p>
             </div>
             <div class="panneau-q">
-              <p class="question">Toi, tu envoies une série d'emails automatique à chaque nouvel inscrit ?</p>
+              <p class="question" data-p="q2">Toi, tu envoies une série d'emails automatique à chaque nouvel inscrit ?</p>
               <div class="reponses">
                 <button type="button" class="rep" data-rep="oui" aria-pressed="false">Je l'ai</button>
                 <button type="button" class="rep" data-rep="non" aria-pressed="false">Pas encore</button>
@@ -313,11 +325,11 @@
           <div class="panneau-grille">
             <div>
               <p class="panneau-kicker">Pièce 4 · Le salon</p>
-              <h3 tabindex="-1">Le salon, <em>c'est là qu'il décide.</em></h3>
-              <p>Ça peut être une page de vente : une longue page qui présente ton offre. Ou une VSL : la même chose en vidéo, tu parles face caméra ou tes slides défilent. C'est là que tout se joue.</p>
+              <h3 tabindex="-1">Le salon, <em data-p="em3">c'est là qu'il décide.</em></h3>
+              <p data-p="desc3">Ça peut être une page de vente : une longue page qui présente ton offre. Ou une VSL : la même chose en vidéo, tu parles face caméra ou tes slides défilent. C'est là que tout se joue.</p>
             </div>
             <div class="panneau-q">
-              <p class="question">Toi, tu as une page de vente ou une VSL ?</p>
+              <p class="question" data-p="q3">Toi, tu as une page de vente ou une VSL ?</p>
               <div class="reponses">
                 <button type="button" class="rep" data-rep="oui" aria-pressed="false">Je l'ai</button>
                 <button type="button" class="rep" data-rep="non" aria-pressed="false">Pas encore</button>
@@ -331,11 +343,11 @@
           <div class="panneau-grille">
             <div>
               <p class="panneau-kicker">Pièce 5 · Les fondations</p>
-              <h3 tabindex="-1">Les fondations, <em>personne ne les voit.</em></h3>
-              <p>À qui tu parles. Ce que tu lui promets. Et pourquoi ta méthode marche mieux qu'une autre. Si les fondations penchent, toutes les pièces penchent, même les plus jolies.</p>
+              <h3 tabindex="-1">Les fondations, <em data-p="em4">personne ne les voit.</em></h3>
+              <p data-p="desc4">À qui tu parles. Ce que tu lui promets. Et pourquoi ta méthode marche mieux qu'une autre. Si les fondations penchent, toutes les pièces penchent, même les plus jolies.</p>
             </div>
             <div class="panneau-q">
-              <p class="question">Toi, tu sais dire en une phrase à qui tu t'adresses, et pourquoi on devrait te choisir toi ?</p>
+              <p class="question" data-p="q4">Toi, tu sais dire en une phrase à qui tu t'adresses, et pourquoi on devrait te choisir toi ?</p>
               <div class="reponses">
                 <button type="button" class="rep" data-rep="oui" aria-pressed="false">Oui</button>
                 <button type="button" class="rep" data-rep="non" aria-pressed="false">Pas vraiment</button>
@@ -959,17 +971,21 @@
       <div class="tete">
         <p class="ref">Les chiffres derrière le simulateur</p>
         <h3 class="certifs-titre">Ce que disent les <span class="accent">études</span>.</h3>
-        <p class="sim-aide">Ceux qui concernent ton activité sont mis en avant.</p>
+        <p class="sim-aide">Seulement ceux qui concernent ton activité.</p>
       </div>
       <ul class="simx-stats-liste">
         <li data-profils="ecom"><strong>70,22 %</strong><p>des paniers en ligne sont abandonnés avant le paiement.</p><cite>Baymard Institute, moyenne de 50 études, 2025</cite></li>
         <li data-profils="ecom"><strong>3,33 %</strong><p>des personnes qui reçoivent une relance de panier abandonné finissent par commander. 7,69 % chez les meilleures marques.</p><cite>Klaviyo, 143 000 séquences, 2023</cite></li>
-        <li data-profils="ecom info"><strong>41 %</strong><p>du chiffre d'affaires des emails vient des emails automatiques. Ils ne pèsent que 5,3 % des envois.</p><cite>Klaviyo, benchmarks email</cite></li>
-        <li data-profils="info saas"><strong>6,6 %</strong><p>des visiteurs passent à l'action sur une landing page, en médiane. 3,8 % en SaaS.</p><cite>Unbounce, 41 000 pages, 2024</cite></li>
+        <li data-profils="ecom"><strong>41 %</strong><p>du chiffre d'affaires des emails vient des emails automatiques. Ils ne pèsent que 5,3 % des envois.</p><cite>Klaviyo, benchmarks email</cite></li>
+        <li data-profils="info"><strong>6,6 %</strong><p>des visiteurs passent à l'action sur une landing page, en médiane. Sur 100 visiteurs, 93 repartent.</p><cite>Unbounce, 41 000 pages, 2024</cite></li>
+        <li data-profils="saas"><strong>3,8 %</strong><p>des visiteurs passent à l'action sur la page d'un logiciel, en médiane. C'est presque deux fois moins que la moyenne tous secteurs (6,6 %).</p><cite>Unbounce, 41 000 pages, 2024</cite></li>
         <li data-profils="ecom"><strong>1,4 %</strong><p>des visiteurs d'une boutique Shopify achètent, en moyenne. Le top 20 % dépasse 3,2 %.</p><cite>Littledata, environ 2 800 boutiques</cite></li>
         <li data-profils="info saas"><strong>84 %</strong><p>des marketeurs qui utilisent la vidéo disent qu'elle a directement augmenté leurs ventes.</p><cite>Wyzowl, 2025</cite></li>
-        <li data-profils="ecom info"><strong>+270 %</strong><p>de probabilité d'achat quand un produit affiche des avis, par rapport à aucun avis.</p><cite>Spiegel Research Center, Northwestern, 2017</cite></li>
+        <li data-profils="ecom"><strong>+270 %</strong><p>de probabilité d'achat quand un produit affiche des avis, par rapport à aucun avis.</p><cite>Spiegel Research Center, Northwestern, 2017</cite></li>
         <li data-profils="info saas"><strong>27,66 $</strong><p>coût moyen d'un prospect en publicité Facebook. +21 % en un an.</p><cite>WordStream et LocaliQ, 2025</cite></li>
+        <li data-profils="ecom"><strong>78 %</strong><p>des visites sur les boutiques en ligne viennent d'un téléphone. Ta page produit se juge d'abord sur un petit écran.</p><cite>Salesforce Shopping Index, 2024</cite></li>
+        <li data-profils="ecom"><strong>3,09 %</strong><p>des visiteurs laissent leur email dans un popup, en moyenne. 9,28 % pour les meilleurs.</p><cite>Sumo, 1,7 milliard de popups, 2016</cite></li>
+        <li data-profils="info saas"><strong>13,5 %</strong><p>de conversion pour une landing page avec un seul appel à l'action, contre 10,5 % quand il y en a trois.</p><cite>Unbounce, 18 639 pages</cite></li>
         <li data-profils="info ecom saas"><strong>20 %</strong><p>du texte d'une page web est réellement lu, en moyenne. Le reste est survolé.</p><cite>Nielsen Norman Group, 2008</cite></li>
       </ul>
     </div>
@@ -1143,9 +1159,10 @@
   <span>Plan A · Feuille 1/1</span>
 </footer>
 
-<script src="js/maison.js?v=41"></script>
-<script src="js/site.js?v=41"></script>
-<script src="js/visite.js?v=41"></script>
-<script src="js/simulateur.js?v=41"></script>
+<script src="js/maison.js?v=45"></script>
+<script src="js/site.js?v=45"></script>
+<script src="js/visite.js?v=45"></script>
+<script src="js/simulateur.js?v=45"></script>
+<script src="js/profil.js?v=45"></script>
 </body>
 </html>

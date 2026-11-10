@@ -857,3 +857,16 @@ h3 { font-size: 1.25rem; font-weight: 600; line-height: 1.25; letter-spacing: -.
 .simx-calcul-liste { margin: 0 0 14px; padding-left: 20px; display: grid; gap: 8px; }
 /* Le halo du haut de page ne doit jamais dépasser l'écran sur mobile */
 .hero { overflow-x: hidden; overflow-x: clip; }
+
+/* « Tu vends : une formation · des produits · un logiciel » */
+.profil-choix { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px; margin: 4px 0 26px; }
+.profil-label { font-size: 14px; font-weight: 600; color: var(--gris); margin-right: 2px; }
+.profil-btn {
+  min-height: 40px; padding: 8px 16px; border-radius: 999px; border: 1px solid var(--trait-fort);
+  background: var(--verre); color: var(--noir); font: 500 14px/1.2 var(--f-sans); cursor: pointer;
+  transition: border-color .25s, background .25s, color .25s;
+}
+.profil-btn:hover { border-color: var(--or); }
+.profil-btn[aria-pressed="true"] { background: var(--lapis); border-color: var(--lapis); color: var(--blanc); }
+.profil-btn:focus-visible { outline: 2px solid var(--lapis); outline-offset: 2px; }
+.profil-maison .profil-choix { margin: 0 0 22px; }

@@ -219,7 +219,9 @@
       b.setAttribute("aria-pressed", b.getAttribute("data-profil") === nom ? "true" : "false");
     });
     racine.querySelectorAll("[data-profils]").forEach(function (li) {
-      li.classList.toggle("simx-stat-active", li.getAttribute("data-profils").split(" ").indexOf(nom) > -1);
+      var concerne = li.getAttribute("data-profils").split(" ").indexOf(nom) > -1;
+      li.classList.toggle("simx-stat-active", concerne);
+      li.hidden = !concerne;
     });
     calculer();
   }
@@ -236,7 +238,11 @@
   });
 
   racine.querySelectorAll("[data-profil]").forEach(function (b) {
-    b.addEventListener("click", function () { appliquerProfil(b.getAttribute("data-profil")); });
+    b.addEventListener("click", function () {
+      var nom = b.getAttribute("data-profil");
+      appliquerProfil(nom);
+      if (window.choisirProfil) window.choisirProfil(nom, true);
+    });
   });
   racine.querySelectorAll("[data-scenario]").forEach(function (b) {
     b.addEventListener("click", function () {
@@ -256,6 +262,8 @@
     a.addEventListener("click", function () { if (calcul) calcul.open = true; });
   });
 
+  // Le choix « Tu vends » du haut de page (js/profil.js) règle aussi le simulateur
+  window.simulateurProfil = appliquerProfil;
   appliquerProfil("info");
   var largeurCourbe = 0;
   window.addEventListener("resize", function () {
