@@ -830,3 +830,30 @@ h3 { font-size: 1.25rem; font-weight: 600; line-height: 1.25; letter-spacing: -.
 .contact-texte span { font-size: 14px; color: var(--gris); overflow-wrap: anywhere; }
 .contact-fleche { margin-left: auto; color: var(--or); font-size: 18px; }
 .contact-copier { text-align: center; margin: 26px 0 0; }
+
+/* Le jardin autour de la maison : les pièces annexes */
+.jardin {
+  position: relative; padding: 16px 14px 14px; border: 1.5px dashed rgba(184, 147, 74, .75); border-radius: 22px;
+  background: radial-gradient(circle at 12px 12px, rgba(184, 147, 74, .18) 1.5px, transparent 2px) 0 0 / 22px 22px, rgba(251, 248, 242, .5);
+}
+.jardin-annexes { margin-top: 16px; padding-top: 14px; border-top: 1px dashed rgba(184, 147, 74, .55); }
+.jardin-titre { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; margin: 0 0 10px; font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--noir); }
+.jardin-titre > span:first-child { color: var(--or); font-size: 14px; letter-spacing: 0; }
+.jardin-titre span + span, .jardin-titre > span:last-child { font-size: 12px; font-weight: 500; letter-spacing: 0; text-transform: none; color: var(--gris); }
+.jardin-liste { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.jardin-liste li { padding: 6px 12px; border-radius: 999px; font-size: 13px; color: var(--noir); background: var(--blanc); border: 1px solid rgba(184, 147, 74, .55); }
+@media (min-width: 760px) { .jardin { padding: 22px 22px 18px; } }
+.source-exemple { font-size: .85rem; color: var(--gris); margin-top: 10px; }
+
+/* Simulateur : les trois leviers et l'explication du calcul */
+.simx-leviers { list-style: none; padding: 0; margin: 16px 0 10px; display: grid; gap: 8px; }
+.simx-leviers li { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 12px; padding: 12px 14px; border-radius: 14px; background: var(--lapis-voile); }
+.simx-levier-nom { font-weight: 600; color: var(--noir); font-size: .95rem; }
+.simx-levier-val { font-variant-numeric: tabular-nums; color: var(--gris); white-space: nowrap; }
+.simx-levier-val strong { color: var(--lapis); }
+.simx-resultats .sim-resultat-chiffre span { color: var(--terre); }
+.simx-calcul { max-width: 920px; margin: 18px auto 0; }
+.simx-calcul .fiche-corps p { margin: 14px 0; }
+.simx-calcul-liste { margin: 0 0 14px; padding-left: 20px; display: grid; gap: 8px; }
+/* Le halo du haut de page ne doit jamais dépasser l'écran sur mobile */
+.hero { overflow-x: hidden; overflow-x: clip; }

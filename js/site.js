@@ -1,12 +1,12 @@
 /* ============================================================
    LES PRIX : à modifier ici, et nulle part ailleurs.
-   Exemple : vsl: "2 200 €"
+   Exemple : vsl: "≈ 2 200 €" (le signe ≈ veut dire « environ »)
    ============================================================ */
 var PRIX = {
-  vsl: "2 000 €",            // Une pièce : une VSL
-  emails: "1 000 €",         // Une pièce : une séquence d'emails
-  ads: "500 à 750 €",        // Une pièce : une publicité
-  maisonSimple: "3 500 €",   // Un tunnel de vente complet (media buying, 10 ads, VSL, séquence d'emails)
+  vsl: "≈ 2 000 €",            // Une pièce : une VSL
+  emails: "≈ 1 000 €",         // Une pièce : une séquence d'emails
+  ads: "≈ 500 à 750 €",        // Une pièce : une publicité
+  maisonSimple: "≈ 3 500 €",   // Un tunnel de vente complet (media buying, 10 ads, VSL, séquence d'emails)
   maisonAiles: "Sur devis"   // Un tunnel complexe
 };
 

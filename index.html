@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=21">
+<link rel="stylesheet" href="css/style.css?v=41">
 </head>
 <body>
 
@@ -115,205 +115,11 @@
   </ul>
 </div>
 
-<!-- Les chiffres de l'agence -->
-<section class="feuille t-encre preuve" aria-labelledby="preuve-titre">
-  <div class="feuille-in">
-    <div class="tete">
-      <img class="logo-preuve" src="assets/logo-sprezza.png" alt="Logo de Sprezza" width="64" height="64">
-      <p class="ref">Ils me font confiance</p>
-      <h2 id="preuve-titre">J'écris tous les jours pour les clients de <span class="accent">Sprezza</span>.</h2>
-      <p>Sprezza, c'est l'agence de copywriting de Théo Rossi. Sa spécialité : les tunnels de vente vidéo. J'y écris des publicités, des pages de vente, des vidéos de vente et des emails.</p>
-    </div>
-    <ul class="chiffres stagger">
-      <li><b>370 K€ → <span data-compte="5.6" data-dec="1">5,6</span> M€</b><span>le chiffre d'affaires de la structure, de 2023 à 2025</span></li>
-      <li><b><span data-compte="15342">15 342</span> € / jour</b><span>ce que leur vidéo de vente a rapporté, 365 jours de suite</span></li>
-      <li><b><span data-compte="20">20</span> %</b><span>la part du chiffre d'affaires qui vient des emails</span></li>
-    </ul>
-    <p class="note">Ces chiffres sont ceux de l'agence, pas les miens. Ce qui est à moi, c'est d'y être entrée : l'agence ne recrute pas sur CV. Chaque candidat passe un test de copywriting noté, sur un vrai cas client.</p>
-  </div>
-</section>
-
-<!-- A.01 · La maison -->
-<section class="feuille t-bleu" id="maison">
-  <div class="feuille-in">
-    <div class="tete">
-      <p class="ref">A.01 · La maison</p>
-      <h2>Un tunnel de vente, c'est une <span class="accent">maison</span>. Ton client la visite pièce par pièce.</h2>
-      <p>Le mot « tunnel » fait peur. L'idée, elle, est simple.</p>
-    </div>
-    <div class="encadre definition col">
-      <p>Ton tunnel de vente, c'est le chemin que fait un inconnu entre le moment où il te découvre et le moment où il te paie. Chaque étape est une pièce. Chaque bouton est une porte. S'il ne pousse pas la porte, il ne voit jamais la pièce suivante.</p>
-    </div>
-    <p class="fort centre">Fais la visite. À chaque pièce, dis-moi si tu l'as déjà.</p>
-
-    <div class="visite clair" id="visite" data-formulaire="https://docs.google.com/forms/d/e/1FAIpQLSe_-8tRlJAWZYybFKXNjkNFQKwHkvTZKSJkQWs8hOul3v4kxg/viewform">
-      <div class="visite-vues" role="group" aria-label="Choisir la vue" hidden>
-        <button type="button" class="vue-btn" data-vue="plan" aria-pressed="true">Vue en plan</button>
-        <button type="button" class="vue-btn" data-vue="volume" aria-pressed="false">Vue en volume</button>
-      </div>
-
-      <div class="visite-cadre">
-        <nav class="plan" aria-label="Plan de la maison">
-          <div class="plan-maison">
-            <a class="piece p-facade" href="#piece-1" data-piece="0">
-              <span class="chemin"></span>
-              <span class="p-nom"><b>1</b>Façade</span>
-              <svg class="p-ico" viewBox="0 0 32 22" aria-hidden="true"><use href="#ico-pub"/></svg>
-              <span class="p-sub">Pub ou contenu<span class="vh p-etat"></span></span>
-              <span class="marque" aria-hidden="true"></span>
-            </a>
-            <a class="piece porte p-entree" href="#piece-2" data-piece="1">
-              <span class="chemin"></span>
-              <span class="p-nom"><b>2</b>Entrée</span>
-              <svg class="p-ico" viewBox="0 0 32 22" aria-hidden="true"><use href="#ico-form"/></svg>
-              <span class="p-sub">Ta landing page<span class="vh p-etat"></span></span>
-              <span class="marque" aria-hidden="true"></span>
-            </a>
-            <a class="piece porte p-couloir" href="#piece-3" data-piece="2">
-              <span class="chemin"></span>
-              <span class="p-nom"><b>3</b>Couloir</span>
-              <svg class="p-ico" viewBox="0 0 32 22" aria-hidden="true"><use href="#ico-mail"/></svg>
-              <span class="p-sub">Tes emails<span class="vh p-etat"></span></span>
-              <span class="marque" aria-hidden="true"></span>
-            </a>
-            <a class="piece porte p-salon" href="#piece-4" data-piece="3">
-              <span class="chemin"></span>
-              <span class="p-nom"><b>4</b>Salon</span>
-              <svg class="p-ico" viewBox="0 0 32 22" aria-hidden="true"><use href="#ico-vente"/></svg>
-              <span class="p-sub">Ta page de vente<span class="vh p-etat"></span></span>
-              <span class="marque" aria-hidden="true"></span>
-            </a>
-          </div>
-          <a class="piece p-fondations" href="#piece-5" data-piece="4">
-            <span class="p-nom"><b>5</b>Fondations</span>
-            <span class="p-sub">Cible, promesse, méthode<span class="vh p-etat"></span></span>
-            <span class="marque" aria-hidden="true"></span>
-          </a>
-        </nav>
-        <div class="volume" hidden></div>
-      </div>
-
-      <div class="panneaux">
-        <article class="panneau actif" id="piece-1" data-panneau="0">
-          <div class="panneau-grille">
-            <div>
-              <p class="panneau-kicker">Pièce 1 · La façade</p>
-              <h3 tabindex="-1">La façade, <em>c'est ce qui te fait connaître.</em></h3>
-              <p>C'est ce qu'il voit de loin, en passant. Une publicité, si tu as du budget. Sinon ton contenu gratuit : tes posts LinkedIn, Instagram, Facebook ou tes vidéos TikTok. Son seul travail : lui donner envie de s'approcher. Pas de tout lui raconter.</p>
-            </div>
-            <div class="panneau-q">
-              <p class="question">Toi, tu fais déjà venir du monde, avec de la pub ou avec ton contenu ?</p>
-              <div class="reponses">
-                <button type="button" class="rep" data-rep="oui" aria-pressed="false">Je l'ai</button>
-                <button type="button" class="rep" data-rep="non" aria-pressed="false">Pas encore</button>
-                <button type="button" class="rep" data-rep="nsp" aria-pressed="false">Je ne sais pas</button>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="panneau" id="piece-2" data-panneau="1">
-          <div class="panneau-grille">
-            <div>
-              <p class="panneau-kicker">Pièce 2 · L'entrée</p>
-              <h3 tabindex="-1">L'entrée, <em>c'est ta landing page.</em></h3>
-              <p>La première pièce où il met les pieds. Il y laisse son email en échange d'un cadeau : un guide, une vidéo, un quiz, un code promo, un essai gratuit. Beaucoup la confondent avec la page de vente. Elle ne vend rien. Elle fait entrer.</p>
-            </div>
-            <div class="panneau-q">
-              <p class="question">Toi, tu as une page où on te laisse son email ?</p>
-              <div class="reponses">
-                <button type="button" class="rep" data-rep="oui" aria-pressed="false">Je l'ai</button>
-                <button type="button" class="rep" data-rep="non" aria-pressed="false">Pas encore</button>
-                <button type="button" class="rep" data-rep="nsp" aria-pressed="false">Je ne sais pas</button>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="panneau" id="piece-3" data-panneau="2">
-          <div class="panneau-grille">
-            <div>
-              <p class="panneau-kicker">Pièce 3 · Le couloir</p>
-              <h3 tabindex="-1">Le couloir, <em>ce sont tes emails.</em></h3>
-              <p>Il t'a laissé son email. Tes emails l'emmènent vers la suite. Ils créent le lien, répondent à ses doutes, et le préparent à acheter. Beaucoup sautent cette pièce. Sans elle, il reste planté dans l'entrée.</p>
-            </div>
-            <div class="panneau-q">
-              <p class="question">Toi, tu envoies une série d'emails automatique à chaque nouvel inscrit ?</p>
-              <div class="reponses">
-                <button type="button" class="rep" data-rep="oui" aria-pressed="false">Je l'ai</button>
-                <button type="button" class="rep" data-rep="non" aria-pressed="false">Pas encore</button>
-                <button type="button" class="rep" data-rep="nsp" aria-pressed="false">Je ne sais pas</button>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="panneau" id="piece-4" data-panneau="3">
-          <div class="panneau-grille">
-            <div>
-              <p class="panneau-kicker">Pièce 4 · Le salon</p>
-              <h3 tabindex="-1">Le salon, <em>c'est là qu'il décide.</em></h3>
-              <p>Ça peut être une page de vente : une longue page qui présente ton offre. Une VSL : la même chose en vidéo, tu parles face caméra ou tes slides défilent. Ou la page d'accueil de ton site ou de ta boutique. C'est là que tout se joue.</p>
-            </div>
-            <div class="panneau-q">
-              <p class="question">Toi, tu as une page de vente, une vidéo de vente ou une page d'accueil qui vend ?</p>
-              <div class="reponses">
-                <button type="button" class="rep" data-rep="oui" aria-pressed="false">Je l'ai</button>
-                <button type="button" class="rep" data-rep="non" aria-pressed="false">Pas encore</button>
-                <button type="button" class="rep" data-rep="nsp" aria-pressed="false">Je ne sais pas</button>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="panneau" id="piece-5" data-panneau="4">
-          <div class="panneau-grille">
-            <div>
-              <p class="panneau-kicker">Pièce 5 · Les fondations</p>
-              <h3 tabindex="-1">Les fondations, <em>personne ne les voit.</em></h3>
-              <p>À qui tu parles. Ce que tu lui promets. Et pourquoi ta méthode marche mieux qu'une autre. Si les fondations penchent, toutes les pièces penchent, même les plus jolies.</p>
-            </div>
-            <div class="panneau-q">
-              <p class="question">Toi, tu sais dire en une phrase à qui tu t'adresses, et pourquoi on devrait te choisir toi ?</p>
-              <div class="reponses">
-                <button type="button" class="rep" data-rep="oui" aria-pressed="false">Oui</button>
-                <button type="button" class="rep" data-rep="non" aria-pressed="false">Pas vraiment</button>
-                <button type="button" class="rep" data-rep="nsp" aria-pressed="false">Je ne sais pas</button>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="panneau panneau-bilan" id="ma-maison" hidden>
-          <div class="bilan-grille">
-            <div class="bilan-dessin" aria-hidden="true"></div>
-            <div>
-              <p class="panneau-kicker">Fin de la visite</p>
-              <h3 tabindex="-1">Ta maison, aujourd'hui.</h3>
-              <div class="bilan-texte" aria-live="polite"></div>
-            </div>
-          </div>
-        </article>
-      </div>
-
-      <div class="visite-nav" hidden>
-        <button type="button" class="nav-btn" data-nav="prec">Pièce précédente</button>
-        <span class="nav-compteur" aria-live="polite">Pièce 1 sur 5</span>
-        <button type="button" class="nav-btn" data-nav="suiv">Pièce suivante</button>
-      </div>
-    </div>
-
-    <blockquote class="citation col">
-      <p>Tu n'as pas besoin de toutes les pièces. Mais chaque pièce que tu as doit donner envie de pousser la porte suivante.</p>
-    </blockquote>
-  </div>
-</section>
-
-<!-- A.02 · Le constat -->
+<!-- A.01 · Le constat -->
 <section class="feuille" id="constat">
   <div class="feuille-in">
     <div class="tete">
-      <p class="ref">A.02 · Le constat</p>
+      <p class="ref">A.01 · Le constat</p>
       <h2>Du monde passe chez toi. Pas assez de monde <span class="accent">achète</span>.</h2>
       <p>Tu as une offre. Tu as des visiteurs, sur ton site, ta boutique ou ta page de vente. Et pourtant :</p>
     </div>
@@ -378,6 +184,211 @@
   </div>
 </section>
 
+<!-- A.02 · La maison -->
+<section class="feuille t-bleu" id="maison">
+  <div class="feuille-in">
+    <div class="tete">
+      <p class="ref">A.02 · La maison</p>
+      <h2>Un tunnel de vente, c'est une <span class="accent">maison</span>. Ton client la visite pièce par pièce.</h2>
+      <p>Le mot « tunnel » fait peur. L'idée, elle, est simple.</p>
+    </div>
+    <div class="encadre definition col">
+      <p>Ton tunnel de vente, c'est le chemin que fait un inconnu entre le moment où il te découvre et le moment où il te paie. Chaque étape est une pièce. Chaque bouton est une porte. S'il ne pousse pas la porte, il ne voit jamais la pièce suivante.</p>
+    </div>
+    <p class="fort centre">Fais la visite. À chaque pièce, dis-moi si tu l'as déjà.</p>
+
+    <div class="visite clair" id="visite" data-formulaire="https://docs.google.com/forms/d/e/1FAIpQLSe_-8tRlJAWZYybFKXNjkNFQKwHkvTZKSJkQWs8hOul3v4kxg/viewform">
+      <div class="visite-vues" role="group" aria-label="Choisir la vue" hidden>
+        <button type="button" class="vue-btn" data-vue="plan" aria-pressed="true">Vue en plan</button>
+        <button type="button" class="vue-btn" data-vue="volume" aria-pressed="false">Vue en volume</button>
+      </div>
+
+      <div class="visite-cadre">
+        <nav class="plan" aria-label="Plan de la maison">
+          <div class="jardin">
+          <div class="plan-maison">
+            <a class="piece p-facade" href="#piece-1" data-piece="0">
+              <span class="chemin"></span>
+              <span class="p-nom"><b>1</b>Façade</span>
+              <svg class="p-ico" viewBox="0 0 32 22" aria-hidden="true"><use href="#ico-pub"/></svg>
+              <span class="p-sub">Pub ou contenu<span class="vh p-etat"></span></span>
+              <span class="marque" aria-hidden="true"></span>
+            </a>
+            <a class="piece porte p-entree" href="#piece-2" data-piece="1">
+              <span class="chemin"></span>
+              <span class="p-nom"><b>2</b>Entrée</span>
+              <svg class="p-ico" viewBox="0 0 32 22" aria-hidden="true"><use href="#ico-form"/></svg>
+              <span class="p-sub">Ta landing page<span class="vh p-etat"></span></span>
+              <span class="marque" aria-hidden="true"></span>
+            </a>
+            <a class="piece porte p-couloir" href="#piece-3" data-piece="2">
+              <span class="chemin"></span>
+              <span class="p-nom"><b>3</b>Couloir</span>
+              <svg class="p-ico" viewBox="0 0 32 22" aria-hidden="true"><use href="#ico-mail"/></svg>
+              <span class="p-sub">Tes emails<span class="vh p-etat"></span></span>
+              <span class="marque" aria-hidden="true"></span>
+            </a>
+            <a class="piece porte p-salon" href="#piece-4" data-piece="3">
+              <span class="chemin"></span>
+              <span class="p-nom"><b>4</b>Salon</span>
+              <svg class="p-ico" viewBox="0 0 32 22" aria-hidden="true"><use href="#ico-vente"/></svg>
+              <span class="p-sub">Ta page de vente / VSL<span class="vh p-etat"></span></span>
+              <span class="marque" aria-hidden="true"></span>
+            </a>
+          </div>
+          <a class="piece p-fondations" href="#piece-5" data-piece="4">
+            <span class="p-nom"><b>5</b>Fondations</span>
+            <span class="p-sub">Cible, promesse, méthode<span class="vh p-etat"></span></span>
+            <span class="marque" aria-hidden="true"></span>
+          </a>
+          <div class="jardin-annexes">
+            <p class="jardin-titre"><span aria-hidden="true">✿</span> Le jardin <span>Les pièces annexes, autour de la maison</span></p>
+            <ul class="jardin-liste">
+              <li>Ta page d'accueil</li>
+              <li>Tes posts LinkedIn</li>
+              <li>Ton webinaire ou ton challenge</li>
+              <li>Tes scripts courts Instagram et TikTok</li>
+            </ul>
+          </div>
+          </div>
+        </nav>
+        <div class="volume" hidden></div>
+      </div>
+
+      <div class="panneaux">
+        <article class="panneau actif" id="piece-1" data-panneau="0">
+          <div class="panneau-grille">
+            <div>
+              <p class="panneau-kicker">Pièce 1 · La façade</p>
+              <h3 tabindex="-1">La façade, <em>c'est ce qui te fait connaître.</em></h3>
+              <p>C'est ce qu'il voit de loin, en passant. Une publicité, si tu as du budget. Sinon ton contenu gratuit : tes posts LinkedIn, Instagram, Facebook ou tes vidéos TikTok. Son seul travail : lui donner envie de s'approcher. Pas de tout lui raconter.</p>
+            </div>
+            <div class="panneau-q">
+              <p class="question">Toi, tu fais déjà venir du monde, avec de la pub ou avec ton contenu ?</p>
+              <div class="reponses">
+                <button type="button" class="rep" data-rep="oui" aria-pressed="false">Je l'ai</button>
+                <button type="button" class="rep" data-rep="non" aria-pressed="false">Pas encore</button>
+                <button type="button" class="rep" data-rep="nsp" aria-pressed="false">Je ne sais pas</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="panneau" id="piece-2" data-panneau="1">
+          <div class="panneau-grille">
+            <div>
+              <p class="panneau-kicker">Pièce 2 · L'entrée</p>
+              <h3 tabindex="-1">L'entrée, <em>c'est ta landing page.</em></h3>
+              <p>La première pièce où il met les pieds. Il y laisse son email en échange d'un cadeau : un guide, une vidéo, un quiz, un code promo, un essai gratuit. Beaucoup la confondent avec la page de vente. Elle ne vend rien. Elle fait entrer.</p>
+            </div>
+            <div class="panneau-q">
+              <p class="question">Toi, tu as une page où on te laisse son email ?</p>
+              <div class="reponses">
+                <button type="button" class="rep" data-rep="oui" aria-pressed="false">Je l'ai</button>
+                <button type="button" class="rep" data-rep="non" aria-pressed="false">Pas encore</button>
+                <button type="button" class="rep" data-rep="nsp" aria-pressed="false">Je ne sais pas</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="panneau" id="piece-3" data-panneau="2">
+          <div class="panneau-grille">
+            <div>
+              <p class="panneau-kicker">Pièce 3 · Le couloir</p>
+              <h3 tabindex="-1">Le couloir, <em>ce sont tes emails.</em></h3>
+              <p>Il t'a laissé son email. Tes emails l'emmènent vers la suite. Ils créent le lien, répondent à ses doutes, et le préparent à acheter. Beaucoup sautent cette pièce. Sans elle, il reste planté dans l'entrée.</p>
+            </div>
+            <div class="panneau-q">
+              <p class="question">Toi, tu envoies une série d'emails automatique à chaque nouvel inscrit ?</p>
+              <div class="reponses">
+                <button type="button" class="rep" data-rep="oui" aria-pressed="false">Je l'ai</button>
+                <button type="button" class="rep" data-rep="non" aria-pressed="false">Pas encore</button>
+                <button type="button" class="rep" data-rep="nsp" aria-pressed="false">Je ne sais pas</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="panneau" id="piece-4" data-panneau="3">
+          <div class="panneau-grille">
+            <div>
+              <p class="panneau-kicker">Pièce 4 · Le salon</p>
+              <h3 tabindex="-1">Le salon, <em>c'est là qu'il décide.</em></h3>
+              <p>Ça peut être une page de vente : une longue page qui présente ton offre. Ou une VSL : la même chose en vidéo, tu parles face caméra ou tes slides défilent. C'est là que tout se joue.</p>
+            </div>
+            <div class="panneau-q">
+              <p class="question">Toi, tu as une page de vente ou une VSL ?</p>
+              <div class="reponses">
+                <button type="button" class="rep" data-rep="oui" aria-pressed="false">Je l'ai</button>
+                <button type="button" class="rep" data-rep="non" aria-pressed="false">Pas encore</button>
+                <button type="button" class="rep" data-rep="nsp" aria-pressed="false">Je ne sais pas</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="panneau" id="piece-5" data-panneau="4">
+          <div class="panneau-grille">
+            <div>
+              <p class="panneau-kicker">Pièce 5 · Les fondations</p>
+              <h3 tabindex="-1">Les fondations, <em>personne ne les voit.</em></h3>
+              <p>À qui tu parles. Ce que tu lui promets. Et pourquoi ta méthode marche mieux qu'une autre. Si les fondations penchent, toutes les pièces penchent, même les plus jolies.</p>
+            </div>
+            <div class="panneau-q">
+              <p class="question">Toi, tu sais dire en une phrase à qui tu t'adresses, et pourquoi on devrait te choisir toi ?</p>
+              <div class="reponses">
+                <button type="button" class="rep" data-rep="oui" aria-pressed="false">Oui</button>
+                <button type="button" class="rep" data-rep="non" aria-pressed="false">Pas vraiment</button>
+                <button type="button" class="rep" data-rep="nsp" aria-pressed="false">Je ne sais pas</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="panneau panneau-bilan" id="ma-maison" hidden>
+          <div class="bilan-grille">
+            <div class="bilan-dessin" aria-hidden="true"></div>
+            <div>
+              <p class="panneau-kicker">Fin de la visite</p>
+              <h3 tabindex="-1">Ta maison, aujourd'hui.</h3>
+              <div class="bilan-texte" aria-live="polite"></div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="visite-nav" hidden>
+        <button type="button" class="nav-btn" data-nav="prec">Pièce précédente</button>
+        <span class="nav-compteur" aria-live="polite">Pièce 1 sur 5</span>
+        <button type="button" class="nav-btn" data-nav="suiv">Pièce suivante</button>
+      </div>
+    </div>
+
+    <blockquote class="citation col">
+      <p>Tu n'as pas besoin de toutes les pièces. Mais chaque pièce que tu as doit donner envie de pousser la porte suivante.</p>
+    </blockquote>
+  </div>
+</section>
+
+<!-- Les chiffres de l'agence -->
+<section class="feuille t-encre preuve" aria-labelledby="preuve-titre">
+  <div class="feuille-in">
+    <div class="tete">
+      <img class="logo-preuve" src="assets/logo-sprezza.png" alt="Logo de Sprezza" width="64" height="64">
+      <p class="ref">Ils me font confiance</p>
+      <h2 id="preuve-titre">J'écris tous les jours pour les clients de <span class="accent">Sprezza</span>.</h2>
+      <p>Sprezza, c'est l'agence de copywriting de Théo Rossi. Sa spécialité : les tunnels de vente vidéo. J'y écris des publicités, des pages de vente, des vidéos de vente et des emails.</p>
+    </div>
+    <ul class="chiffres stagger">
+      <li><b>370 K€ → <span data-compte="5.6" data-dec="1">5,6</span> M€</b><span>le chiffre d'affaires de la structure, de 2023 à 2025</span></li>
+      <li><b><span data-compte="15342">15 342</span> € / jour</b><span>ce que leur vidéo de vente a rapporté, 365 jours de suite</span></li>
+      <li><b><span data-compte="20">20</span> %</b><span>la part du chiffre d'affaires qui vient des emails</span></li>
+    </ul>
+    <p class="note">Ces chiffres sont ceux de l'agence, pas les miens. Ce qui est à moi, c'est d'y être entrée : l'agence ne recrute pas sur CV. Chaque candidat passe un test de copywriting noté, sur un vrai cas client.</p>
+  </div>
+</section>
+
 <!-- Aperçu du simulateur -->
 <section class="feuille" id="simulateur-apercu">
   <div class="feuille-in">
@@ -405,8 +416,11 @@
     </ul>
     <p class="fort centre col">Dans les trois cas, le réflexe est le même : retoucher les mots. Et dans les trois cas, ça ne change rien.</p>
     <div class="encadre exemple clair col">
-      <h3>Un exemple, vrai.</h3>
-      <p>J'ai ouvert le site d'une photographe. Travail magnifique, textes soignés, rien à redire sur le style. Sauf qu'aucune page ne parlait aux particulières : tout s'adressait aux professionnels. Une femme qui voulait un portrait d'elle n'avait nulle part où aller. Le problème n'était pas dans les mots. Il manquait une porte.</p>
+      <h3>Le bouton à 300 millions de dollars.</h3>
+      <p>Un grand site de vente en ligne perdait des acheteurs au moment de payer. Ses fiches produits étaient bien écrites, ses prix corrects. Le problème était ailleurs : juste avant le paiement, un formulaire obligeait à créer un compte. Les nouveaux clients ne voulaient pas s'inscrire. Les anciens avaient oublié leur mot de passe. Ils partaient, le panier plein.</p>
+      <p>L'équipe a remplacé le bouton « S'inscrire » par « Continuer », avec une seule phrase : pas besoin de compte pour acheter. Résultat : 45 % d'acheteurs en plus, et 300 millions de dollars de ventes en plus la première année.</p>
+      <p><strong>Personne n'a réécrit une seule fiche produit. On a déplacé une porte.</strong></p>
+      <p class="source-exemple">Raconté par Jared Spool, spécialiste de l'expérience utilisateur, dans « The $300 Million Button » (2009).</p>
     </div>
     <blockquote class="citation geante">
       <p>Le décorateur change les mots.<br>L'architecte change leur <span class="accent">place</span>.</p>
@@ -762,9 +776,9 @@
           <p class="tarif-sous">À la pièce</p>
           <p class="tarif-texte">Pour construire ou reprendre la pièce qui bloque.</p>
           <ul class="tarif-liste">
-            <li><span>Une VSL</span><strong data-prix="vsl">2 000 €</strong></li>
-            <li><span>Une séquence d'emails</span><strong data-prix="emails">1 000 €</strong></li>
-            <li><span>Une publicité</span><strong data-prix="ads">500 à 750 €</strong></li>
+            <li><span>Une VSL</span><strong data-prix="vsl">≈ 2 000 €</strong></li>
+            <li><span>Une séquence d'emails</span><strong data-prix="emails">≈ 1 000 €</strong></li>
+            <li><span>Une publicité</span><strong data-prix="ads">≈ 500 à 750 €</strong></li>
             <li><span>Landing page, page d'accueil, posts LinkedIn</span><strong>Sur devis</strong></li>
           </ul>
         </li>
@@ -779,7 +793,7 @@
             <li>La VSL</li>
             <li>La séquence d'emails</li>
           </ul>
-          <p class="tarif-prix">Le tunnel complet <strong data-prix="maisonSimple">3 500 €</strong></p>
+          <p class="tarif-prix">Le tunnel complet <strong data-prix="maisonSimple">≈ 3 500 €</strong></p>
         </li>
         <li class="tarif">
           <svg viewBox="0 0 76 44" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 20V2h72v18H50v22H26V20H2"/><path d="M26 2v6M26 14v6M50 2v6M50 14v6M26 20h8M42 20h8"/><path d="M8 11h60M38 14v24" stroke="#1F4E8C" stroke-width="2" stroke-dasharray="1 5" stroke-linecap="round"/></svg>
@@ -790,7 +804,7 @@
         </li>
       </ul>
       <p class="centre col">Pour ce qui est sur devis, le prix est fixé après l'audit, sur ce que ta maison demande vraiment. Tu le connais avant de t'engager.</p>
-      <p class="centre"><a class="btn btn-ligne" href="#simulateur">Calculer ce que chaque pièce me rapporterait</a></p>
+      <p class="centre"><a class="btn btn-ligne" href="#simulateur">Calculer ce que mon tunnel me fait perdre</a></p>
     </div>
   </div>
 </section>
@@ -801,7 +815,7 @@
     <div class="tete">
       <p class="ref">Le simulateur</p>
       <h2>Combien ton tunnel laisse sur la <span class="accent">table</span> ?</h2>
-      <p>Choisis ton activité, mets tes chiffres, coche les pièces que tu voudrais reconstruire. Tu vois ce qu'elles te rapporteraient, ce qu'elles coûtent à mes tarifs, et en combien de jours elles sont remboursées.</p>
+      <p>Choisis ton activité et mets tes chiffres. Tu vois, en gros, ce que ton tunnel te fait perdre chaque mois. Le simulateur te dit combien. L'audit te dit où.</p>
     </div>
 
     <div class="simx">
@@ -868,74 +882,27 @@
         </div>
 
         <div class="sim-bloc">
-          <p class="sim-titre"><span class="simx-num">3</span>Les pièces que tu reconstruis <span>(à mes tarifs)</span></p>
-          <ul class="simx-pieces">
-            <li>
-              <label class="simx-piece simx-piece-complet">
-                <input type="checkbox" data-piece="complet" checked>
-                <span class="simx-piece-corps"><strong>Le tunnel complet</strong><span>La gestion de tes pubs, 10 publicités, la VSL et la séquence d'emails.</span></span>
-                <b data-prix="maisonSimple">3 500 €</b>
-              </label>
-            </li>
-            <li>
-              <label class="simx-piece">
-                <input type="checkbox" data-piece="vsl">
-                <span class="simx-piece-corps"><strong>La VSL</strong><span data-texte="d-vsl">Ta vidéo de vente : plus d'inscrits passent à l'achat.</span></span>
-                <b data-prix="vsl">2 000 €</b>
-              </label>
-            </li>
-            <li>
-              <label class="simx-piece">
-                <input type="checkbox" data-piece="emails">
-                <span class="simx-piece-corps"><strong>La séquence d'emails</strong><span data-texte="d-emails">Une vraie série de bienvenue : tes inscrits deviennent clients.</span></span>
-                <b data-prix="emails">1 000 €</b>
-              </label>
-            </li>
-            <li>
-              <label class="simx-piece">
-                <input type="checkbox" data-piece="ads">
-                <span class="simx-piece-corps"><strong>Des publicités</strong><span>À budget égal, plus de clics vers ta page.</span>
-                  <span class="simx-nb">Combien ?
-                    <select data-nb-ads aria-label="Nombre de publicités">
-                      <option>1</option><option>2</option><option selected>3</option><option>4</option><option>5</option>
-                      <option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
-                    </select>
-                  </span>
-                </span>
-                <b data-sortie="prix-ads">500 à 750 € l'une</b>
-              </label>
-            </li>
-            <li>
-              <label class="simx-piece">
-                <input type="checkbox" data-piece="landing">
-                <span class="simx-piece-corps"><strong>La landing page</strong><span data-texte="d-landing">Plus de visiteurs laissent leur email.</span></span>
-                <b>Sur devis</b>
-              </label>
-            </li>
-            <li>
-              <label class="simx-piece">
-                <input type="checkbox" data-piece="bump">
-                <span class="simx-piece-corps"><strong>Une offre au moment de l'achat</strong><span>Un petit ajout proposé juste avant de payer : le panier moyen monte.</span></span>
-                <b>Sur devis</b>
-              </label>
-            </li>
-          </ul>
-
-          <p class="sim-titre simx-titre-scenario"><span class="simx-num">4</span>Ton scénario</p>
+          <p class="sim-titre"><span class="simx-num">3</span>Avec un tunnel bien construit</p>
           <div class="sim-scenarios" role="group" aria-label="Choisir un scénario">
             <button type="button" class="sim-scenario" data-scenario="prudent" aria-pressed="false">Prudent</button>
             <button type="button" class="sim-scenario" data-scenario="realiste" aria-pressed="true">Réaliste</button>
             <button type="button" class="sim-scenario" data-scenario="ambitieux" aria-pressed="false">Ambitieux</button>
           </div>
           <p class="sim-aide" data-texte="scenario-aide">Le milieu des fourchettes publiées.</p>
+          <ol class="simx-leviers">
+            <li><span class="simx-levier-nom" data-texte="v-etape1">Plus de visiteurs laissent leur email</span><span class="simx-levier-val"><span data-sortie="e1-avant">20 %</span> → <strong data-sortie="e1-apres">26 %</strong></span></li>
+            <li><span class="simx-levier-nom" data-texte="v-etape2">Plus d'inscrits achètent</span><span class="simx-levier-val"><span data-sortie="e2-avant">2 %</span> → <strong data-sortie="e2-apres">3,8 %</strong></span></li>
+            <li><span class="simx-levier-nom" data-texte="v-panier">Chaque vente rapporte un peu plus</span><span class="simx-levier-val"><span data-sortie="p-avant">297 €</span> → <strong data-sortie="p-apres">386 €</strong></span></li>
+          </ol>
+          <p class="sim-aide">À trafic égal : je ne compte aucun visiteur en plus.</p>
         </div>
 
-        <a class="simx-mini" href="#simx-resultat"><span>Ce que tu laisses sur la table</span><strong data-sortie="gain-mois">+5 037 €</strong><em>par mois · voir le détail ↓</em></a>
+        <a class="simx-mini" href="#simx-resultat"><span>Ce que ton tunnel te fait perdre</span><strong data-sortie="gain-mois">+5 037 €</strong><em>par mois · voir le détail ↓</em></a>
       </div>
 
       <div class="simx-resultats" id="simx-resultat" aria-live="polite">
         <div class="sim-resultat">
-          <p class="sim-resultat-label">Ce que tu laisses sur la table</p>
+          <p class="sim-resultat-label">Ce que ton tunnel te fait perdre</p>
           <p class="sim-resultat-chiffre"><span data-sortie="gain-mois">+5 037 €</span> par mois</p>
           <p class="sim-resultat-an">soit <strong data-sortie="gain-an">60 444 €</strong> par an</p>
           <p class="simx-jour" data-sortie="jour"></p>
@@ -946,12 +913,10 @@
           </div>
 
           <dl class="simx-kpis">
-            <div><dt data-texte="k-clients">Clients par mois</dt><dd data-sortie="k-clients">8 → 25</dd></div>
-            <div data-si-pub><dt>Coût d'un client en pub</dt><dd data-sortie="k-cac">63 € → 20 €</dd></div>
-            <div data-si-pub><dt>Chaque euro de pub rapporte</dt><dd data-sortie="k-roas">4,8 € → 14,8 €</dd></div>
-            <div><dt>Prix des pièces</dt><dd data-sortie="k-cout">3 500 €</dd></div>
-            <div><dt>Remboursé en</dt><dd data-sortie="k-rembourse">21 jours</dd></div>
-            <div><dt>Rapporté sur 12 mois</dt><dd data-sortie="k-roi">17 fois le prix</dd></div>
+            <div><dt data-texte="k-clients">Clients par mois</dt><dd data-sortie="k-clients">8 → 20</dd></div>
+            <div><dt>Visiteurs qui achètent</dt><dd data-sortie="k-taux">0,4 % → 1 %</dd></div>
+            <div data-si-pub><dt>Coût d'un client en pub</dt><dd data-sortie="k-cac">63 € → 25 €</dd></div>
+            <div data-si-pub><dt>Chaque euro de pub rapporte</dt><dd data-sortie="k-roas">4,8 € → 15,4 €</dd></div>
           </dl>
 
         </div>
@@ -960,19 +925,36 @@
 
     <div class="simx-suite">
       <figure class="simx-courbe">
-        <figcaption data-legende-courbe>Ton gain cumulé sur 12 mois, une fois les pièces payées</figcaption>
-        <svg data-courbe viewBox="0 0 600 220" role="img" aria-label="Courbe du gain cumulé sur 12 mois"></svg>
+        <figcaption data-legende-courbe>Ce que tu perds, mois après mois, si rien ne change</figcaption>
+        <svg data-courbe viewBox="0 0 600 220" role="img" aria-label="Courbe des pertes cumulées sur 12 mois"></svg>
       </figure>
       <div class="simx-suite-texte">
         <p class="simx-reco" data-sortie="reco"></p>
-        <p class="simx-eco" data-sortie="eco"></p>
-
+        <p class="simx-eco">Ce chiffre est une estimation. Il ne te dit pas quelle pièce répare quoi, ni par où commencer. C'est exactement le travail de l'audit.</p>
         <div class="actions">
-          <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSe_-8tRlJAWZYybFKXNjkNFQKwHkvTZKSJkQWs8hOul3v4kxg/viewform" target="_blank" rel="noopener">Faire le vrai calcul avec mon audit gratuit</a>
-          <a class="btn btn-ligne" href="#tarifs">Revoir mes tarifs</a>
+          <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSe_-8tRlJAWZYybFKXNjkNFQKwHkvTZKSJkQWs8hOul3v4kxg/viewform" target="_blank" rel="noopener">Savoir où je perds ces ventes</a>
+          <a class="btn btn-ligne" href="#simx-calcul">Comment tu calcules ?</a>
         </div>
       </div>
     </div>
+
+    <details class="fiche simx-calcul" id="simx-calcul">
+      <summary>
+        <span class="fiche-titre">Comment je calcule</span>
+        <span class="fiche-accroche">Et pourquoi je ne promets jamais 100 %.</span>
+        <span class="plus" aria-hidden="true"></span>
+      </summary>
+      <div class="fiche-corps">
+        <p><strong>Ton chiffre d'aujourd'hui.</strong> Visiteurs × première étape × deuxième étape × panier. Avec l'exemple : 2 000 visiteurs × 20 % qui laissent leur email × 2 % qui achètent × 297 € = 2 376 € par mois.</p>
+        <p><strong>Le tunnel bien construit.</strong> Je n'ajoute aucun visiteur. Je multiplie seulement tes taux par les fourchettes publiées : la page d'inscription (Leadpages), la série d'emails (Mailchimp et Experian), l'offre au moment de l'achat (systeme.io), la relance de panier (Klaviyo). Prudent prend le bas de la fourchette, Réaliste le milieu, Ambitieux le haut.</p>
+        <p><strong>Pourquoi jamais 100 %.</strong> Personne ne convertit tout le monde. Alors j'ai mis deux freins :</p>
+        <ul class="simx-calcul-liste">
+          <li>Plus ton taux est déjà bon, moins il reste à gagner. À 2 %, le scénario Réaliste te fait presque doubler. À 10 %, beaucoup moins.</li>
+          <li>Chaque étape a un plafond. Au-delà, je ne compte plus aucun gain. Par exemple, sur 100 inscrits, je ne compte jamais plus de 25 acheteurs.</li>
+        </ul>
+        <p>Si 100 personnes découvrent ton offre et que 10 achètent déjà, le simulateur ne te dira jamais que tu passeras à 100. Il te montrera quelques ventes de plus, pas un miracle.</p>
+      </div>
+    </details>
 
     <div class="simx-stats">
       <div class="tete">
@@ -993,7 +975,7 @@
       </ul>
     </div>
 
-    <p class="sim-note">Ce sont des estimations, pas des promesses. Leviers sourcés : séquence de bienvenue (Mailchimp et Experian), page d'inscription (Leadpages), offre au moment de l'achat (systeme.io), relance de panier (Klaviyo). Pour la VSL, les publicités et les emails en SaaS, il n'existe pas d'étude publique fiable : j'ai pris des hypothèses prudentes. Rien de ce que tu tapes n'est envoyé : tout reste dans ton navigateur. L'audit te donne les vrais chiffres de ton tunnel.</p>
+    <p class="sim-note">Ce sont des estimations, pas des promesses. Leviers sourcés : séquence de bienvenue (Mailchimp et Experian), page d'inscription (Leadpages), offre au moment de l'achat (systeme.io), relance de panier (Klaviyo). Pour les emails en SaaS et pour les plafonds, il n'existe pas d'étude publique fiable : j'ai pris des hypothèses prudentes. Rien de ce que tu tapes n'est envoyé : tout reste dans ton navigateur.</p>
   </div>
 </section>
 
@@ -1049,8 +1031,8 @@
       <div>
         <div class="encadre clair agence">
           <h3>Formée au rythme d'une agence</h3>
-          <p>Je travaille au quotidien avec <strong>Sprezza</strong>, l'agence de copywriting de Théo Rossi, spécialisée dans les tunnels de vente vidéo pour les infopreneurs.</p>
-          <p>L'agence applique chez ses clients le système qu'elle fait tourner sur ses propres offres. Et elle s'engage par écrit à leur faire dépasser leur chiffre d'affaires en trois mois. Sinon, elle continue gratuitement.</p>
+          <p>Je travaille au quotidien avec <strong>Sprezza</strong>, l'agence de copywriting de Théo Rossi, spécialisée dans les tunnels de vente vidéo.</p>
+          <p>L'agence applique chez ses clients le système qu'elle fait tourner sur ses propres offres.</p>
           <p>Je suis de près les dernières techniques de vente en ligne, en particulier celles du marché américain, qui a souvent une longueur d'avance sur le nôtre. Et je les applique au quotidien chez les clients de l'agence.</p>
         </div>
         <p><a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSe_-8tRlJAWZYybFKXNjkNFQKwHkvTZKSJkQWs8hOul3v4kxg/viewform" target="_blank" rel="noopener">Demander mon audit gratuit</a></p>
@@ -1091,7 +1073,7 @@
       </details>
       <details class="fiche">
         <summary><span class="fiche-titre">« C'est combien ? »</span><span class="plus" aria-hidden="true"></span></summary>
-        <div class="fiche-corps"><p>Les prix sont affichés <a href="#tarifs">plus haut</a> : à partir de 500 € pour une publicité, 3 500 € pour un tunnel complet. Pour un tunnel à plusieurs offres ou une pièce sur devis, je te donne le prix après l'audit, avant que tu t'engages.</p></div>
+        <div class="fiche-corps"><p>Les prix sont affichés <a href="#tarifs">plus haut</a> : environ 500 € pour une publicité, environ 3 500 € pour un tunnel complet. Pour un tunnel à plusieurs offres ou une pièce sur devis, je te donne le prix après l'audit, avant que tu t'engages.</p></div>
       </details>
       <details class="fiche">
         <summary><span class="fiche-titre">« Pourquoi c'est gratuit ? »</span><span class="plus" aria-hidden="true"></span></summary>
@@ -1162,9 +1144,9 @@
   <span>Plan A · Feuille 1/1</span>
 </footer>
 
-<script src="js/maison.js?v=21"></script>
-<script src="js/site.js?v=21"></script>
-<script src="js/visite.js?v=21"></script>
-<script src="js/simulateur.js?v=21"></script>
+<script src="js/maison.js?v=41"></script>
+<script src="js/site.js?v=41"></script>
+<script src="js/visite.js?v=41"></script>
+<script src="js/simulateur.js?v=41"></script>
 </body>
 </html>

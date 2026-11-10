@@ -8,7 +8,7 @@
     "la façade (ta pub ou ton contenu)",
     "l'entrée (ta landing page)",
     "le couloir (tes emails)",
-    "le salon (ta page de vente)",
+    "le salon (ta page de vente ou ta VSL)",
     "les fondations"
   ];
   var SIGNES = { oui: "✓", non: "×", nsp: "?" };
