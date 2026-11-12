@@ -159,6 +159,7 @@
       choisir(valeur);
       memoriser(valeur);
     }
+    try { sessionStorage.setItem("accueil-vu", "1"); } catch (e) {}
     fermerAccueil();
   }
   if (accueil) {
@@ -177,12 +178,27 @@
   }
 
   // ---------- Au chargement ----------
+  // La question s'affiche à chaque ouverture du lien et à chaque rechargement.
+  // Elle ne s'affiche pas quand on revient d'une page de travaux ou avec le bouton retour.
   var memo = null;
   try { memo = localStorage.getItem("profil"); } catch (e) {}
   if (memo && TEXTES[memo]) { mode = "fixe"; choisir(memo); }
-  else {
-    mode = "libre";
-    choisir("info");
-    if (!memo) ouvrirAccueil();
+  else { mode = "libre"; choisir("info"); }
+
+  var dejaVue = false, typeNav = "";
+  try { dejaVue = sessionStorage.getItem("accueil-vu") === "1"; } catch (e) {}
+  try {
+    var nav = performance.getEntriesByType && performance.getEntriesByType("navigation")[0];
+    typeNav = nav ? nav.type : "";
+  } catch (e) {}
+  var afficher = typeNav === "reload" || (!dejaVue && typeNav !== "back_forward");
+  if (afficher && accueil) {
+    // La réponse précédente est mise en avant : un seul geste pour la confirmer
+    var precedent = memo === "passer" ? null : memo;
+    accueil.querySelectorAll("[data-accueil]").forEach(function (b) {
+      if (b.getAttribute("data-accueil") === precedent) b.setAttribute("aria-current", "true");
+      else b.removeAttribute("aria-current");
+    });
+    ouvrirAccueil();
   }
 })();

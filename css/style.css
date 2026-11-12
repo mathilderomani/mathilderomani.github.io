@@ -967,3 +967,6 @@ html.accueil-ouvert, html.accueil-ouvert body { overflow: hidden; }
 @media (max-width: 759px) {
   .piece:not(.p-couloir):not(.p-fondations) .p-sub { max-width: calc(50% - 32px); text-align: right; line-height: 1.25; }
 }
+/* La réponse précédente, mise en avant quand la question revient */
+.accueil-choix button[aria-current="true"] { border-color: var(--lapis); border-style: solid !important; box-shadow: 0 0 0 3px var(--lapis-voile); }
+.accueil-choix button[aria-current="true"] strong::after { content: " · ton dernier choix"; font-weight: 500; font-size: 12px; color: var(--lapis); }
