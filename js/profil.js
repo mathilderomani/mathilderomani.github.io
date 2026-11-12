@@ -70,6 +70,11 @@
   TEXTES.info = info;
 
   var actuel = null;
+  var PHRASES = {
+    info: "Tu vends une formation ou un accompagnement.",
+    ecom: "Tu vends des produits.",
+    saas: "Tu vends un logiciel ou une application."
+  };
 
   function choisir(nom, depuisSimulateur) {
     if (!TEXTES[nom]) nom = "info";
@@ -85,17 +90,99 @@
     if (window.visiteRafraichir) window.visiteRafraichir();
     if (!depuisSimulateur && window.simulateurProfil) window.simulateurProfil(nom);
     document.documentElement.setAttribute("data-profil", nom);
-    if (window.typoFr) window.typoFr(document.getElementById("maison") || document.body);
     actuel = nom;
-    try { localStorage.setItem("profil", nom); } catch (e) {}
+    peindreMode();
+    if (window.typoFr) window.typoFr(document.body);
   }
-  window.choisirProfil = choisir;
+  window.choisirProfil = function (nom, depuisSimulateur) {
+    choisir(nom, depuisSimulateur);
+    memoriser(mode === "fixe" ? nom : "curieux");
+  };
+
+  // Mode « libre » : le visiteur voit les trois profils et peut passer de l'un à l'autre.
+  // Mode « fixe » : il a dit ce qu'il vend, le site ne lui parle que de ça.
+  var mode = "libre";
+  function peindreMode() {
+    var fixe = mode === "fixe";
+    document.documentElement.setAttribute("data-mode", mode);
+    document.querySelectorAll("[data-profil-libre]").forEach(function (el) { el.hidden = fixe; });
+    document.querySelectorAll("[data-profil-fixe]").forEach(function (el) {
+      el.hidden = !fixe;
+      if (!fixe) return;
+      el.textContent = "";
+      el.appendChild(document.createTextNode(PHRASES[actuel] + " "));
+      var lien = document.createElement("button");
+      lien.type = "button";
+      lien.className = "profil-changer";
+      lien.textContent = "Changer";
+      lien.addEventListener("click", ouvrirAccueil);
+      el.appendChild(lien);
+    });
+    document.querySelectorAll(".simx-stats-liste li").forEach(function (li) {
+      li.hidden = li.getAttribute("data-profils").split(" ").indexOf(actuel) < 0;
+    });
+  }
+
+  function memoriser(valeur) {
+    try { localStorage.setItem("profil", valeur); } catch (e) {}
+  }
 
   boutons.forEach(function (b) {
-    b.addEventListener("click", function () { choisir(b.getAttribute("data-choix-profil")); });
+    b.addEventListener("click", function () { window.choisirProfil(b.getAttribute("data-choix-profil")); });
   });
 
+  // ---------- La question d'accueil ----------
+  var accueil = document.getElementById("accueil");
+  var dernierFocus = null;
+  function ouvrirAccueil() {
+    if (!accueil) return;
+    dernierFocus = document.activeElement;
+    accueil.hidden = false;
+    document.documentElement.classList.add("accueil-ouvert");
+    requestAnimationFrame(function () { accueil.classList.add("visible"); });
+    var premier = accueil.querySelector("[data-accueil]");
+    if (premier) premier.focus({ preventScroll: true });
+  }
+  function fermerAccueil() {
+    accueil.classList.remove("visible");
+    document.documentElement.classList.remove("accueil-ouvert");
+    setTimeout(function () { accueil.hidden = true; }, 250);
+    if (dernierFocus && dernierFocus.focus) dernierFocus.focus({ preventScroll: true });
+  }
+  function repondre(valeur) {
+    if (valeur === "curieux" || valeur === "passer") {
+      mode = "libre";
+      choisir(actuel && valeur === "passer" ? actuel : "info");
+      memoriser(valeur === "passer" ? "passer" : "curieux");
+    } else {
+      mode = "fixe";
+      choisir(valeur);
+      memoriser(valeur);
+    }
+    fermerAccueil();
+  }
+  if (accueil) {
+    accueil.addEventListener("click", function (e) {
+      var b = e.target.closest("[data-accueil]");
+      if (b) repondre(b.getAttribute("data-accueil"));
+    });
+    accueil.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") { repondre("passer"); return; }
+      if (e.key !== "Tab") return;
+      var focusables = accueil.querySelectorAll("button");
+      var premier = focusables[0], dernier = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === premier) { e.preventDefault(); dernier.focus(); }
+      else if (!e.shiftKey && document.activeElement === dernier) { e.preventDefault(); premier.focus(); }
+    });
+  }
+
+  // ---------- Au chargement ----------
   var memo = null;
   try { memo = localStorage.getItem("profil"); } catch (e) {}
-  choisir(memo || "info");
+  if (memo && TEXTES[memo]) { mode = "fixe"; choisir(memo); }
+  else {
+    mode = "libre";
+    choisir("info");
+    if (!memo) ouvrirAccueil();
+  }
 })();

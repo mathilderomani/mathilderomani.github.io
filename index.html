@@ -14,9 +14,24 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=45">
+<link rel="stylesheet" href="css/style.css?v=49">
 </head>
 <body>
+<div class="accueil" id="accueil" role="dialog" aria-modal="true" aria-labelledby="accueil-titre" hidden>
+  <div class="accueil-carte">
+    <p class="accueil-signe"><span aria-hidden="true">M</span> Mathilde · Stratège et copywriter</p>
+    <h2 id="accueil-titre">Avant de commencer, tu <span class="accent">vends</span> quoi ?</h2>
+    <p class="accueil-sous">Je te montre la maison et les chiffres qui te concernent. Une seule question, promis.</p>
+    <div class="accueil-choix">
+      <button type="button" data-accueil="info"><span class="accueil-ico" aria-hidden="true">◈</span><strong>Une formation</strong><span>ou un accompagnement en ligne</span></button>
+      <button type="button" data-accueil="ecom"><span class="accueil-ico" aria-hidden="true">◇</span><strong>Des produits</strong><span>sur ta boutique en ligne</span></button>
+      <button type="button" data-accueil="saas"><span class="accueil-ico" aria-hidden="true">◎</span><strong>Un logiciel</strong><span>ou une application</span></button>
+      <button type="button" data-accueil="curieux" class="accueil-curieux"><span class="accueil-ico" aria-hidden="true">✦</span><strong>Rien, je jette juste un œil</strong><span>tu verras tout le site</span></button>
+    </div>
+    <button type="button" class="accueil-passer" data-accueil="passer">Passer</button>
+  </div>
+</div>
+
 
 <!-- Les mini-illustrations des pièces (aucun logo, aucune marque) -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -83,12 +98,6 @@
     <p class="surtitre">Stratège et copywriter · Infopreneurs, e-commerce, SaaS</p>
     <h1>Pourquoi ton offre ne se vend pas plus, et comment y remédier en <span class="accent">3 étapes</span> <span class="h1-fin">(sans tout refaire)</span></h1>
     <p class="chapo">Ta pub, ton site, tes emails : quelque part, tes visiteurs s'en vont sans acheter. Je trouve l'endroit. Puis je le réécris.</p>
-    <div class="profil-choix" role="group" aria-label="Ce que tu vends">
-      <span class="profil-label">Tu vends :</span>
-      <button type="button" class="profil-btn" data-choix-profil="info" aria-pressed="true">une formation</button>
-      <button type="button" class="profil-btn" data-choix-profil="ecom" aria-pressed="false">des produits</button>
-      <button type="button" class="profil-btn" data-choix-profil="saas" aria-pressed="false">un logiciel</button>
-    </div>
     <div class="actions">
       <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSe_-8tRlJAWZYybFKXNjkNFQKwHkvTZKSJkQWs8hOul3v4kxg/viewform" target="_blank" rel="noopener">Demander mon audit gratuit</a>
       <a class="btn btn-ligne" href="#ouvrages">Voir mes travaux</a>
@@ -201,7 +210,7 @@
       <p>Ton tunnel de vente, c'est le chemin que fait un inconnu entre le moment où il te découvre et le moment où il te paie. Chaque étape est une pièce. Chaque bouton est une porte. S'il ne pousse pas la porte, il ne voit jamais la pièce suivante.</p>
     </div>
     <p class="fort centre">Fais la visite. À chaque pièce, dis-moi si tu l'as déjà.</p>
-    <div class="centre profil-maison"><div class="profil-choix" role="group" aria-label="Ta maison selon ce que tu vends">
+    <div class="centre profil-maison"><p class="profil-fixe" data-profil-fixe hidden></p><div class="profil-choix" data-profil-libre role="group" aria-label="Ta maison selon ce que tu vends">
       <span class="profil-label">Tu vends :</span>
       <button type="button" class="profil-btn" data-choix-profil="info" aria-pressed="true">une formation</button>
       <button type="button" class="profil-btn" data-choix-profil="ecom" aria-pressed="false">des produits</button>
@@ -834,7 +843,8 @@
 
         <div class="sim-bloc">
           <p class="sim-titre"><span class="simx-num">1</span>Ton activité</p>
-          <div class="sim-scenarios" role="group" aria-label="Ton activité">
+          <p class="profil-fixe profil-fixe-sim" data-profil-fixe hidden></p>
+          <div class="sim-scenarios" role="group" aria-label="Ton activité" data-profil-libre>
             <button type="button" class="sim-scenario" data-profil="info" aria-pressed="true">Infopreneur</button>
             <button type="button" class="sim-scenario" data-profil="ecom" aria-pressed="false">E-commerce</button>
             <button type="button" class="sim-scenario" data-profil="saas" aria-pressed="false">SaaS</button>
@@ -1159,10 +1169,10 @@
   <span>Plan A · Feuille 1/1</span>
 </footer>
 
-<script src="js/maison.js?v=45"></script>
-<script src="js/site.js?v=45"></script>
-<script src="js/visite.js?v=45"></script>
-<script src="js/simulateur.js?v=45"></script>
-<script src="js/profil.js?v=45"></script>
+<script src="js/maison.js?v=49"></script>
+<script src="js/site.js?v=49"></script>
+<script src="js/visite.js?v=49"></script>
+<script src="js/simulateur.js?v=49"></script>
+<script src="js/profil.js?v=49"></script>
 </body>
 </html>

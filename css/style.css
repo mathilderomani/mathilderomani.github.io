@@ -1,5 +1,5 @@
 /* Mathilde · Direction artistique « Cléopâtre moderne »
-   Old money, lumineux, épuré. Le bleu lapis porte l'identité, l'or reste rare.
+   Old money, lumineux, épuré. Le bleu lapis porte l'identité, l'ocre réchauffe, l'or reste rare.
    Toutes les couleurs et les typos sont définies ici, puis utilisées partout. */
 
 :root {
@@ -18,6 +18,10 @@
   --trait: rgba(26, 26, 26, .09);
   --trait-fort: rgba(26, 26, 26, .2);
   --terre: #9C4A32;        /* repère discret pour « le problème » et « pas encore » */
+  --ocre: #C2772E;         /* ocre égyptienne : chaleur, fonds de section, chiffres, symboles */
+  --ocre-fonce: #8F5219;   /* ocre lisible pour du texte sur fond clair */
+  --ocre-voile: rgba(194, 119, 46, .09);
+  --ocre-sable: #EFDFC6;   /* sable chaud pour les bandeaux */
 
   /* Les typos */
   --f-sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -44,7 +48,8 @@ body {
   background-color: var(--creme);
   background-image:
     radial-gradient(1100px 700px at 50% -8%, rgba(31, 78, 140, .13), transparent 68%),
-    radial-gradient(700px 500px at 88% 12%, rgba(31, 78, 140, .06), transparent 70%);
+    radial-gradient(700px 500px at 88% 12%, rgba(31, 78, 140, .06), transparent 70%),
+    radial-gradient(800px 600px at 6% 22%, rgba(194, 119, 46, .16), transparent 70%);
   background-repeat: no-repeat;
   color: var(--gris);
   font-family: var(--f-sans);
@@ -870,3 +875,95 @@ h3 { font-size: 1.25rem; font-weight: 600; line-height: 1.25; letter-spacing: -.
 .profil-btn[aria-pressed="true"] { background: var(--lapis); border-color: var(--lapis); color: var(--blanc); }
 .profil-btn:focus-visible { outline: 2px solid var(--lapis); outline-offset: 2px; }
 .profil-maison .profil-choix { margin: 0 0 22px; }
+
+/* ============================================================
+   L'ocre égyptienne : de la chaleur à côté du lapis
+   ============================================================ */
+/* Des sections teintées, en alternance avec le crème */
+.feuille.preuve { background: linear-gradient(180deg, rgba(194, 119, 46, .2), rgba(194, 119, 46, .08)); }
+.feuille.t-bleu { background: linear-gradient(180deg, rgba(31, 78, 140, .07), rgba(31, 78, 140, .02)); }
+.feuille.t-jaune { background: linear-gradient(180deg, rgba(194, 119, 46, .18), rgba(239, 223, 198, .45)); }
+.feuille.t-rouge { background: linear-gradient(180deg, rgba(156, 74, 50, .06), rgba(156, 74, 50, .015)); }
+#simulateur-apercu { background: var(--ocre-sable); }
+#contact { background: linear-gradient(180deg, rgba(194, 119, 46, .08), transparent); }
+.feuille.preuve + .feuille::before, .feuille + .feuille.preuve::before { opacity: .5; }
+
+/* Le bandeau qui défile : un ruban ocre */
+.defile { background: var(--ocre-sable); border-color: rgba(194, 119, 46, .55); }
+.defile-piste li::after { color: var(--ocre); }
+
+/* Symboles et numéros */
+.ref::before { color: var(--ocre); }
+.benefices b, .etape-num { color: var(--ocre-fonce); }
+.preuve .chiffres b, #simulateur-apercu .accent, .t-jaune .accent { color: var(--ocre-fonce); }
+.raisons li:nth-child(even) .raison-tag { background: var(--ocre-voile); color: var(--ocre-fonce); }
+.sciences li:nth-child(even) { background: var(--ocre-voile); border-color: rgba(194, 119, 46, .35); }
+.simx-stats-liste li:nth-child(3n+2) strong { color: var(--ocre-fonce); }
+.tarif-milieu { border-top: 4px solid var(--ocre); }
+.etape { border-top: 3px solid rgba(194, 119, 46, .55); }
+.jardin-liste li { border-color: rgba(194, 119, 46, .5); }
+.jardin-titre > span:first-child { color: var(--ocre); }
+.pied { border-top-color: rgba(194, 119, 46, .6); }
+.fiche:hover, .contact-carte:hover, .simx-piece:hover { border-color: var(--ocre); }
+.btn-ligne:hover { border-color: var(--ocre); }
+
+/* ============================================================
+   La question d'accueil : « Avant de commencer, tu vends quoi ? »
+   ============================================================ */
+html.accueil-ouvert, html.accueil-ouvert body { overflow: hidden; }
+.accueil {
+  position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; padding: 16px;
+  background: rgba(244, 238, 227, .55); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  opacity: 0; transition: opacity .25s ease;
+}
+.accueil.visible { opacity: 1; }
+.accueil-carte {
+  width: 100%; max-width: 560px; max-height: calc(100vh - 32px); overflow-y: auto;
+  padding: 30px 22px 18px; border-radius: 28px; text-align: center;
+  background: linear-gradient(180deg, var(--blanc), #F7EEDF);
+  border: 1px solid rgba(194, 119, 46, .45);
+  box-shadow: 0 30px 80px rgba(31, 78, 140, .18), 0 4px 14px rgba(26, 26, 26, .06);
+  transform: translateY(12px) scale(.98); transition: transform .3s ease;
+  position: relative;
+}
+.accueil-carte::before {
+  content: ""; position: absolute; left: 24px; right: 24px; top: 0; height: 4px; border-radius: 0 0 4px 4px;
+  background: linear-gradient(90deg, var(--lapis), var(--ocre), var(--or));
+}
+.accueil.visible .accueil-carte { transform: none; }
+.accueil-signe { display: inline-flex; align-items: center; gap: 10px; margin: 0 0 14px; font-size: 12.5px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--gris); }
+.accueil-signe span { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 9px; background: var(--noir); color: var(--or); font-family: var(--f-serif); font-style: italic; font-size: 18px; letter-spacing: 0; text-transform: none; }
+.accueil h2 { font-size: clamp(1.6rem, 6vw, 2.2rem); line-height: 1.1; letter-spacing: -.035em; margin-bottom: 10px; }
+.accueil-sous { font-size: .98rem; margin: 0 auto 20px; max-width: 400px; }
+.accueil-choix { display: grid; gap: 10px; }
+@media (min-width: 520px) { .accueil-choix { grid-template-columns: 1fr 1fr; } .accueil-carte { padding: 38px 32px 20px; } }
+.accueil-choix button {
+  display: grid; grid-template-columns: auto 1fr; grid-template-rows: auto auto; column-gap: 12px; align-items: center;
+  min-height: 64px; padding: 14px 16px; text-align: left; cursor: pointer;
+  border-radius: 18px; border: 1px solid var(--trait-fort); background: var(--blanc); color: var(--noir);
+  font: inherit; transition: border-color .2s, transform .2s, box-shadow .2s, background .2s;
+}
+.accueil-choix button:hover, .accueil-choix button:focus-visible { border-color: var(--lapis); background: #fff; transform: translateY(-2px); box-shadow: var(--ombre); outline: none; }
+.accueil-ico { grid-row: span 2; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; background: var(--lapis-voile); color: var(--lapis); font-size: 20px; }
+.accueil-choix button:nth-child(2) .accueil-ico { background: var(--ocre-voile); color: var(--ocre-fonce); }
+.accueil-choix button:nth-child(3) .accueil-ico { background: rgba(184, 147, 74, .14); color: #7A5F27; }
+.accueil-choix strong { font-size: 1rem; font-weight: 700; line-height: 1.25; }
+.accueil-choix button > span:last-child { font-size: 13px; color: var(--gris); line-height: 1.3; }
+.accueil-curieux { background: transparent !important; border-style: dashed !important; }
+.accueil-curieux .accueil-ico { background: transparent; color: var(--ocre); }
+.accueil-passer { margin: 14px auto 0; padding: 8px 14px; border: 0; background: none; color: var(--gris); font: 500 14px/1.2 var(--f-sans); text-decoration: underline; text-underline-offset: 4px; cursor: pointer; }
+.accueil-passer:hover { color: var(--noir); }
+@media (prefers-reduced-motion: reduce) { .accueil, .accueil-carte { transition: none; } }
+
+/* « Tu vends des produits. Changer » */
+.profil-fixe { margin: 0 0 22px; font-weight: 600; color: var(--noir); }
+.profil-fixe-sim { margin: 0 0 12px; text-align: left; }
+.profil-changer { margin-left: 6px; padding: 4px 12px; border-radius: 999px; border: 1px solid rgba(194, 119, 46, .6); background: var(--ocre-voile); color: var(--ocre-fonce); font: 600 13px/1.2 var(--f-sans); cursor: pointer; }
+.profil-changer:hover { background: rgba(194, 119, 46, .16); }
+.raisons li > b, .raisons b { color: var(--ocre); }
+.confiance-pastille { border-color: rgba(194, 119, 46, .4); }
+.etiq-plein { background: var(--ocre-fonce); border-color: var(--ocre-fonce); color: var(--blanc); }
+/* Sur téléphone, l'étiquette d'une pièce ne passe jamais sous l'icône : elle va à la ligne */
+@media (max-width: 759px) {
+  .piece:not(.p-couloir):not(.p-fondations) .p-sub { max-width: calc(50% - 32px); text-align: right; line-height: 1.25; }
+}
