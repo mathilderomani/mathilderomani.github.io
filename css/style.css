@@ -998,3 +998,4 @@ html.accueil-ouvert, html.accueil-ouvert body { overflow: hidden; }
   .certif-diplome { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); align-items: center; gap: 30px; padding: 28px; }
 }
 .certif-diplome .certif-emetteur { padding-right: 0; }
+@media (min-width: 980px) { .certifs-liste { grid-template-columns: repeat(3, 1fr); } }
